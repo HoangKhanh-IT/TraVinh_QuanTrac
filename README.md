@@ -14,6 +14,8 @@
 + Sửa thư viện comboTreePlugin.js ==> Xóa dòng `this.options.collapse` và sửa file style css
 
 ### Note giao diện (đề xuất)
++ Border ở các Modal (Header và Footer) tăng Width ==> done
++ Điều chỉnh thanh kéo ngang (giảm Width) ==> done
 + Hiển thị kết quả thống kê
     + Giới hạn số lượng trạm so sánh: 3 ==> Bảng biểu và chart hiển thị tối đa 3 trạm (done)
     + Bảng dữ liệu báo cáo: đề xuất làm Dropdown hiển thị Chart (pending)

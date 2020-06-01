@@ -15,7 +15,7 @@ input[type="radio"], input[type="checkbox"] {
 
 /*** Custom Scrollbar if navbar have overflow ***/
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 14px;
 }
 
 ::-webkit-scrollbar-track {
@@ -337,7 +337,7 @@ label {
     float: left;
     margin-left: 1px;
     display: block;
-    width: 360px;
+    width: 365px;
     height: 100%;
     max-width: 100%;
     background-color: #ffffff;
@@ -627,7 +627,11 @@ label {
 .modal-header {
     height: 50.5px;
     cursor: move;
-    border-bottom: 1px solid #0099fa;
+    border-bottom: 2px solid #0099fa;
+}
+
+.modal-footer {
+    border-top: 3px solid #e5e5e5;
 }
 
 .modal-feature {
