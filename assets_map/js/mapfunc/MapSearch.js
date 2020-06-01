@@ -220,7 +220,8 @@ $("#loaitram").change(function () {
     /*** Thay đổi option của Select ***/
     var item_loaitram = $("#loaitram").val();
     if (item_loaitram != 'none') {
-        item_loaitram_cond = '%20loaitram=%27' + item_loaitram + '%27';
+        // item_loaitram_cond = '%20loaitram=%27' + item_loaitram + '%27';
+        item_loaitram_cond = '%20loaitram=' + item_loaitram;
     } else {
         item_loaitram_cond = '%20loaitram=1=1';
     }
@@ -258,7 +259,8 @@ $("#loaitram").change(function () {
 $("#district").change(function () {
     var item_quanhuyen = $("#district").val();
     if (item_quanhuyen != 'none') {
-        item_quanhuyen_cond = '%20quanhuyen=%27' + item_quanhuyen + '%27';
+        // item_quanhuyen_cond = '%20quanhuyen=%27' + item_quanhuyen + '%27';
+        item_quanhuyen_cond = '%20quanhuyen=' + item_quanhuyen;
     } else {
         item_quanhuyen_cond = '%20quanhuyen=1=1';
     }

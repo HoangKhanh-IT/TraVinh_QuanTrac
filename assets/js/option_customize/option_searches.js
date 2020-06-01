@@ -39,7 +39,7 @@ $.getJSON("services/call_categories_option.php", function (data_category) {
     $.each(data_category, function (key, value) {
         $('#loaitram')
             .append($("<option></option>")
-                .attr('value', value.name).text(value.name));
+                .attr('value', value.id).text(value.name));
     });
 })
 
@@ -51,6 +51,6 @@ $.getJSON("services/call_districts_option.php", function (data_district) {
     $.each(data_district, function (key, value) {
         $('#district')
             .append($("<option></option>")
-                .attr('value', value.name).text(value.name));
+                .attr('value', value.id).text(value.name));
     });
 })

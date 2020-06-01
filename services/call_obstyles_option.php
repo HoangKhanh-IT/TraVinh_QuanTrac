@@ -56,6 +56,6 @@
         'children' => $option
     );
 
-    $final_data = json_encode($option_final, JSON_PRETTY_PRINT);
+    $final_data = json_encode($option_final);
      echo $final_data;
 ?>

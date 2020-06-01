@@ -50,6 +50,6 @@
         'features' => $features,
     );
 
-    $final_data = json_encode($new_data, JSON_PRETTY_PRINT);
+    $final_data = json_encode($new_data);;
     echo $final_data;
 ?>

@@ -16,12 +16,14 @@
                             "station"."establishyear", "station"."terminatedate", 
                             "station"."maintenance", "station"."active", 
                             "station"."the_geom",
-                            "category"."name" "categoryName", 
+                            "category"."name" "categoryName",
+                            "category"."id" "categoryID", 
                             "organization"."name" "organizationName", 
                             "enterprise"."name" "enterpriseName", 
                             "basin"."name" "basinName", 
                             "location"."name" "locationName",
                             "district"."name" "districtName",
+                            "district"."id" "districtID",
 							string_agg("obs_type"."name", \'; \') "obstype_namelist"
 							
                         FROM "Observationstation" "station"
@@ -69,15 +71,15 @@
     /*** Where Condition Data Loại trạm và Quận huyện (1=1 là không có điều kiện xảy ra)***/
     $querry_tramqt_where_loaitram_quanhuyen = 'AND 1=1';
     if ($quanhuyen != '1=1') {
-        $querry_tramqt_where_loaitram_quanhuyen.=' AND "district"."name" = '.$quanhuyen;
+        $querry_tramqt_where_loaitram_quanhuyen.=' AND "district"."id" = '.$quanhuyen;
     }
     if ($loaitram != '1=1') {
-        $querry_tramqt_where_loaitram_quanhuyen.=' AND "category"."name" = '.$loaitram;
+        $querry_tramqt_where_loaitram_quanhuyen.=' AND "category"."id" = '.$loaitram;
     }
 
     /*** Group and Order Data ***/
-    $querry_tramqt_group = ' GROUP BY "station"."id", "category"."name", "organization"."name", 
-                            "enterprise"."name", "basin"."name", "location"."name", "district"."name"
+    $querry_tramqt_group = ' GROUP BY "station"."id", "category"."name", "category"."id", "organization"."name", 
+                            "enterprise"."name", "basin"."name", "location"."name", "district"."name", "district"."id"
                             ORDER BY "station"."name" ASC';
 
     /*** Gộp 3 chuỗi trên tạo thành câu truy vấn ***/
@@ -131,6 +133,6 @@
         'features' => $features,
     );
 
-    $final_data = json_encode($new_data, JSON_PRETTY_PRINT);
+    $final_data = json_encode($new_data);
     echo $final_data;
 ?>

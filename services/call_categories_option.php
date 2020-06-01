@@ -27,6 +27,6 @@
         );
     }
 
-    $final_data = json_encode($option, JSON_PRETTY_PRINT);
+    $final_data = json_encode($option);
     echo $final_data;
 ?>
