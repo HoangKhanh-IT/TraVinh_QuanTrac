@@ -223,9 +223,8 @@ function Modal_Feature_Content(feat, layer) {
     })
 }
 
-/*** Khi load trang hay F5 sẽ gọi service 'call_obser_station.php' không thêm các điều kiện ***/
-url_call_station = "services/call_obser_station.php?loaihinh[]=0&loaitram=1=1&quanhuyen=1=1";
-view_data_quantrac = new L.GeoJSON.AJAX(url_call_station, {
+/*** Khi load trang hay F5 sẽ không gọi service 'call_obser_station.php' - Dữ liệu trống ***/
+view_data_quantrac = new L.GeoJSON.AJAX(null, {
     pointToLayer: function (feat, latlng) {
         return L.marker(latlng).on('click', markerOnClick);
     },

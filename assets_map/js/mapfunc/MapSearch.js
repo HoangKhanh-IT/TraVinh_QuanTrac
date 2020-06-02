@@ -176,7 +176,10 @@ var item_quanhuyen_cond = '%20quanhuyen=1=1';
 /*** Lựa chọn loại hình ***/
 $('#loaihinh').on("changed.jstree", function (e, data) {
     var checkedNodes = []
-    checkedNodes = data.selected;
+    /*** Kiểm tra data.action trả về, chỉ lấy dạng ready (kki mới load trang hoặc "Select node" khi change ***/
+    if (data.action == "ready" || data.action == "select_node") {
+        checkedNodes = data.selected;
+    }
 
     if (checkedNodes.length == 0) {
         item_loaihinh_cond = '%20loaihinh[]=9999';

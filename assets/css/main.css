@@ -125,7 +125,7 @@ label {
 
 .toggle_cus {
     margin-left: 15px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 /*** Màu label cho các toggle lớp quan trắc ***/
@@ -155,21 +155,22 @@ label {
 
 /*** Switch Toggle Label ***/
 .nav-titles, .nav-titles-icon {
-    position: absolute;
-    margin-top: 7px;
+    position: relative;
+    display: inline-block;
+    /* margin-top: 7px; */
     font-family: Arial;
     font-size: 14px;
 }
 
 .nav-titles {
-    margin-left: -50px;
+    margin-left: 1%;
 }
 
 .nav-titles-icon {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    margin-left: 24%;
+    margin-left: 10%;
 }
 
 .nav-titles-default {
@@ -214,6 +215,10 @@ label {
 /*** Search Advanced ***/
 #searchbox {
     margin-left: 14px;
+}
+
+#search_advanced_heading {
+    cursor: pointer;
 }
 
 .search-advanced-titles, .modal-advanced-titles {
@@ -401,16 +406,17 @@ label {
     color: #333;
     background-color: #e6f2ff;
     border: 1px solid #0099fa;
-    border-radius: 50px;
+    border-radius: unset;
+    /* border-radius: 50px; */
 }
 
 .panel-dropdown-content {
     display: none;
 }
 
-.panel-data-quantrac {
+/* .panel-data-quantrac {
     border-radius: 0px 0px 20px 20px !important;
-}
+} */
 
 .panel-heading {
     margin-bottom: 2%;
@@ -420,6 +426,8 @@ label {
 
 .panel-body {
     width: 350px;
+    padding-bottom: 5px;
+    padding-top: 5px;
 }
 
 .panel-title {

@@ -1,5 +1,5 @@
 /*----- DOM Option Loại hình và Quan trắc -----*/
-jQuery(document).ready(function ($) {
+$(function () {
     $.getJSON("services/call_obstyles_option.php", function (data_obstyles) {
         $('#loaihinh').jstree({
             'core': {
