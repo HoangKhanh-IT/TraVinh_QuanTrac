@@ -107,7 +107,14 @@ function markerOnClick(e) {
 
 /*---- Dữ liệu không gian ----*/
 /*** Hiển thị thông tin trạm quan trắc ***/
+var lats = [], lngs = [];
+
 function Modal_Feature_Content(feat, layer) {
+    /*** Fitbound bộ điểm theo onChange option Select/Checkbox ***/
+    lats.push(feat.geometry.coordinates[1]);
+    lngs.push(feat.geometry.coordinates[0]);
+    setbounds(map, lats, lngs);
+
     /*** Kiểm tra trạm quan trắc có năm thành lập hay không ***/
     var establishyear_qt = "";
     if (feat.properties.establishyear != null) {
@@ -231,6 +238,21 @@ view_data_quantrac = new L.GeoJSON.AJAX(null, {
     onEachFeature: Modal_Feature_Content
 })
 view_data_quantrac.addTo(map);
+
+/*** Hàm tìm các điểm mốc lớn nhất và nhỏ nhất của bộ điểm được Fit Bound***/
+function setbounds(map, lats, lngs) {
+    var maxlat = Math.max.apply(Math, lats);
+    var maxlng = Math.max.apply(Math, lngs);
+
+    var minlat = Math.min.apply(Math, lats);
+    var minlng = Math.min.apply(Math, lngs);
+
+    var sw = new L.LatLng(minlat, minlng);
+    var ne = new L.LatLng(maxlat, maxlng);
+
+    var bounds = new L.LatLngBounds(sw, ne);
+    map.fitBounds(bounds);
+}
 
 map.addControl(
     L.control.basemaps({

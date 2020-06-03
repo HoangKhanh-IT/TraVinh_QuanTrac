@@ -191,9 +191,12 @@ $('#loaihinh').on("changed.jstree", function (e, data) {
     }
     url_call_station = 'services/call_obser_station.php?'
         + item_loaihinh_cond + '&' + item_loaitram_cond + '&' + item_quanhuyen_cond;
-    view_data_quantrac.refresh(url_call_station);
 
     /*** Cập nhật lại hiển thị của dữ liệu quan trắc ***/
+    lats = [], lngs = [];
+    view_data_quantrac.refresh(url_call_station);
+
+    /*** Cập nhật lại option trạm quan trắc và thông báo số lượng trạm quan trắc ***/
     $('#quantrac').find('option').remove();
     $.getJSON(url_call_station, function (data_DOM_qt) {
         var DOM_opt_qt = data_DOM_qt.features;
@@ -231,9 +234,12 @@ $("#loaitram").change(function () {
     /*** Gọi service 'call_obser_station.php' có thêm các điều kiện khi lựa chọn Select Option ***/
     url_call_station = 'services/call_obser_station.php?'
         + item_loaihinh_cond + '&' + item_loaitram_cond + '&' + item_quanhuyen_cond;
-    view_data_quantrac.refresh(url_call_station);
 
     /*** Cập nhật lại hiển thị của dữ liệu quan trắc ***/
+    lats = [], lngs = [];
+    view_data_quantrac.refresh(url_call_station);
+
+    /*** Cập nhật lại option trạm quan trắc và thông báo số lượng trạm quan trắc ***/
     $('#quantrac').find('option').remove();
     $.getJSON(url_call_station, function (data_DOM_qt) {
         var DOM_opt_qt = data_DOM_qt.features;
@@ -269,9 +275,12 @@ $("#district").change(function () {
     }
     url_call_station = 'services/call_obser_station.php?'
         + item_loaihinh_cond + '&' + item_loaitram_cond + '&' + item_quanhuyen_cond;
-    view_data_quantrac.refresh(url_call_station);
 
     /*** Cập nhật lại hiển thị của dữ liệu quan trắc ***/
+    lats = [], lngs = [];
+    view_data_quantrac.refresh(url_call_station);
+
+    /*** Cập nhật lại option trạm quan trắc và thông báo số lượng trạm quan trắc ***/
     $('#quantrac').find('option').remove();
     $.getJSON(url_call_station, function (data_DOM_qt) {
         var DOM_opt_qt = data_DOM_qt.features;
