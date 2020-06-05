@@ -5,53 +5,77 @@ $(document).one("ajaxStop", function () {
     sizeLayerControl();
 
     /*** Search tên điểm quan trắc ***/
-    var quantracBH = new Bloodhound({
-        name: "quantrac_search",
+    var quantrac_nameBH = new Bloodhound({
+        name: "quantrac_search_basic",
         datumTokenizer: function (d) {
             return Bloodhound.tokenizers.whitespace(d.name);
         },
         queryTokenizer: Bloodhound.tokenizers.whitespace,
-        local: quantrac_search,
+        local: quantrac_search_basic,
         limit: 10
     });
 
     /*** Search loại trạm quan trắc ***/
     var quantrac_loaitramBH = new Bloodhound({
-        name: "quantrac_search",
+        name: "quantrac_search_basic",
         datumTokenizer: function (d) {
             return Bloodhound.tokenizers.whitespace(d.loaitram);
         },
         queryTokenizer: Bloodhound.tokenizers.whitespace,
-        local: quantrac_search,
+        local: quantrac_search_basic,
         limit: 10
     });
 
     /*** Search loại hình quan trắc ***/
     var quantrac_loaihinhBH = new Bloodhound({
-        name: "quantrac_search",
+        name: "quantrac_search_basic",
         datumTokenizer: function (d) {
             return Bloodhound.tokenizers.whitespace(d.loaihinh);
         },
         queryTokenizer: Bloodhound.tokenizers.whitespace,
-        local: quantrac_search,
+        local: quantrac_search_basic,
         limit: 10
     });
 
     /*** Search quận huyện quan trắc ***/
     var quantrac_districtBH = new Bloodhound({
-        name: "quantrac_search",
+        name: "quantrac_search_basic",
         datumTokenizer: function (d) {
             return Bloodhound.tokenizers.whitespace(d.quanhuyen);
         },
         queryTokenizer: Bloodhound.tokenizers.whitespace,
-        local: quantrac_search,
+        local: quantrac_search_basic,
         limit: 10
     });
 
-    quantracBH.initialize();
+    /*** Search loại địa danh quan trắc ***/
+    var quantrac_loaidiadanhtBH = new Bloodhound({
+        name: "quantrac_search_basic",
+        datumTokenizer: function (d) {
+            return Bloodhound.tokenizers.whitespace(d.loaidiadanh);
+        },
+        queryTokenizer: Bloodhound.tokenizers.whitespace,
+        local: quantrac_search_basic,
+        limit: 10
+    });
+
+    /*** Search địa danh quan trắc ***/
+    var quantrac_diadanhBH = new Bloodhound({
+        name: "quantrac_search_basic",
+        datumTokenizer: function (d) {
+            return Bloodhound.tokenizers.whitespace(d.diadanh);
+        },
+        queryTokenizer: Bloodhound.tokenizers.whitespace,
+        local: quantrac_search_basic,
+        limit: 10
+    });
+
+    quantrac_nameBH.initialize();
     quantrac_loaitramBH.initialize();
     quantrac_loaihinhBH.initialize();
     quantrac_districtBH.initialize();
+    quantrac_loaidiadanhtBH.initialize();
+    quantrac_diadanhBH.initialize();
 
     $("#searchbox").typeahead({
         minLength: 1,
@@ -59,9 +83,9 @@ $(document).one("ajaxStop", function () {
         hint: false
     }, {
         /*** Tên quan trắc ***/
-        name: "quantrac_search",
+        name: "quantrac_search_basic",
         displayKey: "name",
-        source: quantracBH.ttAdapter(),
+        source: quantrac_nameBH.ttAdapter(),
         templates: {
             header: "<h4 class='typeahead-header'>" +
                 "<i class='icon-home4 brown' style='font-size: 16px; margin-top: -2px'></i>" +
@@ -69,18 +93,22 @@ $(document).one("ajaxStop", function () {
                 "</h4>",
             suggestion: Handlebars.compile(["" +
             "<i class='icon-home4' style='font-size: 13px; margin-top: -2px'></i>&nbsp;" +
-            "<span style='font-weight: bolder'>{{name}}</span>" +
+            "<span style='font-weight: bolder'>Tên trạm::&nbsp;" + "{{name}}</span>" +
             "<br><i class='icon-location3' style='font-size: 16px; margin-top: -2px'></i>" +
             "&nbsp;<small>Địa điểm:&nbsp;" + "{{quanhuyen}}</small>" +
             "<br><i class='icon-lab' style='font-size: 16px; margin-top: -2px'></i>" +
             "&nbsp;<small>Loại hình:&nbsp;" + "{{loaihinh}}</small>" +
             "<br><i class='icon-server' style='font-size: 16px; margin-top: -2px'></i>" +
-            "&nbsp;<small>Loại trạm:&nbsp;" + "{{loaitram}}</small>"
+            "&nbsp;<small>Loại trạm:&nbsp;" + "{{loaitram}}</small>" +
+            "<br><i class='mdi mdi-map-legend' style='font-size: 16px; margin-top: -2px'></i>" +
+            "&nbsp;<small>Loại địa danh:&nbsp;" + "{{loaidiadanh}}</small>" +
+            "<br><i class='mdi mdi-location-enter' style='font-size: 16px; margin-top: -2px'></i>" +
+            "&nbsp;<small>Địa danh:&nbsp;" + "{{diadanh}}</small>"
             ].join(""))
         }
     }, {
         /*** Loại trạm quan trắc ***/
-        name: "quantrac_search",
+        name: "quantrac_search_basic",
         displayKey: "loaitram",
         source: quantrac_loaitramBH.ttAdapter(),
         templates: {
@@ -90,18 +118,22 @@ $(document).one("ajaxStop", function () {
                 "</h4>",
             suggestion: Handlebars.compile(["" +
             "<i class='icon-server' style='font-size: 16px; margin-top: -2px'></i>&nbsp;" +
-            "<span style='font-weight: bolder'>{{loaitram}}</span>" +
+            "<span style='font-weight: bolder'>Loại trạm:&nbsp;" + "{{loaitram}}</span>" +
             "<br><i class='icon-home4' style='font-size: 13px; margin-top: -2px'></i>" +
             "&nbsp;<small>Tên trạm:&nbsp;" + "{{name}}</small>" +
             "<br><i class='icon-location3' style='font-size: 16px; margin-top: -2px'></i>" +
             "&nbsp;<small>Địa điểm:&nbsp;" + "{{quanhuyen}}</small>" +
             "<br><i class='icon-lab' style='font-size: 16px; margin-top: -2px'></i>" +
-            "&nbsp;<small>Loại hình:&nbsp;" + "{{loaihinh}}</small>"
+            "&nbsp;<small>Loại hình:&nbsp;" + "{{loaihinh}}</small>" +
+            "<br><i class='mdi mdi-map-legend' style='font-size: 16px; margin-top: -2px'></i>" +
+            "&nbsp;<small>Loại địa danh:&nbsp;" + "{{loaidiadanh}}</small>" +
+            "<br><i class='mdi mdi-location-enter' style='font-size: 16px; margin-top: -2px'></i>" +
+            "&nbsp;<small>Địa danh:&nbsp;" + "{{diadanh}}</small>"
             ].join(""))
         }
     }, {
         /*** Loại hình quan trắc ***/
-        name: "quantrac_search",
+        name: "quantrac_search_basic",
         displayKey: "loaihinh",
         source: quantrac_loaihinhBH.ttAdapter(),
         templates: {
@@ -111,18 +143,22 @@ $(document).one("ajaxStop", function () {
                 "</h4>",
             suggestion: Handlebars.compile(["" +
             "<i class='icon-lab' style='font-size: 16px; margin-top: -2px'></i>&nbsp;" +
-            "<span style='font-weight: bolder'>{{loaihinh}}</span>" +
+            "<span style='font-weight: bolder'>Loại hình:&nbsp;" + "{{loaihinh}}</span>" +
             "<br><i class='icon-home4' style='font-size: 13px; margin-top: -2px'></i>" +
             "&nbsp;<small>Tên trạm:&nbsp;" + "{{name}}</small>" +
             "<br><i class='icon-location3' style='font-size: 16px; margin-top: -2px'></i>" +
             "&nbsp;<small>Địa điểm:&nbsp;" + "{{quanhuyen}}</small>" +
             "<br><i class='icon-server' style='font-size: 16px; margin-top: -2px'></i>" +
-            "&nbsp;<small>Loại trạm:&nbsp;" + "{{loaitram}}</small>"
+            "&nbsp;<small>Loại trạm:&nbsp;" + "{{loaitram}}</small>" +
+            "<br><i class='mdi mdi-map-legend' style='font-size: 16px; margin-top: -2px'></i>" +
+            "&nbsp;<small>Loại địa danh:&nbsp;" + "{{loaidiadanh}}</small>" +
+            "<br><i class='mdi mdi-location-enter' style='font-size: 16px; margin-top: -2px'></i>" +
+            "&nbsp;<small>Địa danh:&nbsp;" + "{{diadanh}}</small>"
             ].join(""))
         }
     }, {
         /*** Huyện/thành phố quan trắc ***/
-        name: "quantrac_search",
+        name: "quantrac_search_basic",
         displayKey: "quanhuyen",
         source: quantrac_districtBH.ttAdapter(),
         templates: {
@@ -132,17 +168,71 @@ $(document).one("ajaxStop", function () {
                 "</h4>",
             suggestion: Handlebars.compile(["" +
             "<i class='icon-location3' style='font-size: 16px; margin-top: -2px'></i>&nbsp;" +
-            "<span style='font-weight: bolder'>{{quanhuyen}}</span>" +
+            "<span style='font-weight: bolder'>Huyện/thành phố:&nbsp;" + "{{quanhuyen}}</span>" +
             "<br><i class='icon-home4' style='font-size: 13px; margin-top: -2px'></i>" +
             "&nbsp;<small>Tên trạm:&nbsp;" + "{{name}}</small>" +
             "<br><i class='icon-server' style='font-size: 16px; margin-top: -2px'></i>" +
             "&nbsp;<small>Loại trạm:&nbsp;" + "{{loaitram}}</small>" +
             "<br><i class='icon-lab' style='font-size: 16px; margin-top: -2px'></i>" +
-            "&nbsp;<small>Loại hình:&nbsp;" + "{{loaihinh}}</small>"
+            "&nbsp;<small>Loại hình:&nbsp;" + "{{loaihinh}}</small>" +
+            "<br><i class='mdi mdi-map-legend' style='font-size: 16px; margin-top: -2px'></i>" +
+            "&nbsp;<small>Loại địa danh:&nbsp;" + "{{loaidiadanh}}</small>" +
+            "<br><i class='mdi mdi-location-enter' style='font-size: 16px; margin-top: -2px'></i>" +
+            "&nbsp;<small>Địa danh:&nbsp;" + "{{diadanh}}</small>"
+            ].join(""))
+        }
+    }, {
+        /*** Loại địa danh quan trắc ***/
+        name: "quantrac_search_basic",
+        displayKey: "loaidiadanh",
+        source: quantrac_loaidiadanhtBH.ttAdapter(),
+        templates: {
+            header: "<h4 class='typeahead-header'>" +
+                "<i class='mdi mdi-map-legend brown' style='font-size: 16px; margin-top: -2px'></i>" +
+                "<span class='brown'>&nbsp;Loại địa danh</span>" +
+                "</h4>",
+            suggestion: Handlebars.compile(["" +
+            "<i class='mdi mdi-map-legend' style='font-size: 16px; margin-top: -2px'></i>&nbsp;" +
+            "<span style='font-weight: bolder'>Loại địa danh:&nbsp;" + "{{loaidiadanh}}</span>" +
+            "<br><i class='icon-home4' style='font-size: 13px; margin-top: -2px'></i>" +
+            "&nbsp;<small>Tên trạm:&nbsp;" + "{{name}}</small>" +
+            "<br><i class='icon-server' style='font-size: 16px; margin-top: -2px'></i>" +
+            "&nbsp;<small>Loại trạm:&nbsp;" + "{{loaitram}}</small>" +
+            "<br><i class='icon-lab' style='font-size: 16px; margin-top: -2px'></i>" +
+            "&nbsp;<small>Loại hình:&nbsp;" + "{{loaihinh}}</small>" +
+            "<br><i class='icon-location3' style='font-size: 16px; margin-top: -2px'></i>" +
+            "&nbsp;<small>Địa điểm:&nbsp;" + "{{quanhuyen}}</small>" +
+            "<br><i class='mdi mdi-location-enter' style='font-size: 16px; margin-top: -2px'></i>" +
+            "&nbsp;<small>Địa danh:&nbsp;" + "{{diadanh}}</small>"
+            ].join(""))
+        }
+    }, {
+        /*** Địa danh quan trắc ***/
+        name: "quantrac_search_basic",
+        displayKey: "diadanh",
+        source: quantrac_diadanhBH.ttAdapter(),
+        templates: {
+            header: "<h4 class='typeahead-header'>" +
+                "<i class='mdi mdi-location-enter brown' style='font-size: 16px; margin-top: -2px'></i>" +
+                "<span class='brown'>&nbsp;Địa danh</span>" +
+                "</h4>",
+            suggestion: Handlebars.compile(["" +
+            "<i class='mdi mdi-location-enter' style='font-size: 16px; margin-top: -2px'></i>&nbsp;" +
+            "<span style='font-weight: bolder'>Địa danh:&nbsp;" + "{{diadanh}}</span>" +
+            "<br><i class='icon-home4' style='font-size: 13px; margin-top: -2px'></i>" +
+            "&nbsp;<small>Tên trạm:&nbsp;" + "{{name}}</small>" +
+            "<br><i class='icon-server' style='font-size: 16px; margin-top: -2px'></i>" +
+            "&nbsp;<small>Loại trạm:&nbsp;" + "{{loaitram}}</small>" +
+            "<br><i class='icon-lab' style='font-size: 16px; margin-top: -2px'></i>" +
+            "&nbsp;<small>Loại hình:&nbsp;" + "{{loaihinh}}</small>" +
+            "<br><i class='icon-location3' style='font-size: 16px; margin-top: -2px'></i>" +
+            "&nbsp;<small>Địa điểm:&nbsp;" + "{{quanhuyen}}</small>" +
+            "<br><i class='mdi mdi-map-legend' style='font-size: 16px; margin-top: -2px'></i>" +
+            "&nbsp;<small>Loại địa danh:&nbsp;" + "{{loaidiadanh}}</small>"
             ].join(""))
         }
     }).on("typeahead:selected", function (obj, datum) {
-        if (datum.source === "quantrac_search") {
+        if (datum.source === "quantrac_search_basic") {
             map.setView([datum.lat, datum.lng], 15);
 
             /*** Tự động mở Modal sau khi Zoom ***/
@@ -307,10 +397,9 @@ $("#district").change(function () {
 
 function search_tramqt() {
     var tramqt = document.getElementById("quantrac").value;
-    for (var attr_modal in quantrac_search) {
-        var datum = quantrac_search[attr_modal];
+    for (var attr_modal in quantrac_search_advanced) {
+        var datum = quantrac_search_advanced[attr_modal];
         if (tramqt == datum.name) {
-            /*** Tự động mở Modal sau khi Zoom ***/
             map.setView([datum.lat, datum.lng], 15);
             if (map._layers[datum.id]) {
                 map._layers[datum.id].fire("click");

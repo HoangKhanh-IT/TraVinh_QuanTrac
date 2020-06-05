@@ -1,7 +1,7 @@
 <?php
     $travinh_db = pg_connect("host=localhost 
         port=5432 
-        dbname=travinh_quantrac 
+        dbname=quantrac_travinh 
         user=postgres 
         password=0888365051"
     );

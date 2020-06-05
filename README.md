@@ -14,6 +14,11 @@
 + Sửa thư viện comboTreePlugin.js ==> Xóa dòng `this.options.collapse` và sửa file style css
 
 ### Note giao diện (đề xuất)
++ Cơ chế đóng mở 1 trong 2 của Search Cơ bản và Nâng cao: 
+https://viblo.asia/p/bai-19-tao-collapse-va-accordion-voi-bootstrap-3-Qbq5Q1gG5D8
++ Lưu ý: phảm thêm thẻ class `.panel` thì thuộc tính `data-parent` mới được thực hiện:
+https://stackoverflow.com/questions/19425165/bootstrap-accordion-button-toggle-data-parent-not-working
++ Nút Navbar Collapse chuyển qua góc trái (sát Logo) ==> logo
 + Border ở các Modal (Header và Footer) tăng Width ==> done
 + Điều chỉnh thanh kéo ngang (giảm Width) ==> done
 + Hiển thị kết quả thống kê

@@ -54,3 +54,27 @@ $.getJSON("services/call_districts_option.php", function (data_district) {
                 .attr('value', value.id).text(value.name));
     });
 })
+
+/*----- DOM Option Loại địa danh -----*/
+$.getJSON("services/call_loctype_option.php", function (data_locType) {
+    $('#locType')
+        .append($("<option></option>")
+            .attr('value', 'none').text("Lựa chọn loại địa danh"));
+    $.each(data_locType, function (key, value) {
+        $('#locType')
+            .append($("<option></option>")
+                .attr('value', value.id).text(value.name));
+    });
+})
+
+/*----- DOM Option Địa danh -----*/
+$.getJSON("services/call_location_option.php", function (data_location) {
+    $('#location')
+        .append($("<option></option>")
+            .attr('value', 'none').text("Lựa chọn địa danh"));
+    $.each(data_location, function (key, value) {
+        $('#location')
+            .append($("<option></option>")
+                .attr('value', value.id).text(value.name));
+    });
+})

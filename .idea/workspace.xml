@@ -2,10 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="461f7496-579b-4c31-90e4-a3dfaeb4f371" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/services/call_location_option.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/call_loctype_option.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/option_customize/option_searches.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/option_customize/option_searches.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets_map/js/mapfunc/MapScript.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets_map/js/mapfunc/MapScript.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets_map/js/mapfunc/MapSearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets_map/js/mapfunc/MapSearch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/call_obser_station.php" beforeDir="false" afterPath="$PROJECT_DIR$/services/call_obser_station.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/services/config.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +54,8 @@
     <setting file="file://$PROJECT_DIR$/services/call_districts_option.php" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/services/config.php" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/assets/js/main.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/services/call_loctype_option.php" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/services/call_location_option.php" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
   </component>
   <component name="ProjectId" id="1b7Azah71Uj3CGrSStKiYCKs8I3" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -123,7 +132,9 @@
       <workItem from="1590714771776" duration="23902000" />
       <workItem from="1590993145664" duration="6140000" />
       <workItem from="1591071815098" duration="13325000" />
-      <workItem from="1591147307747" duration="19326000" />
+      <workItem from="1591147307747" duration="19358000" />
+      <workItem from="1591235705242" duration="23280000" />
+      <workItem from="1591320596745" duration="8330000" />
     </task>
     <task id="LOCAL-00001" summary="TraVinh_QuanTrac">
       <created>1588737118984</created>
@@ -447,7 +458,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591090136811</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="TraVinh_QuanTrac">
+      <created>1591178365967</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1591178365967</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -463,11 +481,11 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="361" y="75" key="#Notifications/0.0.1536.834/1920.30.1366.738@0.0.1536.834" timestamp="1590236187145" />
-    <state x="375" y="0" key="CommitChangelistDialog2" timestamp="1591090134980">
+    <state x="375" y="0" key="CommitChangelistDialog2" timestamp="1591178364796">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="375" y="0" key="CommitChangelistDialog2/0.0.1536.834/1920.0.1024.738@0.0.1536.834" timestamp="1588905135465" />
-    <state x="375" y="0" key="CommitChangelistDialog2/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1591090134980" />
+    <state x="375" y="0" key="CommitChangelistDialog2/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1591178364796" />
     <state x="375" y="0" key="CommitChangelistDialog2/0.0.1536.834/1920.30.1366.738@0.0.1536.834" timestamp="1590343144013" />
     <state x="375" y="0" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1588751106467" />
     <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1590736584884">
@@ -475,10 +493,10 @@
     </state>
     <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834/1920.0.1024.738@0.0.1536.834" timestamp="1588132046198" />
     <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1590736584884" />
-    <state x="604" y="336" key="NewPhpFileDialog" timestamp="1590032780360">
+    <state x="604" y="336" key="NewPhpFileDialog" timestamp="1591327896933">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1590032780360" />
+    <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1591327896933" />
     <state x="277" y="59" key="SettingsEditor" timestamp="1590714803420">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -487,17 +505,17 @@
     <state x="277" y="59" key="SettingsEditor/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1590714803420" />
     <state x="277" y="59" key="SettingsEditor/0.0.1536.834/1920.30.1366.738@0.0.1536.834" timestamp="1590687625571" />
     <state x="277" y="59" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1590330123913" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1591090141525">
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1591178371401">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834/1920.0.1024.738@0.0.1536.834" timestamp="1588905139877" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1591090141525" />
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1591178371401" />
     <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834/1920.30.1366.738@0.0.1536.834" timestamp="1590343155390" />
     <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1588751113279" />
-    <state x="444" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1591147320086">
+    <state x="444" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1591320596825">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="444" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1591147320086" />
+    <state x="444" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1591320596825" />
     <state x="444" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834/1920.30.1366.738@0.0.1536.834" timestamp="1590677569259" />
     <state x="444" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834@0.0.1536.834" timestamp="1590330113823" />
     <state x="452" y="0" width="631" height="834" key="find.popup" timestamp="1591082758729">

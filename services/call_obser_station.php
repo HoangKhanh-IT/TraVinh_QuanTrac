@@ -22,6 +22,7 @@
                             "enterprise"."name" "enterpriseName", 
                             "basin"."name" "basinName", 
                             "location"."name" "locationName",
+                            "loctype"."name" "locationTypeName",
                             "district"."name" "districtName",
                             "district"."id" "districtID",
 							string_agg("obs_type"."name", \'; \') "obstype_namelist"
@@ -32,6 +33,7 @@
                         LEFT JOIN "Enterprise" "enterprise" ON "enterprise"."id" = "station"."enterpriseid"
                         LEFT JOIN "Basin" "basin" ON "basin"."id" = "station"."basinid"
                         LEFT JOIN "Location" "location" ON "location"."id" = "station"."locationid"
+                        LEFT JOIN "LocationType" "loctype" on "loctype"."id" = "location"."locationtypeid"
                         LEFT JOIN "District" "district" ON "district"."id" = "station"."districtid"
 						LEFT JOIN "Obstype_Station" "obs_station" ON "obs_station"."stationid" = "station"."id"
 						LEFT JOIN "ObservationType" "obs_type" ON "obs_type"."id" = "obs_station"."obstypesid"
@@ -45,6 +47,7 @@
                         LEFT JOIN "Enterprise" "enterprise" ON "enterprise"."id" = "station_In"."enterpriseid"
                         LEFT JOIN "Basin" "basin" ON "basin"."id" = "station_In"."basinid"
                         LEFT JOIN "Location" "location" ON "location"."id" = "station_In"."locationid"
+                        LEFT JOIN "LocationType" "loctype" on "loctype"."id" = "location"."locationtypeid"
                         LEFT JOIN "District" "district" ON "district"."id" = "station_In"."districtid"
 			            LEFT JOIN "Obstype_Station" "obs_station" ON "obs_station"."stationid" = "station_In"."id"
 			            LEFT JOIN "ObservationType" "obs_type" ON "obs_type"."id" = "obs_station"."obstypesid"';
@@ -79,7 +82,8 @@
 
     /*** Group and Order Data ***/
     $querry_tramqt_group = ' GROUP BY "station"."id", "category"."name", "category"."id", "organization"."name", 
-                            "enterprise"."name", "basin"."name", "location"."name", "district"."name", "district"."id"
+                            "enterprise"."name", "basin"."name", "location"."name", "loctype"."name"
+                            , "district"."name", "district"."id"
                             ORDER BY "station"."name" ASC';
 
     /*** Gộp 3 chuỗi trên tạo thành câu truy vấn ***/
@@ -113,6 +117,7 @@
                 'enterpriseName' => $value['enterpriseName'],
                 'districtName' => $value['districtName'],
                 'locationName' => $value['locationName'],
+                'locationType' => $value['locationTypeName'],
                 'establishyear' => $value['establishyear'],
                 'terminatedate' => $value['terminatedate'],
                 'maintenance' => $value['maintenance'],

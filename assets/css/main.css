@@ -217,7 +217,7 @@ label {
     margin-left: 14px;
 }
 
-#search_advanced_heading {
+#search_advanced_heading, #search_basic_heading {
     cursor: pointer;
 }
 
@@ -317,8 +317,15 @@ label {
     float: left;
     margin-top: 5px;
     margin-right: 10px;
+    margin-left: 15px;
     width: 60px;
     height: 60px;
+}
+
+.collapse_menu {
+    font-size: 22px;
+    color: #1a6aff;
+    margin-top: 20px;
 }
 
 .title {
@@ -817,6 +824,10 @@ span .paginate_button {
 
     .navbar-form .has-feedback .form-control-feedback {
         top: -3px;
+    }
+
+    .collapse_menu {
+        margin-top: 24px;
     }
 }
 

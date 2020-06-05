@@ -90,6 +90,11 @@
                         <i class="fa fa-list fa-lg blue" style="font-size: 20px"></i>
                     </a>
                 </div>
+                <div class="hidden-xs" style="float: left">
+                    <a data-target=".navbar-collapse.in" data-toggle="collapse" href="#" id="list-btn">
+                        <i class="fa fa-list blue collapse_menu"></i>
+                    </a>
+                </div>
                 <img id="logo" src="assets/images/SoTNMT.png"/>
                 <div class="title">
                     <div id="titlefont1">SỞ TÀI NGUYÊN VÀ MÔI TRƯỜNG TỈNH TRÀ VINH</div>
@@ -98,11 +103,6 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav" style="margin-top: 1.25%">
-                    <li class="hidden-xs">
-                        <a data-target=".navbar-collapse.in" data-toggle="collapse" href="#" id="list-btn">
-                            <i class="fa fa-list blue" style="font-size: 22px; color: #1a6aff; margin-top: -3px"></i>
-                        </a>
-                    </li>
                     <li>
                         <a data-target=".navbar-collapse.in" data-toggle="collapse" href="#" id="about-btn">
                             <i class="icon-accessibility blue" style="font-size: 16px; margin-top: -2px;"></i>
@@ -125,13 +125,14 @@
             <div class="sidebar-wrapper">
                 <div class="panel panel-default" id="features">
                     <!-- Lớp dữ liệu -->
-                    <div class="panel-heading panel-data-quantrac" data-toggle="collapse" href="#data_layer_tramqt">
+                    <div class="panel-heading panel-data-quantrac"
+                         data-toggle="collapse" href="#data_layer_tramqt" style="border-top: unset">
                         <h3 class="panel-title blue">
                             <i class="glyphicon glyphicon-list-alt"
                                style="font-size: 16px; margin-top: -5px;"></i>&nbsp;&nbsp;&nbsp;Lớp dữ liệu trạm quan trắc
-                            <button class="btn btn-xs btn-default pull-right" id="sidebar-hide-btn" type="button">
+                            <!-- <button class="btn btn-xs btn-default pull-right" id="sidebar-hide-btn" type="button">
                                 <i class="fa fa-chevron-left blue" style="font-size: 16px; margin-top: -2px;"></i>
-                            </button>
+                            </button> -->
                             <!-- <button class="btn btn-xs btn-default btn-cus pull-right" type="button"
                                     data-toggle="collapse" href="#data_layer_tramqt">
                                 <i class="fa fa-chevron-down blue" style="font-size: 16px; margin-top: -2px;"></i>
@@ -233,7 +234,6 @@
                             </div>
                             <label class="nav-titles nav-titles-default">Nhãn đơn vị hành chính</label>
                         </div> -->
-
                     </div>
                     <!-- Tìm kiếm dữ liệu -->
                     <div class="panel-heading" data-toggle="collapse" href="#search_tramqt">
@@ -242,89 +242,120 @@
                                style="font-size: 16px; margin-top: -2px;"></i>&nbsp;&nbsp;&nbsp;Tìm kiếm dữ liệu
                         </h3>
                     </div>
-                    <div class="panel-body collapse" id="search_tramqt">
-                        <div class="col-xs-12 col-md-12">
-                            <i class="fa fa-location-arrow" style="font-size: 16px; margin-top: -2px; color: #999"></i>
-                            <span class="panel-search">&nbsp;&nbsp;Tìm kiếm cơ bản</span>
-                            <form class="navbar-form navbar-left" role="search" style="margin-bottom: -5px">
-                                <div class="form-group has-feedback">
-                                    <span class="fa fa-search form-control-feedback blue" id="searchicon"></span>
-                                    <input class="form-control" id="searchbox" placeholder="Nhập tên vị trí" type="text"
-                                    onclick="Refresh_Option()">
+                    <div class="panel-body collapse" id="search_tramqt" aria-multiselectable="true">
+                        <div class="panel">
+                            <div class="col-xs-12 col-md-12" data-toggle="collapse" data-parent="#search_tramqt"
+                                 aria-expanded="true" aria-controls="search_basic"
+                                 href="#search_basic" id="search_basic_heading">
+                                <i class="fa fa-location-arrow" style="font-size: 16px; margin-top: -2px; color: #999"></i>
+                                <span class="panel-search">&nbsp;&nbsp;Tìm kiếm cơ bản</span>
+                                <i class="glyphicon glyphicon-triangle-bottom"
+                                   style="font-size: 13px; color: #999"></i>
+                            </div>
+                            <div class="collapse in" id="search_basic">
+                                <div class="col-xs-12 col-md-12">
+                                    <form class="navbar-form navbar-left" role="search" style="margin-bottom: -5px">
+                                        <div class="form-group has-feedback">
+                                            <span class="fa fa-search form-control-feedback blue" id="searchicon"></span>
+                                            <input class="form-control" id="searchbox"
+                                                   placeholder="Nhập tên vị trí" type="text" onclick="Refresh_Option()"/>
+                                        </div>
+                                    </form>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                         <div class="col-xs-12 col-md-12">
                             <hr class="line-search">
                         </div>
-                        <div class="col-xs-8 col-md-8" data-toggle="collapse"
-                             href="#search_advanced" id="search_advanced_heading">
-                            <i class="mdi mdi-map-search" style="font-size: 16px; margin-top: -2px; color: #999"></i>
-                            <span class="panel-search">&nbsp;&nbsp;Tìm kiếm nâng cao</span>
-                            <i class="glyphicon glyphicon-triangle-bottom"
-                               style="font-size: 13px; color: #999"></i>
-                        </div>
-                        <div class="collapse" id="search_advanced">
-                            <div class="col-xs-12 col-md-12 search-advanced-titles">
-                                <i class="icon-lab blue" style="font-size: 14px; margin-top: -2px"></i>
-                                <span for="loaihinh" style="margin-left: 1px">&nbsp;Loại hình</span>
+                        <div class="panel">
+                            <div class="col-xs-8 col-md-8" data-toggle="collapse" data-parent="#search_tramqt"
+                                 aria-expanded="false" aria-controls="search_advanced"
+                                 href="#search_advanced" id="search_advanced_heading">
+                                <i class="mdi mdi-map-search" style="font-size: 16px; margin-top: -2px; color: #999"></i>
+                                <span class="panel-search">&nbsp;&nbsp;Tìm kiếm nâng cao</span>
+                                <i class="glyphicon glyphicon-triangle-bottom"
+                                   style="font-size: 13px; color: #999"></i>
                             </div>
-                            <div class="form-group col-xs-12 col-md-12 search-advanced">
-                                <div id="loaihinh"></div>
-                                <!-- <input type="text" id="loaihinh" placeholder="Lựa chọn loại hình"
-                                       autocomplete="off"/> -->
-                                <!-- <select class="form-control" id="loaihinh">
-                                    DOM từ DB vào
-                                </select> -->
+                            <div class="collapse" id="search_advanced">
+                                <div class="col-xs-12 col-md-12 search-advanced-titles">
+                                    <i class="icon-lab blue" style="font-size: 14px; margin-top: -2px"></i>
+                                    <span for="loaihinh" style="margin-left: 1px">&nbsp;Loại hình</span>
+                                </div>
+                                <div class="form-group col-xs-12 col-md-12 search-advanced">
+                                    <div id="loaihinh"></div>
+                                    <!-- <input type="text" id="loaihinh" placeholder="Lựa chọn loại hình"
+                                           autocomplete="off"/> -->
+                                    <!-- <select class="form-control" id="loaihinh">
+                                        DOM từ DB vào
+                                    </select> -->
+                                </div>
+                                <div class="col-xs-12 col-md-12 search-advanced-titles">
+                                    <i class="icon-server blue" style="font-size: 14px; margin-top: -2px"></i>
+                                    <span for="loaitram" style="margin-left: 1px">&nbsp;Loại trạm</span>
+                                </div>
+                                <div class="form-group col-xs-12 col-md-12 search-advanced">
+                                    <select class="form-control" id="loaitram">
+                                        <!-- DOM từ DB vào -->
+                                    </select>
+                                </div>
+                                <div class="col-xs-12 col-md-12 search-advanced-titles">
+                                    <i class="icon-location3 blue" style="font-size: 14px; margin-top: -2px"></i>
+                                    <span for="district" style="margin-left: 1px">&nbsp;Thành phố, Huyện, Thị xã</span>
+                                </div>
+                                <div class="form-group col-xs-12 col-md-12 search-advanced">
+                                    <select class="form-control" id="district">
+                                        <!-- DOM từ DB vào -->
+                                    </select>
+                                </div>
+                                <div class="col-xs-12 col-md-12 search-advanced-titles">
+                                    <i class="mdi mdi-map-legend blue" style="font-size: 14px; margin-top: -2px"></i>
+                                    <span for="locType" style="margin-left: 1px">&nbsp;Loại địa danh</span>
+                                </div>
+                                <div class="form-group col-xs-12 col-md-12 search-advanced">
+                                    <select class="form-control" id="locType">
+                                        <!-- DOM từ DB vào -->
+                                    </select>
+                                </div>
+                                <div class="col-xs-12 col-md-12 search-advanced-titles">
+                                    <i class="mdi mdi-location-enter blue" style="font-size: 14px; margin-top: -2px"></i>
+                                    <span for="location" style="margin-left: 1px">&nbsp;Địa danh</span>
+                                </div>
+                                <div class="form-group col-xs-12 col-md-12 search-advanced">
+                                    <select class="form-control" id="location">
+                                        <!-- DOM từ DB vào -->
+                                    </select>
+                                </div>
+                                <!-- <div class="col-xs-12 col-md-12" style="margin-bottom: 10px">
+                                    <button class="btn btn-primary btn-block" id="search-advanced-btn" type="button" onclick="search_list_tramqt()">
+                                        <i class="icon-cog5" style="font-size: 16px; margin-top: -1px"></i>&nbsp;&nbsp;Danh sách trạm tìm kiếm
+                                    </button>
+                                </div> -->
+                                <div class="col-xs-12 col-md-12 search-advanced-titles">
+                                    <i class="icon icon-store blue" style="font-size: 14px; margin-top: -2px"></i>
+                                    <span for="quantrac">&nbsp;Trạm quan trắc</span>
+                                </div>
+                                <div class="form-group col-xs-12 col-md-12 search-advanced">
+                                    <select class="form-control" id="quantrac" onchange="search_tramqt()">
+                                        <!-- DOM từ DB vào -->
+                                    </select>
+                                </div>
+                                <!-- DOM kết quả thẻ div Search Error và Search Success -->
+                                <div class="form-group col-xs-12 col-md-12 search-error" style="display: none">
+                                    <i class="icon-alert" style="font-size: 16px; margin-top: -1px"></i>
+                                    <span>&nbsp;Không tìm thấy trạm quan trắc</span>
+                                </div>
+                                <div class="form-group col-xs-12 col-md-12 search-success" style="display: none">
+                                    <i class="icon-check" style="font-size: 20px; margin-top: -1px"></i>
+                                    <span id="success_alert"></span>
+                                </div>
+                                <!-- Thêm 1 thẻ div để đẩy thẻ div sau ra giữa khung navbar
+                                <div class="col-xs-1 col-md-1"></div>
+                                <div class="col-xs-10 col-md-10" style="margin-bottom: 10px; margin-top: 6px">
+                                    <button class="btn btn-success btn-block" id="search-advanced-btn" type="button" onclick="search_tramqt()">
+                                        <i class="icon-arrow-right16" style="font-size: 16px; margin-top: -1px"></i>&nbsp;&nbsp;Đi đến trạm
+                                    </button>
+                                </div> -->
                             </div>
-                            <div class="col-xs-12 col-md-12 search-advanced-titles">
-                                <i class="icon-server blue" style="font-size: 14px; margin-top: -2px"></i>
-                                <span for="loaitram" style="margin-left: 1px">&nbsp;Loại trạm</span>
-                            </div>
-                            <div class="form-group col-xs-12 col-md-12 search-advanced">
-                                <select class="form-control" id="loaitram">
-                                    <!-- DOM từ DB vào -->
-                                </select>
-                            </div>
-                            <div class="col-xs-12 col-md-12 search-advanced-titles">
-                                <i class="icon-location3 blue" style="font-size: 14px; margin-top: -2px"></i>
-                                <span for="district" style="margin-left: 1px">&nbsp;Thành phố, Huyện, Thị xã</span>
-                            </div>
-                            <div class="form-group col-xs-12 col-md-12 search-advanced">
-                                <select class="form-control" id="district">
-                                    <!-- DOM từ DB vào -->
-                                </select>
-                            </div>
-                            <!-- <div class="col-xs-12 col-md-12" style="margin-bottom: 10px">
-                                <button class="btn btn-primary btn-block" id="search-advanced-btn" type="button" onclick="search_list_tramqt()">
-                                    <i class="icon-cog5" style="font-size: 16px; margin-top: -1px"></i>&nbsp;&nbsp;Danh sách trạm tìm kiếm
-                                </button>
-                            </div> -->
-                            <div class="col-xs-12 col-md-12 search-advanced-titles">
-                                <i class="icon icon-store blue" style="font-size: 14px; margin-top: -2px"></i>
-                                <span for="quantrac">&nbsp;Trạm quan trắc</span>
-                            </div>
-                            <div class="form-group col-xs-12 col-md-12 search-advanced">
-                                <select class="form-control" id="quantrac" onchange="search_tramqt()">
-                                    <!-- DOM từ DB vào -->
-                                </select>
-                            </div>
-                            <!-- DOM kết quả thẻ div Search Error và Search Success -->
-                            <div class="form-group col-xs-12 col-md-12 search-error" style="display: none">
-                                <i class="icon-alert" style="font-size: 16px; margin-top: -1px"></i>
-                                <span>&nbsp;Không tìm thấy trạm quan trắc</span>
-                            </div>
-                            <div class="form-group col-xs-12 col-md-12 search-success" style="display: none">
-                                <i class="icon-check" style="font-size: 20px; margin-top: -1px"></i>
-                                <span id="success_alert"></span>
-                            </div>
-                            <!-- Thêm 1 thẻ div để đẩy thẻ div sau ra giữa khung navbar
-                            <div class="col-xs-1 col-md-1"></div>
-                            <div class="col-xs-10 col-md-10" style="margin-bottom: 10px; margin-top: 6px">
-                                <button class="btn btn-success btn-block" id="search-advanced-btn" type="button" onclick="search_tramqt()">
-                                    <i class="icon-arrow-right16" style="font-size: 16px; margin-top: -1px"></i>&nbsp;&nbsp;Đi đến trạm
-                                </button>
-                            </div> -->
                         </div>
                     </div>
                     <!-- Công cụ hỗ trợ -->
