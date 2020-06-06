@@ -262,6 +262,34 @@ var url_call_station = '';
 var item_loaihinh_cond = '%20loaihinh[]=0';
 var item_loaitram_cond = '%20loaitram=1=1';
 var item_quanhuyen_cond = '%20quanhuyen=1=1';
+var item_loaidiadanh_cond = '%20loaidiadanh=1=1';
+var item_diadanh_cond = '%20diadanh=1=1';
+
+/*** Cập nhật lại option trạm quan trắc và thông báo số lượng trạm quan trắc ***/
+function update_Station() {
+    $('#quantrac').find('option').remove();
+    $.getJSON(url_call_station, function (data_DOM_qt) {
+        var DOM_opt_qt = data_DOM_qt.features;
+        /*** DOM count ***/
+        if (DOM_opt_qt.length == 0) {
+            $(".search-error").css("display", "block");
+            $(".search-success").css("display", "none");
+        } else {
+            $(".search-success span").text(" Tìm thấy " + DOM_opt_qt.length + " trạm quan trắc");
+            $(".search-success").css("display", "block");
+            $(".search-error").css("display", "none");
+        }
+        /*** Chèn Option ***/
+        $('#quantrac')
+            .append($("<option></option>")
+                .attr('value', '0').text('Lựa chọn trạm quan trắc'));
+        for (i = 0; i < DOM_opt_qt.length; i++) {
+            $('#quantrac')
+                .append($("<option></option>")
+                    .attr('value', DOM_opt_qt[i].properties.name).text(DOM_opt_qt[i].properties.name));
+        }
+    })
+}
 
 /*** Lựa chọn loại hình ***/
 $('#loaihinh').on("changed.jstree", function (e, data) {
@@ -280,35 +308,13 @@ $('#loaihinh').on("changed.jstree", function (e, data) {
         }
     }
     url_call_station = 'services/call_obser_station.php?'
-        + item_loaihinh_cond + '&' + item_loaitram_cond + '&' + item_quanhuyen_cond;
+        + item_loaihinh_cond + '&' + item_loaitram_cond + '&' + item_quanhuyen_cond +
+        '&' + item_loaidiadanh_cond + '&' + item_diadanh_cond;
 
     /*** Cập nhật lại hiển thị của dữ liệu quan trắc ***/
     lats = [], lngs = [];
     view_data_quantrac.refresh(url_call_station);
-
-    /*** Cập nhật lại option trạm quan trắc và thông báo số lượng trạm quan trắc ***/
-    $('#quantrac').find('option').remove();
-    $.getJSON(url_call_station, function (data_DOM_qt) {
-        var DOM_opt_qt = data_DOM_qt.features;
-        /*** DOM count ***/
-        if (DOM_opt_qt.length == 0) {
-            $(".search-error").css("display", "block");
-            $(".search-success").css("display", "none");
-        } else {
-            $(".search-success span").text(" Tìm thấy " + DOM_opt_qt.length + " trạm quan trắc");
-            $(".search-success").css("display", "block");
-            $(".search-error").css("display", "none");
-        }
-        /*** Chèn Option ***/
-        $('#quantrac')
-            .append($("<option></option>")
-                .attr('value', '0').text('Lựa chọn trạm quan trắc'));
-        for (i = 0; i < DOM_opt_qt.length; i++) {
-            $('#quantrac')
-                .append($("<option></option>")
-                    .attr('value', DOM_opt_qt[i].properties.name).text(DOM_opt_qt[i].properties.name));
-        }
-    })
+    update_Station();
 })
 
 /*** Lựa chọn loại trạm ***/
@@ -316,83 +322,73 @@ $("#loaitram").change(function () {
     /*** Thay đổi option của Select ***/
     var item_loaitram = $("#loaitram").val();
     if (item_loaitram != 'none') {
-        // item_loaitram_cond = '%20loaitram=%27' + item_loaitram + '%27';
         item_loaitram_cond = '%20loaitram=' + item_loaitram;
     } else {
         item_loaitram_cond = '%20loaitram=1=1';
     }
     /*** Gọi service 'call_obser_station.php' có thêm các điều kiện khi lựa chọn Select Option ***/
     url_call_station = 'services/call_obser_station.php?'
-        + item_loaihinh_cond + '&' + item_loaitram_cond + '&' + item_quanhuyen_cond;
+        + item_loaihinh_cond + '&' + item_loaitram_cond + '&' + item_quanhuyen_cond +
+        '&' + item_loaidiadanh_cond + '&' + item_diadanh_cond;
 
     /*** Cập nhật lại hiển thị của dữ liệu quan trắc ***/
     lats = [], lngs = [];
     view_data_quantrac.refresh(url_call_station);
-
-    /*** Cập nhật lại option trạm quan trắc và thông báo số lượng trạm quan trắc ***/
-    $('#quantrac').find('option').remove();
-    $.getJSON(url_call_station, function (data_DOM_qt) {
-        var DOM_opt_qt = data_DOM_qt.features;
-        /*** DOM count ***/
-        if (DOM_opt_qt.length == 0) {
-            $(".search-error").css("display", "block");
-            $(".search-success").css("display", "none");
-        } else {
-            $(".search-success span").text(" Tìm thấy " + DOM_opt_qt.length + " trạm quan trắc");
-            $(".search-success").css("display", "block");
-            $(".search-error").css("display", "none");
-        }
-        /*** Chèn Option ***/
-        $('#quantrac')
-            .append($("<option></option>")
-                .attr('value', '0').text('Lựa chọn trạm quan trắc'));
-        for (i = 0; i < DOM_opt_qt.length; i++) {
-            $('#quantrac')
-                .append($("<option></option>")
-                    .attr('value', DOM_opt_qt[i].properties.name).text(DOM_opt_qt[i].properties.name));
-        }
-    })
+    update_Station()
 });
 
 /*** Lựa chọn quận huyện ***/
 $("#district").change(function () {
     var item_quanhuyen = $("#district").val();
     if (item_quanhuyen != 'none') {
-        // item_quanhuyen_cond = '%20quanhuyen=%27' + item_quanhuyen + '%27';
         item_quanhuyen_cond = '%20quanhuyen=' + item_quanhuyen;
     } else {
         item_quanhuyen_cond = '%20quanhuyen=1=1';
     }
     url_call_station = 'services/call_obser_station.php?'
-        + item_loaihinh_cond + '&' + item_loaitram_cond + '&' + item_quanhuyen_cond;
+        + item_loaihinh_cond + '&' + item_loaitram_cond + '&' + item_quanhuyen_cond +
+        '&' + item_loaidiadanh_cond + '&' + item_diadanh_cond;
 
     /*** Cập nhật lại hiển thị của dữ liệu quan trắc ***/
     lats = [], lngs = [];
     view_data_quantrac.refresh(url_call_station);
+    update_Station()
+});
 
-    /*** Cập nhật lại option trạm quan trắc và thông báo số lượng trạm quan trắc ***/
-    $('#quantrac').find('option').remove();
-    $.getJSON(url_call_station, function (data_DOM_qt) {
-        var DOM_opt_qt = data_DOM_qt.features;
-        /*** DOM count ***/
-        if (DOM_opt_qt.length == 0) {
-            $(".search-error").css("display", "block");
-            $(".search-success").css("display", "none");
-        } else {
-            $(".search-success span").text(" Tìm thấy " + DOM_opt_qt.length + " trạm quan trắc");
-            $(".search-success").css("display", "block");
-            $(".search-error").css("display", "none");
-        }
-        /*** Chèn Option ***/
-        $('#quantrac')
-            .append($("<option></option>")
-                .attr('value', '0').text('Lựa chọn trạm quan trắc'));
-        for (i = 0; i < DOM_opt_qt.length; i++) {
-            $('#quantrac')
-                .append($("<option></option>")
-                    .attr('value', DOM_opt_qt[i].properties.name).text(DOM_opt_qt[i].properties.name));
-        }
-    })
+/*** Lựa chọn loại địa danh ***/
+$("#locType").change(function () {
+    var item_loaidiadanh = $("#locType").val();
+    if (item_loaidiadanh != 'none') {
+        item_loaidiadanh_cond = '%20loaidiadanh=' + item_loaidiadanh;
+    } else {
+        item_loaidiadanh_cond = '%20loaidiadanh=1=1';
+    }
+    url_call_station = 'services/call_obser_station.php?'
+        + item_loaihinh_cond + '&' + item_loaitram_cond + '&' + item_quanhuyen_cond +
+        '&' + item_loaidiadanh_cond + '&' + item_diadanh_cond;
+
+    /*** Cập nhật lại hiển thị của dữ liệu quan trắc ***/
+    lats = [], lngs = [];
+    view_data_quantrac.refresh(url_call_station);
+    update_Station()
+});
+
+/*** Lựa chọn loại địa danh ***/
+$("#location").change(function () {
+    var item_diadanh = $("#loccation").val();
+    if (item_diadanh != 'none') {
+        item_diadanh_cond = '%20loaidiadanh=' + item_diadanh;
+    } else {
+        item_diadanh_cond = '%20loaidiadanh=1=1';
+    }
+    url_call_station = 'services/call_obser_station.php?'
+        + item_loaihinh_cond + '&' + item_loaitram_cond + '&' + item_quanhuyen_cond +
+        '&' + item_loaidiadanh_cond + '&' + item_diadanh_cond;
+
+    /*** Cập nhật lại hiển thị của dữ liệu quan trắc ***/
+    lats = [], lngs = [];
+    view_data_quantrac.refresh(url_call_station);
+    update_Station()
 });
 
 function search_tramqt() {

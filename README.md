@@ -55,6 +55,7 @@ https://askubuntu.com/questions/599921/adminer-none-of-the-supported-php-extensi
 https://www.semicolonworld.com/question/32508/add-json-element-to-multidimensional-json-object-php
 
 ### Note xử lý onchange in map using Select Option/Checkbox Input
++ Sự kiện search sẽ thay đổi theo cấp từ lớn tới nhỏ và có tính phụ thuộc nhau (pending)
 + Thêm event `onChange` vào `<select class="form-control" id="quantrac" onchange="search_tramqt()"></select>`
 + Vào trang show hết tất cả điểm (lựa chọn loại hình được tích `Tất cả` ==> done)
 + Ghép chuỗi trong service: sử dụng linh hoạt `%20` (dấu " ") và `%27` (dấu "'")

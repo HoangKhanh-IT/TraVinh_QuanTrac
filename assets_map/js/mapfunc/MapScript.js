@@ -371,7 +371,9 @@ view_data_quantrac = new L.GeoJSON.AJAX(null, {
 view_data_quantrac.addTo(map);
 
 /*** Khi load trang hay F5 sẽ gọi service 'call_obser_station.php' không chứa điều kiện - Search Cơ bản ***/
-$.getJSON("services/call_obser_station.php?loaihinh[]=0&loaitram=1=1&quanhuyen=1=1", function (search_basic) {
+var url_search_basic = "services/call_obser_station.php?loaihinh[]=0&" +
+    "loaitram=1=1&quanhuyen=1=1&loaidiadanh=1=1&diadanh=1=1"
+$.getJSON(url_search_basic, function (search_basic) {
     L.geoJSON(search_basic, {
         onEachFeature: Modal_Feature_Basic,
         pointToLayer: function (feat, latlng) {
@@ -386,7 +388,7 @@ count_click = 0;
 function Refresh_Option() {
     count_click++;
     if (count_click > 1) {
-        view_data_quantrac.refresh("services/call_obser_station.php?loaihinh[]=0&loaitram=1=1&quanhuyen=1=1");
+        view_data_quantrac.refresh(url_search_basic);
     }
 }
 

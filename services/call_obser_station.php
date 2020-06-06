@@ -10,6 +10,9 @@
     $loaihinh = $_GET['loaihinh'];
     $loaitram = $_GET['loaitram'];
     $quanhuyen = $_GET['quanhuyen'];
+    $loaidiadanh = $_GET['loaidiadanh'];
+    $diadanh = $_GET['diadanh'];
+
     $querry_tramqt_select = 'SELECT
                             "station"."id", "station"."code", "station"."name",
                             "station"."coordx", "station"."coordy",
@@ -22,7 +25,9 @@
                             "enterprise"."name" "enterpriseName", 
                             "basin"."name" "basinName", 
                             "location"."name" "locationName",
+                            "location"."id" "locationID",
                             "loctype"."name" "locationTypeName",
+                            "loctype"."id" "locationTypeID",
                             "district"."name" "districtName",
                             "district"."id" "districtID",
 							string_agg("obs_type"."name", \'; \') "obstype_namelist"
@@ -71,24 +76,33 @@
     }
     $querry_tramqt_where_loaihinh.= ')';
 
-    /*** Where Condition Data Loại trạm và Quận huyện (1=1 là không có điều kiện xảy ra)***/
-    $querry_tramqt_where_loaitram_quanhuyen = 'AND 1=1';
+    /*** Where Condition Data Loại trạm, Quận huyện, Loại địa danh và Địa danh (1=1 là không có điều kiện xảy ra)***/
+    $querry_tramqt_where_loaitram_quanhuyen_loaidiadanh_diadanh = 'AND 1=1';
     if ($quanhuyen != '1=1') {
-        $querry_tramqt_where_loaitram_quanhuyen.=' AND "district"."id" = '.$quanhuyen;
+        $querry_tramqt_where_loaitram_quanhuyen_loaidiadanh_diadanh.=' AND "district"."id" = '.$quanhuyen;
     }
     if ($loaitram != '1=1') {
-        $querry_tramqt_where_loaitram_quanhuyen.=' AND "category"."id" = '.$loaitram;
+        $querry_tramqt_where_loaitram_quanhuyen_loaidiadanh_diadanh.=' AND "category"."id" = '.$loaitram;
+    }
+    if ($loaidiadanh != '1=1') {
+        $querry_tramqt_where_loaitram_quanhuyen_loaidiadanh_diadanh.=' AND "loctype"."id" = '.$loaidiadanh;
+    }
+    if ($diadanh != '1=1') {
+        $querry_tramqt_where_loaitram_quanhuyen_loaidiadanh_diadanh.=' AND "location"."id" = '.$diadanh;
     }
 
     /*** Group and Order Data ***/
-    $querry_tramqt_group = ' GROUP BY "station"."id", "category"."name", "category"."id", "organization"."name", 
-                            "enterprise"."name", "basin"."name", "location"."name", "loctype"."name"
-                            , "district"."name", "district"."id"
+    $querry_tramqt_group = ' GROUP BY "station"."id", 
+                            "category"."name", "category"."id", 
+                            "location"."name", "location"."id",
+                            "loctype"."name", "loctype"."id",
+                            "district"."name", "district"."id",
+                            "organization"."name", "enterprise"."name", "basin"."name"
                             ORDER BY "station"."name" ASC';
 
     /*** Gộp 3 chuỗi trên tạo thành câu truy vấn ***/
-    $querry_tramqt = $querry_tramqt_select.$querry_tramqt_where_loaihinh.$querry_tramqt_where_loaitram_quanhuyen.$querry_tramqt_group;
-    // echo $querry_tramqt;
+    $querry_tramqt = $querry_tramqt_select.$querry_tramqt_where_loaihinh.
+        $querry_tramqt_where_loaitram_quanhuyen_loaidiadanh_diadanh.$querry_tramqt_group;
     $result = pg_query($travinh_db, $querry_tramqt);
     if (!$result) {
         echo "Không có dữ liệu.\n";
