@@ -258,16 +258,25 @@ $(document).one("ajaxStop", function () {
 /*----- Search Advanced -----*/
 var url_call_station = '';
 /*** Biến điều kiện cần chứa 1=1 (đối với loại trạm và Quận huyện)
- và chứa '= 0' (đối với loại hình) để hiển thị ***/
+ * và chứa '= 0' (đối với loại hình) để hiển thị ***/
 var item_loaihinh_cond = '%20loaihinh[]=0';
 var item_loaitram_cond = '%20loaitram=1=1';
 var item_quanhuyen_cond = '%20quanhuyen=1=1';
 var item_loaidiadanh_cond = '%20loaidiadanh=1=1';
 var item_diadanh_cond = '%20diadanh=1=1';
 
+var item_loaitram = '';
+var item_quanhuyen = '';
+var item_loaidiadanh = '';
+var item_diadanh = '';
+
 /*** Cập nhật lại option trạm quan trắc và thông báo số lượng trạm quan trắc ***/
 function update_Station() {
     $('#quantrac').find('option').remove();
+    $('#quantrac')
+        .append($("<option></option>")
+            .attr('value', 'none').text('Lựa chọn trạm quan trắc'));
+
     $.getJSON(url_call_station, function (data_DOM_qt) {
         var DOM_opt_qt = data_DOM_qt.features;
         /*** DOM count ***/
@@ -280,9 +289,6 @@ function update_Station() {
             $(".search-error").css("display", "none");
         }
         /*** Chèn Option ***/
-        $('#quantrac')
-            .append($("<option></option>")
-                .attr('value', '0').text('Lựa chọn trạm quan trắc'));
         for (i = 0; i < DOM_opt_qt.length; i++) {
             $('#quantrac')
                 .append($("<option></option>")
@@ -291,26 +297,208 @@ function update_Station() {
     })
 }
 
+function check_Option_Unique(tag_selector) {
+    var test_arr = new Array();
+    $(tag_selector).children("option").each(function (x) {
+        cond = false;
+        choose = test_arr[x] = $(this).val();
+        for (i = 0; i < test_arr.length - 1; i++) {
+            if (choose == test_arr[i]) {
+                cond = true;
+            }
+        }
+        if (cond) {
+            $(this).remove();
+        }
+    })
+}
+
+function add_newOp_depend_loaihinh() {
+    $.getJSON(url_call_station, function (data_new_Option) {
+        $('#loaitram')
+            .append($("<option></option>")
+                .attr('value', 'none').text("Lựa chọn loại trạm"));
+        $('#district')
+            .append($("<option></option>")
+                .attr('value', 'none').text("Lựa chọn quận huyện"));
+        $('#locType')
+            .append($("<option></option>")
+                .attr('value', 'none').text("Lựa chọn loại địa danh"));
+        $('#location')
+            .append($("<option></option>")
+                .attr('value', 'none').text("Lựa chọn địa danh"));
+
+        var data = data_new_Option.features;
+        for (var i = 0; i < data.length; i++) {
+            $('#loaitram')
+                .append($("<option></option>")
+                    .attr('value', data[i].properties.categoryID)
+                    .text(data[i].properties.categoryName));
+            $('#district')
+                .append($("<option></option>")
+                    .attr('value', data[i].properties.districtID)
+                    .text(data[i].properties.districtName));
+            $('#locType')
+                .append($("<option></option>")
+                    .attr('value', data[i].properties.locationTypeID)
+                    .text(data[i].properties.locationTypeName));
+            $('#location')
+                .append($("<option></option>")
+                    .attr('value', data[i].properties.locationID)
+                    .text(data[i].properties.locationName));
+        }
+
+        /*** Filter trùng Option ***/
+        check_Option_Unique('#loaitram');
+        check_Option_Unique('#district');
+        check_Option_Unique('#locType');
+        check_Option_Unique('#location');
+    });
+}
+
+function add_newOp_depend_loaitram() {
+    $.getJSON(url_call_station, function (data_new_Option) {
+        $('#district')
+            .append($("<option></option>")
+                .attr('value', 'none').text("Lựa chọn quận huyện"));
+        $('#locType')
+            .append($("<option></option>")
+                .attr('value', 'none').text("Lựa chọn loại địa danh"));
+        $('#location')
+            .append($("<option></option>")
+                .attr('value', 'none').text("Lựa chọn địa danh"));
+
+        var data = data_new_Option.features;
+        for (var i = 0; i < data.length; i++) {
+            $('#district')
+                .append($("<option></option>")
+                    .attr('value', data[i].properties.districtID)
+                    .text(data[i].properties.districtName));
+            $('#locType')
+                .append($("<option></option>")
+                    .attr('value', data[i].properties.locationTypeID)
+                    .text(data[i].properties.locationTypeName));
+            $('#location')
+                .append($("<option></option>")
+                    .attr('value', data[i].properties.locationID)
+                    .text(data[i].properties.locationName));
+        }
+
+        /*** Filter trùng Option ***/
+        check_Option_Unique('#district');
+        check_Option_Unique('#locType');
+        check_Option_Unique('#location');
+    });
+}
+
+function add_newOp_depend_district() {
+    $.getJSON(url_call_station, function (data_new_Option) {
+        $('#locType')
+            .append($("<option></option>")
+                .attr('value', 'none').text("Lựa chọn loại địa danh"));
+        $('#location')
+            .append($("<option></option>")
+                .attr('value', 'none').text("Lựa chọn địa danh"));
+
+        var data = data_new_Option.features;
+        for (var i = 0; i < data.length; i++) {
+            $('#locType')
+                .append($("<option></option>")
+                    .attr('value', data[i].properties.locationTypeID)
+                    .text(data[i].properties.locationTypeName));
+            $('#location')
+                .append($("<option></option>")
+                    .attr('value', data[i].properties.locationID)
+                    .text(data[i].properties.locationName));
+        }
+
+        /*** Filter trùng Option ***/
+        check_Option_Unique('#locType');
+        check_Option_Unique('#location');
+    });
+}
+
+function add_newOp_depend_locType() {
+    $.getJSON(url_call_station, function (data_new_Option) {
+        $('#location')
+            .append($("<option></option>")
+                .attr('value', 'none').text("Lựa chọn địa danh"));
+
+        var data = data_new_Option.features;
+        for (var i = 0; i < data.length; i++) {
+            $('#location')
+                .append($("<option></option>")
+                    .attr('value', data[i].properties.locationID)
+                    .text(data[i].properties.locationName));
+        }
+
+        /*** Filter trùng Option ***/
+        check_Option_Unique('#location');
+    });
+}
+
 /*** Lựa chọn loại hình ***/
 $('#loaihinh').on("changed.jstree", function (e, data) {
     var checkedNodes = []
-    /*** Kiểm tra data.action trả về, chỉ lấy dạng ready (kki mới load trang hoặc "Select node" khi change ***/
-    if (data.action == "ready" || data.action == "select_node") {
+    /*** Kiểm tra data.action trả về, chỉ lấy dạng ready (kki mới load trang
+     * hoặc "Select node"/"Deselect node" khi change ***/
+    if (data.action == "ready" || data.action == "select_node" || data.action == "deselect_node") {
         checkedNodes = data.selected;
     }
 
     if (checkedNodes.length == 0) {
+        /*** Reset quận huyện, loại địa danh và địa danh ***/
+        $("#loaitram").val('none');
+        $("#district").val('none');
+        $("#locType").val('none');
+        $("#location").val('none');
+        item_loaitram_cond = '%20loaitram=1=1';
+        item_quanhuyen_cond = '%20quanhuyen=1=1';
+        item_loaidiadanh_cond = '%20loaidiadanh=1=1';
+        item_diadanh_cond = '%20diadanh=1=1';
+
+        /*** Xóa Option ban đầu hoặc Option tại lựa chọn trước ***/
+        $("#loaitram").find('option').remove();
+        $("#district").find('option').remove();
+        $("#locType").find('option').remove();
+        $("#location").find('option').remove();
+
         item_loaihinh_cond = '%20loaihinh[]=9999';
+        url_call_station = 'services/call_obser_station.php?'
+            + item_loaihinh_cond + '&' + item_loaitram_cond + '&' + item_quanhuyen_cond +
+            '&' + item_loaidiadanh_cond + '&' + item_diadanh_cond;
+
+        /*** Thêm Option mới ***/
+        add_newOp_depend_loaihinh();
     } else {
+        /*** Reset quận huyện, loại địa danh và địa danh ***/
+        $("#loaitram").val('none');
+        $("#district").val('none');
+        $("#locType").val('none');
+        $("#location").val('none');
+        item_loaitram_cond = '%20loaitram=1=1';
+        item_quanhuyen_cond = '%20quanhuyen=1=1';
+        item_loaidiadanh_cond = '%20loaidiadanh=1=1';
+        item_diadanh_cond = '%20diadanh=1=1';
+
+        /*** Xóa Option ban đầu hoặc Option tại lựa chọn trước ***/
+        $("#loaitram").find('option').remove();
+        $("#district").find('option').remove();
+        $("#locType").find('option').remove();
+        $("#location").find('option').remove();
+
         item_loaihinh_cond = '';
         for (i = 0; i < checkedNodes.length; i++) {
             item_loaihinh_cond += '%20loaihinh[]=' + checkedNodes[i] + '&';
         }
-    }
-    url_call_station = 'services/call_obser_station.php?'
-        + item_loaihinh_cond + '&' + item_loaitram_cond + '&' + item_quanhuyen_cond +
-        '&' + item_loaidiadanh_cond + '&' + item_diadanh_cond;
 
+        url_call_station = 'services/call_obser_station.php?'
+            + item_loaihinh_cond + '&' + item_loaitram_cond + '&' + item_quanhuyen_cond +
+            '&' + item_loaidiadanh_cond + '&' + item_diadanh_cond;
+
+        /*** Thêm Option mới ***/
+        add_newOp_depend_loaihinh();
+    }
     /*** Cập nhật lại hiển thị của dữ liệu quan trắc ***/
     lats = [], lngs = [];
     view_data_quantrac.refresh(url_call_station);
@@ -320,17 +508,50 @@ $('#loaihinh').on("changed.jstree", function (e, data) {
 /*** Lựa chọn loại trạm ***/
 $("#loaitram").change(function () {
     /*** Thay đổi option của Select ***/
-    var item_loaitram = $("#loaitram").val();
+    item_loaitram = $("#loaitram").val();
     if (item_loaitram != 'none') {
-        item_loaitram_cond = '%20loaitram=' + item_loaitram;
-    } else {
-        item_loaitram_cond = '%20loaitram=1=1';
-    }
-    /*** Gọi service 'call_obser_station.php' có thêm các điều kiện khi lựa chọn Select Option ***/
-    url_call_station = 'services/call_obser_station.php?'
-        + item_loaihinh_cond + '&' + item_loaitram_cond + '&' + item_quanhuyen_cond +
-        '&' + item_loaidiadanh_cond + '&' + item_diadanh_cond;
+        /*** Reset quận huyện, loại địa danh và địa danh ***/
+        $("#district").val('none');
+        $("#locType").val('none');
+        $("#location").val('none');
+        item_quanhuyen_cond = '%20quanhuyen=1=1';
+        item_loaidiadanh_cond = '%20loaidiadanh=1=1';
+        item_diadanh_cond = '%20diadanh=1=1';
 
+        /*** Xóa Option ban đầu hoặc Option tại lựa chọn trước ***/
+        $("#district").find('option').remove();
+        $("#locType").find('option').remove();
+        $("#location").find('option').remove();
+
+        item_loaitram_cond = '%20loaitram=' + item_loaitram;
+        url_call_station = 'services/call_obser_station.php?'
+            + item_loaihinh_cond + '&' + item_loaitram_cond + '&' + item_quanhuyen_cond +
+            '&' + item_loaidiadanh_cond + '&' + item_diadanh_cond;
+
+        /*** Thêm Option mới ***/
+        add_newOp_depend_loaitram()
+    } else {
+        /*** Reset quận huyện, loại địa danh và địa danh ***/
+        $("#district").val('none');
+        $("#locType").val('none');
+        $("#location").val('none');
+        item_quanhuyen_cond = '%20quanhuyen=1=1';
+        item_loaidiadanh_cond = '%20loaidiadanh=1=1';
+        item_diadanh_cond = '%20diadanh=1=1';
+
+        /*** Thêm toàn bộ Option ***/
+        $("#district").find('option').remove();
+        $("#locType").find('option').remove();
+        $("#location").find('option').remove();
+
+        item_loaitram_cond = '%20loaitram=1=1';
+        url_call_station = 'services/call_obser_station.php?'
+            + item_loaihinh_cond + '&' + item_loaitram_cond + '&' + item_quanhuyen_cond +
+            '&' + item_loaidiadanh_cond + '&' + item_diadanh_cond;
+
+        /*** Thêm Option mới ***/
+        add_newOp_depend_loaitram()
+    }
     /*** Cập nhật lại hiển thị của dữ liệu quan trắc ***/
     lats = [], lngs = [];
     view_data_quantrac.refresh(url_call_station);
@@ -339,16 +560,44 @@ $("#loaitram").change(function () {
 
 /*** Lựa chọn quận huyện ***/
 $("#district").change(function () {
-    var item_quanhuyen = $("#district").val();
+    item_quanhuyen = $("#district").val();
     if (item_quanhuyen != 'none') {
-        item_quanhuyen_cond = '%20quanhuyen=' + item_quanhuyen;
-    } else {
-        item_quanhuyen_cond = '%20quanhuyen=1=1';
-    }
-    url_call_station = 'services/call_obser_station.php?'
-        + item_loaihinh_cond + '&' + item_loaitram_cond + '&' + item_quanhuyen_cond +
-        '&' + item_loaidiadanh_cond + '&' + item_diadanh_cond;
+        /*** Reset quận huyện, loại địa danh và địa danh ***/
+        $("#locType").val('none');
+        $("#location").val('none');
+        item_loaidiadanh_cond = '%20loaidiadanh=1=1';
+        item_diadanh_cond = '%20diadanh=1=1';
 
+        /*** Xóa Option ban đầu hoặc Option tại lựa chọn trước ***/
+        $("#locType").find('option').remove();
+        $("#location").find('option').remove();
+
+        item_quanhuyen_cond = '%20quanhuyen=' + item_quanhuyen;
+        url_call_station = 'services/call_obser_station.php?'
+            + item_loaihinh_cond + '&' + item_loaitram_cond + '&' + item_quanhuyen_cond +
+            '&' + item_loaidiadanh_cond + '&' + item_diadanh_cond;
+
+        /*** Thêm Option mới ***/
+        add_newOp_depend_district();
+    } else {
+        /*** Reset quận huyện, loại địa danh và địa danh ***/
+        $("#locType").val('none');
+        $("#location").val('none');
+        item_loaidiadanh_cond = '%20loaidiadanh=1=1';
+        item_diadanh_cond = '%20diadanh=1=1';
+
+        /*** Thêm toàn bộ Option ***/
+        $("#locType").find('option').remove();
+        $("#location").find('option').remove();
+
+        item_quanhuyen_cond = '%20quanhuyen=1=1';
+        url_call_station = 'services/call_obser_station.php?'
+            + item_loaihinh_cond + '&' + item_loaitram_cond + '&' + item_quanhuyen_cond +
+            '&' + item_loaidiadanh_cond + '&' + item_diadanh_cond;
+
+        /*** Thêm Option mới ***/
+        add_newOp_depend_district()
+    }
     /*** Cập nhật lại hiển thị của dữ liệu quan trắc ***/
     lats = [], lngs = [];
     view_data_quantrac.refresh(url_call_station);
@@ -357,34 +606,55 @@ $("#district").change(function () {
 
 /*** Lựa chọn loại địa danh ***/
 $("#locType").change(function () {
-    var item_loaidiadanh = $("#locType").val();
+    item_loaidiadanh = $("#locType").val();
     if (item_loaidiadanh != 'none') {
-        item_loaidiadanh_cond = '%20loaidiadanh=' + item_loaidiadanh;
-    } else {
-        item_loaidiadanh_cond = '%20loaidiadanh=1=1';
-    }
-    url_call_station = 'services/call_obser_station.php?'
-        + item_loaihinh_cond + '&' + item_loaitram_cond + '&' + item_quanhuyen_cond +
-        '&' + item_loaidiadanh_cond + '&' + item_diadanh_cond;
+        /*** Reset quận huyện, loại địa danh và địa danh ***/
+        $("#location").val('none');
+        item_diadanh_cond = '%20diadanh=1=1';
 
+        /*** Xóa Option ban đầu hoặc Option tại lựa chọn trước ***/
+        $("#location").find('option').remove();
+
+        item_loaidiadanh_cond = '%20loaidiadanh=' + item_loaidiadanh;
+        url_call_station = 'services/call_obser_station.php?'
+            + item_loaihinh_cond + '&' + item_loaitram_cond + '&' + item_quanhuyen_cond +
+            '&' + item_loaidiadanh_cond + '&' + item_diadanh_cond;
+
+        /*** Thêm Option mới ***/
+        add_newOp_depend_locType();
+    } else {
+        /*** Reset địa danh ***/
+        $("#location").val('none');
+        item_diadanh_cond = '%20diadanh=1=1';
+
+        /*** Thêm toàn bộ Option ***/
+        $("#location").find('option').remove();
+
+        item_loaidiadanh_cond = '%20loaidiadanh=1=1';
+        url_call_station = 'services/call_obser_station.php?'
+            + item_loaihinh_cond + '&' + item_loaitram_cond + '&' + item_quanhuyen_cond +
+            '&' + item_loaidiadanh_cond + '&' + item_diadanh_cond;
+
+        /*** Thêm Option mới ***/
+        add_newOp_depend_locType();
+    }
     /*** Cập nhật lại hiển thị của dữ liệu quan trắc ***/
     lats = [], lngs = [];
     view_data_quantrac.refresh(url_call_station);
     update_Station()
 });
 
-/*** Lựa chọn loại địa danh ***/
+/*** Lựa chọn địa danh ***/
 $("#location").change(function () {
-    var item_diadanh = $("#loccation").val();
+    item_diadanh = $("#location").val();
     if (item_diadanh != 'none') {
-        item_diadanh_cond = '%20loaidiadanh=' + item_diadanh;
+        item_diadanh_cond = '%20diadanh=' + item_diadanh;
     } else {
-        item_diadanh_cond = '%20loaidiadanh=1=1';
+        item_diadanh_cond = '%20diadanh=1=1';
     }
     url_call_station = 'services/call_obser_station.php?'
         + item_loaihinh_cond + '&' + item_loaitram_cond + '&' + item_quanhuyen_cond +
         '&' + item_loaidiadanh_cond + '&' + item_diadanh_cond;
-
     /*** Cập nhật lại hiển thị của dữ liệu quan trắc ***/
     lats = [], lngs = [];
     view_data_quantrac.refresh(url_call_station);

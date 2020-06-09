@@ -169,7 +169,7 @@ function Modal_Feature_Advanced(feat, layer) {
         "<tr><th class='brown'><i class='mdi mdi-location-enter' style='font-size: 16px; margin-top: -2px'></i>" +
         "&nbsp;Địa danh</th><td>" + feat.properties.locationName + "</td>" +
         "<th class='brown'><i class='mdi mdi-map-legend' style='font-size: 16px; margin-top: -2px'></i>" +
-        "&nbsp;Loại địa danh</th><td>" + feat.properties.locationType + "</td></tr>" +
+        "&nbsp;Loại địa danh</th><td>" + feat.properties.locationTypeName + "</td></tr>" +
         "<tr><th class='brown'><i class='icon-location3' style='font-size: 16px; margin-top: -2px'></i>" +
         "&nbsp;Địa điểm</th><td>" + feat.properties.districtName + "</td>" +
         "<th class='brown'><i class='icon-office' style='font-size: 14px; " +
@@ -292,7 +292,7 @@ function Modal_Feature_Basic(feat, layer) {
         "<tr><th class='brown'><i class='mdi mdi-location-enter' style='font-size: 16px; margin-top: -2px'></i>" +
         "&nbsp;Địa danh</th><td>" + feat.properties.locationName + "</td>" +
         "<th class='brown'><i class='mdi mdi-map-legend' style='font-size: 16px; margin-top: -2px'></i>" +
-        "&nbsp;Loại địa danh</th><td>" + feat.properties.locationType + "</td></tr>" +
+        "&nbsp;Loại địa danh</th><td>" + feat.properties.locationTypeName + "</td></tr>" +
         "<tr><th class='brown'><i class='icon-location3' style='font-size: 16px; margin-top: -2px'></i>" +
         "&nbsp;Địa điểm</th><td>" + feat.properties.districtName + "</td>" +
         "<th class='brown'><i class='icon-office' style='font-size: 14px; " +
