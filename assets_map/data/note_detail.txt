@@ -1,2 +1,0 @@
-detail để dom Chart: trong file chart_demo.json
-dữ liệu để dom trạm vượt ngưỡng = object (bên db) +  detail

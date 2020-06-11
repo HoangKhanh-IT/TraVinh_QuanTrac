@@ -67,4 +67,7 @@ https://www.semicolonworld.com/question/32508/add-json-element-to-multidimension
 + Kendo_UI có tính phí, sử dụng bản miễn phí chỉ có 30 ngày ==> Chuyển sang Plugin TreeJS ==> done
 + Close All Open Node Specify Branches: https://groups.google.com/forum/#!topic/jstree/EoDgKTh5xFc
 + Chuyển ID dạng Text sang dạng số (tránh lỗi Php khi gọi dạng text sẽ không truy vấn được)
-+ Xử lý fitbound theo onChange Select/Checkbox: https://groups.google.com/forum/#!topic/leaflet-js/F66YlMCaQK4
++ Xử lý fitbound theo onChange Select/Checkbox: https://groups.google.com/forum/#!topic/leaflet-js/F66YlMCaQK4 ==> lỗi khi fitbound về 1 đối tượng sẽ zoom hết cỡ
++ Lựa chọn cơ chế chọn điểm fitbounds mới: https://github.com/geosquare/geojson-bbox
+
+### Tối ưu hóa đợt 1

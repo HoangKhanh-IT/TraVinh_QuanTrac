@@ -270,6 +270,19 @@ var item_quanhuyen = '';
 var item_loaidiadanh = '';
 var item_diadanh = '';
 
+/*** Fitbound zoom onChange ***/
+function Fitbound_zoom(url_data) {
+    $.getJSON(url_data, function (data) {
+        var extend = bbox(data);
+        if (isFinite(extend[0])) {
+            var bounds = [[extend[1], extend[0]], [extend[3], extend[2]]]
+            map.fitBounds(bounds, {
+                maxZoom: 15
+            });
+        }
+    })
+}
+
 /*** Cập nhật lại option trạm quan trắc và thông báo số lượng trạm quan trắc ***/
 function update_Station() {
     $('#quantrac').find('option').remove();
@@ -500,7 +513,7 @@ $('#loaihinh').on("changed.jstree", function (e, data) {
         add_newOp_depend_loaihinh();
     }
     /*** Cập nhật lại hiển thị của dữ liệu quan trắc ***/
-    lats = [], lngs = [];
+    Fitbound_zoom(url_call_station);
     view_data_quantrac.refresh(url_call_station);
     update_Station();
 })
@@ -553,7 +566,7 @@ $("#loaitram").change(function () {
         add_newOp_depend_loaitram()
     }
     /*** Cập nhật lại hiển thị của dữ liệu quan trắc ***/
-    lats = [], lngs = [];
+    Fitbound_zoom(url_call_station);
     view_data_quantrac.refresh(url_call_station);
     update_Station()
 });
@@ -599,7 +612,7 @@ $("#district").change(function () {
         add_newOp_depend_district()
     }
     /*** Cập nhật lại hiển thị của dữ liệu quan trắc ***/
-    lats = [], lngs = [];
+    Fitbound_zoom(url_call_station);
     view_data_quantrac.refresh(url_call_station);
     update_Station()
 });
@@ -639,7 +652,7 @@ $("#locType").change(function () {
         add_newOp_depend_locType();
     }
     /*** Cập nhật lại hiển thị của dữ liệu quan trắc ***/
-    lats = [], lngs = [];
+    Fitbound_zoom(url_call_station);
     view_data_quantrac.refresh(url_call_station);
     update_Station()
 });
@@ -655,8 +668,9 @@ $("#location").change(function () {
     url_call_station = 'services/call_obser_station.php?'
         + item_loaihinh_cond + '&' + item_loaitram_cond + '&' + item_quanhuyen_cond +
         '&' + item_loaidiadanh_cond + '&' + item_diadanh_cond;
+
     /*** Cập nhật lại hiển thị của dữ liệu quan trắc ***/
-    lats = [], lngs = [];
+    Fitbound_zoom(url_call_station);
     view_data_quantrac.refresh(url_call_station);
     update_Station()
 });

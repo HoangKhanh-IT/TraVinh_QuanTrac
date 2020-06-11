@@ -36,47 +36,6 @@
     <link href="vendor/bootstrap/css/buttons.bootstrap4.min.css" rel="stylesheet">
     <!-- Tree CSS -->
     <link href="assets/css/tree/default/style.css" rel="stylesheet">
-
-    <!-- Main JS -->
-    <script src="vendor/jquery/js/jquery-3.3.1.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap-toggle.js"></script>
-    <script src="assets/js/search_plugin/typeahead.bundle.js"></script>
-    <script src="assets/js/search_plugin/handlebars.js"></script>
-    <script src="assets/js/search_plugin/list.min.js"></script>
-    <!-- Datatables JS -->
-    <script src="vendor/jquery/js/jquery.dataTables.min.js"></script>
-    <script src="vendor/bootstrap/js/dataTables.bootstrap4.min.js"></script>
-    <!-- Tree JS -->
-    <script src="assets/js/tree/jstree.js"></script>
-    <!-- Datatables Plugin -->
-    <script src="assets/js/tables/datatables.min.js"></script>
-    <script src="assets/js/tables/extensions/responsive.min.js"></script>
-    <script src="assets/js/forms/selects/select2.min.js"></script>
-    <script src="assets/js/tables/dataTables.buttons.min.js"></script>
-    <script src="assets/js/tables/jszip.min.js"></script>
-    <script src="assets/js/tables/pdfmake.min.js"></script>
-    <script src="assets/js/tables/vfs_fonts.js"></script>
-    <script src="assets/js/tables/buttons.html5.min.js"></script>
-
-    <!-- Map JS -->
-    <script src="assets_map/js/leaflet.js"></script>
-    <script src="assets_map/js/leaflet.ajax.js"></script>
-    <script src="assets_map/js/leaflet.zoomhome.js"></script>
-    <script src="assets_map/js/leaflet-gps.js"></script>
-    <script src="assets_map/js/Control.FullScreen.js"></script>
-    <script src="assets_map/js/L.Icon.Pulse.js"></script>
-    <script src="assets_map/js/L.Control.Basemaps.js"></script>
-    <script src="assets_map/js/rbush.js"></script>
-    <script src="assets_map/js/labelgun.js"></script>
-
-    <!-- Map Data Chart -->
-    <script src="vendor/chart/AmChart/core.js"></script>
-    <script src="vendor/chart/AmChart/charts.js"></script>
-    <script src="vendor/chart/AmChart/maps.js"></script>
-    <script src="vendor/chart/AmChart/lang/vi_VN.js"></script>
-    <script src="vendor/chart/AmChart/themes/animated.js"></script>
-    <script src="vendor/chart/AmChart/fonts/notosans-sc.js"></script>
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -283,11 +242,6 @@
                                 </div>
                                 <div class="form-group col-xs-12 col-md-12 search-advanced">
                                     <div id="loaihinh"></div>
-                                    <!-- <input type="text" id="loaihinh" placeholder="Lựa chọn loại hình"
-                                           autocomplete="off"/> -->
-                                    <!-- <select class="form-control" id="loaihinh">
-                                        DOM từ DB vào
-                                    </select> -->
                                 </div>
                                 <div class="col-xs-12 col-md-12 search-advanced-titles">
                                     <i class="icon-server blue" style="font-size: 14px; margin-top: -2px"></i>
@@ -637,11 +591,11 @@
                             <div class="form-group" style="padding-top: 5px">
                                 <div class="col-xs-2 col-md-2" style="margin-top: 1%"><b>Từ ngày</b></div>
                                 <div class="form-group col-xs-4 col-md-4">
-                                    <input class="form-control" id="" type="date">
+                                    <input class="form-control" id="FromDate_data" type="date">
                                 </div>
                                 <div class="col-xs-2 col-md-2" style="margin-top: 1%"><b>Đến ngày</b></div>
                                 <div class="form-group col-xs-4 col-md-4">
-                                    <input class="form-control" id="" type="date">
+                                    <input class="form-control" id="ToDate_data" type="date">
                                 </div>
                             </div>
                         </fieldset>
@@ -1060,6 +1014,48 @@
             </div>
         </div>
     </div>
+
+    <!-- Main JS -->
+    <script src="vendor/jquery/js/jquery-3.3.1.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap-toggle.js"></script>
+    <script src="assets/js/search_plugin/typeahead.bundle.js"></script>
+    <script src="assets/js/search_plugin/handlebars.js"></script>
+    <script src="assets/js/search_plugin/list.min.js"></script>
+    <!-- Datatables JS -->
+    <script src="vendor/jquery/js/jquery.dataTables.min.js"></script>
+    <script src="vendor/bootstrap/js/dataTables.bootstrap4.min.js"></script>
+    <!-- Tree JS -->
+    <script src="assets/js/tree/jstree.js"></script>
+    <!-- Datatables Plugin -->
+    <script src="assets/js/tables/datatables.min.js"></script>
+    <script src="assets/js/tables/extensions/responsive.min.js"></script>
+    <script src="assets/js/forms/selects/select2.min.js"></script>
+    <script src="assets/js/tables/dataTables.buttons.min.js"></script>
+    <!-- <script src="assets/js/tables/jszip.min.js"></script>
+    <script src="assets/js/tables/pdfmake.min.js"></script>
+    <script src="assets/js/tables/vfs_fonts.js"></script> -->
+    <script src="assets/js/tables/buttons.html5.min.js"></script>
+
+    <!-- Map JS -->
+    <script src="assets_map/js/leaflet.js"></script>
+    <script src="assets_map/js/leaflet.ajax.js"></script>
+    <script src="assets_map/js/leaflet.zoomhome.js"></script>
+    <script src="assets_map/js/leaflet-gps.js"></script>
+    <script src="assets_map/js/Control.FullScreen.js"></script>
+    <script src="assets_map/js/L.Icon.Pulse.js"></script>
+    <script src="assets_map/js/L.Control.Basemaps.js"></script>
+    <script src="assets_map/js/rbush.js"></script>
+    <script src="assets_map/js/labelgun.js"></script>
+    <script src="assets_map/js/geojson-bbox.js"></script>
+
+    <!-- Map Data Chart -->
+    <script src="vendor/chart/AmChart/core.js"></script>
+    <script src="vendor/chart/AmChart/charts.js"></script>
+    <script src="vendor/chart/AmChart/maps.js"></script>
+    <script src="vendor/chart/AmChart/lang/vi_VN.js"></script>
+    <script src="vendor/chart/AmChart/themes/animated.js"></script>
+    <!-- <script src="vendor/chart/AmChart/fonts/notosans-sc.js"></script> -->
 
     <!-- Main JS Custom -->
     <script src="assets/js/config.js"></script>
