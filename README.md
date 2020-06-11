@@ -71,3 +71,5 @@ https://www.semicolonworld.com/question/32508/add-json-element-to-multidimension
 + Lựa chọn cơ chế chọn điểm fitbounds mới: https://github.com/geosquare/geojson-bbox
 
 ### Tối ưu hóa đợt 1
++ Tìm các thư viện nặng nhưng không sử dụng đến để loại bỏ
++ Tối ưu hóa thuật toán fitbounds (xem ở phần "Note xử lý onChange in map using Select Option/Checkbox Input"

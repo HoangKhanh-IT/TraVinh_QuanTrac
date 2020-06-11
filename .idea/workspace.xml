@@ -1,40 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="461f7496-579b-4c31-90e4-a3dfaeb4f371" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/alert.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/bg-small.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/bg.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/chart.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/current-location.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/electronic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/full-extent.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/hinhbg.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/info.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/legend.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/minus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/pdf.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/picture.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/plus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/search.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/splitter-horizontal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/splitter-vertical.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/spotlight-poi.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/ui-icons.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/warning.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets_map/data/chart_demo.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets_map/data/note_detail.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets_map/data/point_demo.geojson" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets_map/js/mapfunc/MapScript.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets_map/js/mapfunc/MapScript.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/database/FullSoLieuTV_21052020_1524.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/database/FullSoLieuTV_21052020_1525.backup" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/database/quantrac_travinh.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/database/quantrac_travinh_rel_tab.sql" beforeDir="false" />
-    </list>
+    <list default="true" id="461f7496-579b-4c31-90e4-a3dfaeb4f371" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -167,14 +134,7 @@
       <workItem from="1591665352748" duration="16463000" />
       <workItem from="1591839554533" duration="4660000" />
       <workItem from="1591847383062" duration="2696000" />
-      <workItem from="1591857663261" duration="5917000" />
-    </task>
-    <task id="LOCAL-00003" summary="TraVinh_QuanTrac">
-      <created>1588738142115</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1588738142115</updated>
+      <workItem from="1591857663261" duration="6766000" />
     </task>
     <task id="LOCAL-00004" summary="TraVinh_QuanTrac">
       <created>1588750518819</created>
@@ -512,7 +472,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591689015216</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="TraVinh_QuanTrac">
+      <created>1591863855859</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1591863855860</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -528,11 +495,11 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="361" y="75" key="#Notifications/0.0.1536.834/1920.30.1366.738@0.0.1536.834" timestamp="1590236187145" />
-    <state x="375" y="0" key="CommitChangelistDialog2" timestamp="1591689013050">
+    <state x="375" y="0" key="CommitChangelistDialog2" timestamp="1591863854293">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="375" y="0" key="CommitChangelistDialog2/0.0.1536.834/1920.0.1024.738@0.0.1536.834" timestamp="1588905135465" />
-    <state x="375" y="0" key="CommitChangelistDialog2/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1591689013050" />
+    <state x="375" y="0" key="CommitChangelistDialog2/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1591863854293" />
     <state x="375" y="0" key="CommitChangelistDialog2/0.0.1536.834/1920.30.1366.738@0.0.1536.834" timestamp="1591465668796" />
     <state x="375" y="0" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1588751106467" />
     <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1590736584884">
@@ -544,19 +511,19 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1591327896933" />
-    <state x="277" y="59" key="SettingsEditor" timestamp="1591857769902">
+    <state x="277" y="59" key="SettingsEditor" timestamp="1591863882768">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="277" y="59" key="SettingsEditor/0.0.1536.834/1920.0.1024.738@0.0.1536.834" timestamp="1588905169183" />
     <state x="277" y="59" key="SettingsEditor/0.0.1536.834/1920.0.1280.689@0.0.1536.834" timestamp="1588749804835" />
-    <state x="277" y="59" key="SettingsEditor/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1591857769902" />
+    <state x="277" y="59" key="SettingsEditor/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1591863882768" />
     <state x="277" y="59" key="SettingsEditor/0.0.1536.834/1920.30.1366.738@0.0.1536.834" timestamp="1591449510739" />
     <state x="277" y="59" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1590330123913" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1591689020383">
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1591865430722">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834/1920.0.1024.738@0.0.1536.834" timestamp="1588905139877" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1591689020383" />
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1591865430722" />
     <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834/1920.30.1366.738@0.0.1536.834" timestamp="1591465673681" />
     <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1588751113279" />
     <state x="444" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1591857674829">
