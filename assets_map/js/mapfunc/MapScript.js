@@ -109,6 +109,7 @@ function markerOnClick(e) {
 /*---- Dữ liệu không gian ----*/
 /*** Hiển thị thông tin trạm quan trắc ***/
 /*** Modal cho Search Nâng cao ***/
+var station_id;
 function Modal_Feature_Advanced(feat, layer) {
     /*** Kiểm tra trạm quan trắc có năm thành lập hay không ***/
     var establishyear_qt = "";
@@ -199,6 +200,8 @@ function Modal_Feature_Advanced(feat, layer) {
 
                 $("#featureModal").modal("show");
             } else {
+                /*** Get Staion ID ***/
+                station_id = feat.properties.id;
                 $(".feature-title").html(feat.properties.name);
                 $(".info_qt").html(content_info);
 

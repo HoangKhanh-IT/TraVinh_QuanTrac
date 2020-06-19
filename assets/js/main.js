@@ -42,6 +42,7 @@ $("#threshold-btn").click(function () {
 /*---- Modal Sample ----*/
 $("#sample-btn").click(function () {
     $("#sampleModal").modal("show");
+    getData_sample_Bantudong();
     $(".navbar-collapse.in").collapse("hide");
     return false;
 });
@@ -150,11 +151,7 @@ function format(d) {
             '<tr class="">' +
             /*** Thay đổi theo từng loại trạm khác nhau ***/
                 '<th scope="col">' + 'Thông số' + '</th>' +
-                '<th scope="col" class="parameter_tab">' + 'pH' + '</th>' +
-                '<th scope="col" class="parameter_tab">' + 'Cu' + '</th>' +
-                '<th scope="col" class="parameter_tab">' + 'Fe' + '</th>' +
-                '<th scope="col" class="parameter_tab">' + 'Fe' + '</th>' +
-                '<th scope="col" class="parameter_tab">' + 'Thủy ngân' + '</th>' +
+                /* '<th scope="col" class="parameter_tab">' + d.detail.data + '</th>' + */
                 /* '<th scope="col" class="parameter_tab">' + 'SO₂' + '</th>' + */
             '</tr>' +
         '</thead>' +
@@ -163,92 +160,17 @@ function format(d) {
                 /*** Thay đổi rowspan theo time và date ***/
                 '<th rowspan="2" class="">' + 'Giá trị/Thời gian' + '</th>' +
                 '<td><b class="red">' + "3.23 | " + "10h39 | " + "30/03/2019</b>" + '</td>' +
-                '<td><b class="red">' + "3.23 | " + "10h39 | " + "30/03/2019</b>" + '</td>' +
-                '<td><b class="red">' + "3.23 | " + "10h39 | " + "30/03/2019</b>" + '</td>' +
-                '<td><b class="red">' + "3.23 | " + "10h39 | " + "30/03/2019</b>" + '</td>' +
-                '<td><b class="red">' + "3.23 | " + "10h39 | " + "30/03/2019</b>" + '</td>' +
                 /* '<td>' + '</td>' + */
             '</tr>' +
             '<tr>' +
                 '<td><b class="red">' + "3.23 | " + "10h39 | " + "30/03/2019</b>" + '</td>' +
-                '<td>' + '</td>' +
-                '<td>' + '</td>' +
-                '<td>' + '</td>' +
-                '<td>' + '</td>' +
                 /* '<td><b class="red">' + "3.23 | " + "10h39 | " + "30/03/2019</b>" + '</td>' + */
-            '</tr>'
-    '</tbody>' +
+            '</tr>' +
+        '</tbody>' +
     '</table>';
 }
 
 $(document).ready(function () {
-    /*** Datatable Mẫu từng trạm ***/
-    var table_sample = $('#table_sample').DataTable({
-        ajax: "assets_map/data/object_sample.json",
-        columns: [
-            {
-                "className": 'details-control',
-                "orderable": false,
-                "data": null,
-                "defaultContent": ''
-            },
-            {"data": "sampleid"},
-            {"data": "time_dateOfSamping"},
-            {"data": "dateOfAnalysis"},
-            {"data": "sample_loc"},
-            {"data": "sample_weather"}
-        ],
-        order: [[1, 'asc']],
-
-        dom: "<'row'<'col-sm-7'B><'col-sm-3'l><'col-sm-2'f>>" +
-            "<'row'<'col-sm-12'tr>>" +
-            "<'row'<'col-sm-5'i><'col-sm-7'p>>",
-        buttons: [
-            // {extend: 'copy', className: 'btn btn-info btn-sm'},
-            {extend: 'pdf', className: 'btn btn-success btn-sm'},
-            // {extend: 'print', className: 'btn btn-info btn-sm'},
-            {extend: 'excel', className: 'btn btn-success btn-sm'}
-        ],
-        paging: true,
-        autoWidth: false,
-        "language": {
-            pagingType: "full_numbers",
-            search: '<span>Tìm kiếm:</span> _INPUT_',
-            searchPlaceholder: 'Gõ để tìm...',
-            paginate: {
-                'first': 'First',
-                'last': 'Last',
-                'next': $('html').attr('dir') == 'rtl' ? '<span style="font-size:13px;">Trước</span>' :
-                    '<span style="font-size:13px;">Sau</span>',
-                'previous': $('html').attr('dir') == 'rtl' ? '<span style="font-size:13px;">Sau</span>' :
-                    '<span style="font-size:13;">Trước</span>'
-            },
-            sLengthMenu: "<span>Hiển thị&nbsp;</span> _MENU_<span> kết quả</span>",
-            sZeroRecords: "Không tìm thấy kết quả",
-            sInfo: "Hiển thị _START_ đến _END_ trên _TOTAL_ dòng",
-            sInfoFiltered: "(tất cả _MAX_ dòng)",
-            sInfoEmpty: "Hiển thị 0 đến _END_ trên _TOTAL_ dòng",
-        },
-    });
-
-    table_sample.buttons().container()
-        .appendTo('#table_threshold_wrapper .col-md-12:eq(0)');
-
-    $('#table_sample tbody').on('click', 'td.details-control', function () {
-        var tr = $(this).closest('tr');
-        var row = table_sample.row(tr);
-
-        if (row.child.isShown()) {
-            // This row is already open - close it
-            row.child.hide();
-            tr.removeClass('shown');
-        } else {
-            // Open this row
-            row.child(format(row.data())).show();
-            tr.addClass('shown');
-        }
-    });
-
     /*** Datatable Vượt ngưỡng ***/
     var table_threshold = $('#table_threshold').DataTable({
         ajax: "assets_map/data/object_vuotnguong.json",
@@ -270,9 +192,7 @@ $(document).ready(function () {
             "<'row'<'col-sm-12'tr>>" +
             "<'row'<'col-sm-5'i><'col-sm-7'p>>",
         buttons: [
-            // {extend: 'copy', className: 'btn btn-info btn-sm'},
             {extend: 'pdf', className: 'btn btn-info btn-sm'},
-            // {extend: 'print', className: 'btn btn-info btn-sm'},
             {extend: 'excel', className: 'btn btn-info btn-sm'}
         ],
         paging: true,
@@ -331,7 +251,7 @@ $(document).ready(function () {
     });
 });
 
-$.getJSON("assets_map/data/data_viewgroupchart_demo.json", function (data_viewgroupchart_demo) {
+/* $.getJSON("assets_map/data/data_viewgroupchart_demo.json", function (data_viewgroupchart_demo) {
     render_groupchart_quantrac("chart_stats_para_1", data_viewgroupchart_demo, "Nhu cầu Oxy hóa học",
         "Thời gian", "Nhu cầu Oxy hóa học");
-})
+}) */
