@@ -14,6 +14,7 @@
 + Sửa thư viện comboTreePlugin.js ==> Xóa dòng `this.options.collapse` và sửa file style css
 
 ### Note giao diện (đề xuất)
++ Chặn cơ chế bấm click bên ngoài modal để tắt modal thêm thuộc tính `data-backdrop="static"` và `data-keyboard="false"`
 + Cơ chế đóng mở 1 trong 2 của Search Cơ bản và Nâng cao: 
 https://viblo.asia/p/bai-19-tao-collapse-va-accordion-voi-bootstrap-3-Qbq5Q1gG5D8
 + Lưu ý: phảm thêm thẻ class `.panel` thì thuộc tính `data-parent` mới được thực hiện:
@@ -71,7 +72,9 @@ https://www.semicolonworld.com/question/32508/add-json-element-to-multidimension
 + Lựa chọn cơ chế chọn điểm fitbounds mới: https://github.com/geosquare/geojson-bbox
 
 ### Xử lý DOM dữ liệu bán tự động
-+ Cần `destroy` bảng trước khi tạo bảng mới: https://datatables.net/manual/tech-notes/3
++ Cần `destroy` bảng trước khi tạo bảng mới: https://datatables.net/manual/tech-notes/3 ==> lỗi khi người dùng
+click "Xem dữ liệu" các lần chẵn (tức là lần 2, 4, 6, ...) thì không mở được data-child ==> sử dụng cơ chế
+`ajax.url().load` khi có url mới cho Datatables: https://datatables.net/reference/api/ajax.url().load()
 + Kiểm tra bảng có dữ liệu hay chưa: https://datatables.net/reference/api/%24.fn.dataTable.isDataTable
 + Cần xử lý cách DOM bảng Child (pending)
 

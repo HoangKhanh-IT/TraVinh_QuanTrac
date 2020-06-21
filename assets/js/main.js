@@ -143,33 +143,37 @@ $(".modal-header").on("mousedown", function (mousedownEvt) {
     });
 });
 
-/*---- Datables danh sách vượt ngưỡng ----*/
+/*---- Datables Children DOM ----*/
+/*** `d` is the original data object for the row ***/
 function format(d) {
-    /*** `d` is the original data object for the row ***/
-    return '<table class="table table-bordered table-responsive">' +
-        '<thead>' +
-            '<tr class="">' +
-            /*** Thay đổi theo từng loại trạm khác nhau ***/
-                '<th scope="col">' + 'Thông số' + '</th>' +
-                /* '<th scope="col" class="parameter_tab">' + d.detail.data + '</th>' + */
-                /* '<th scope="col" class="parameter_tab">' + 'SO₂' + '</th>' + */
-            '</tr>' +
-        '</thead>' +
-        '<tbody>' +
-            '<tr>' +
-                /*** Thay đổi rowspan theo time và date ***/
-                '<th rowspan="2" class="">' + 'Giá trị/Thời gian' + '</th>' +
-                '<td><b class="red">' + "3.23 | " + "10h39 | " + "30/03/2019</b>" + '</td>' +
-                /* '<td>' + '</td>' + */
-            '</tr>' +
-            '<tr>' +
-                '<td><b class="red">' + "3.23 | " + "10h39 | " + "30/03/2019</b>" + '</td>' +
-                /* '<td><b class="red">' + "3.23 | " + "10h39 | " + "30/03/2019</b>" + '</td>' + */
-            '</tr>' +
-        '</tbody>' +
-    '</table>';
+    var time_date_Arr = d.detail.time.split(", ");
+    var time = time_date_Arr[0];
+    var date = time_date_Arr[1];
+
+    var DOM_child_table = '<table class="table table-bordered table-responsive">';
+    DOM_child_table += '<thead>' +
+        '<tr class="">' +
+        '<th scope="col"> Thông số </th>'
+
+    /*** Sử dụng Object keys để lấy tên từng tham số ***/
+    for (var i = 0; i < d.detail.data.length; i++) {
+        var param = Object.keys(d.detail.data[i]);
+        DOM_child_table += '<th scope="col" class="parameter_tab">' + param + '</th>';
+    }
+
+    /*** Thay đổi rowspan theo time và date ***/
+    DOM_child_table += '<tbody>' + '<th rowspan="">' + 'Giá trị/Thời gian' + '</th>';
+
+    /*** Sử dụng Object value để lấy value của từng tham số ***/
+    for (var j = 0; j < d.detail.data.length; j++) {
+        var value = Object.values(d.detail.data[j]);
+        DOM_child_table += '<td><b class="red">' + value[0].v + ' | ' + time + ' | ' + date + '</b></th>';
+    }
+
+    return DOM_child_table;
 }
 
+/*---- Datables danh sách vượt ngưỡng ----*/
 $(document).ready(function () {
     /*** Datatable Vượt ngưỡng ***/
     var table_threshold = $('#table_threshold').DataTable({
@@ -223,17 +227,17 @@ $(document).ready(function () {
     $('<button class="dt-button buttons-html5 btn btn-sm active" id="fillter_1h" ' +
         'type="button" aria-controls="table_threshold" tabindex="0" ' +
         'style="margin-right: 4.5px; margin-left: 30%;">' +
-            '<span>1 giờ</span>' +
+        '<span>1 giờ</span>' +
         '</button>' +
         '<button class="dt-button buttons-html5 btn btn-sm" id="fillter_8h" ' +
         'type="button" aria-controls="table_threshold" tabindex="0" style="margin-right: 4.5px;">' +
-            '<span>8 giờ</span>' +
+        '<span>8 giờ</span>' +
         '</button>' +
         '<button class="dt-button buttons-html5 btn btn-sm" id="fillter_24h" ' +
         'type="button" aria-controls="table_threshold" tabindex="0">' +
-            '<span>24 giờ</span>' +
+        '<span>24 giờ</span>' +
         '</button>'
-        ).appendTo("#table_threshold_wrapper .dt-buttons");
+    ).appendTo("#table_threshold_wrapper .dt-buttons");
 
     $('#table_threshold tbody').on('click', 'td.details-control', function () {
         var tr = $(this).closest('tr');

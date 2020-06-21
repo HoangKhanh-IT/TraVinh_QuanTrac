@@ -11,8 +11,9 @@
     /*** Querry lựa chọn sample bán tự động ***/
     $querry_option_sampleBTD = 'SELECT "Sample_BanTuDong".*, "Observation".detail
 	                            FROM "Sample_BanTuDong"
-	                            LEFT JOIN "Observation" ON "Observation".sampleid = "Sample_BanTuDong".stationid
+	                            LEFT JOIN "Observation" ON "Observation".stationid = "Sample_BanTuDong".stationid
 	                            WHERE "Observation".day = "Sample_BanTuDong"."dateOfAnalysis"';
+
 	$querry_option_sampleBTD.= ' AND "Sample_BanTuDong".stationid ='.$station_id;
     if ($fromDate == '' && $toDate == '') {
         $querry_option_sampleBTD = $querry_option_sampleBTD;
@@ -22,7 +23,6 @@
     }
 
     $result = pg_query($travinh_db, $querry_option_sampleBTD);
-    // echo $querry_option_sampleBTD;
     if (!$result) {
         echo "Không có dữ liệu.\n";
         exit;
