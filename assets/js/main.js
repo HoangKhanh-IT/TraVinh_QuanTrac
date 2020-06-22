@@ -18,6 +18,11 @@ if (!("ontouchstart" in window)) {
 
 $(document).on("mouseout", ".feature-row", clearHighlight);
 
+/*---- Reset Input ----*/
+$(".reset_input").click(function () {
+    $("input[type=date]").val("")
+})
+
 /*---- Modal About Us ----*/
 $("#about-btn").click(function () {
     $("#aboutModal").modal("show");

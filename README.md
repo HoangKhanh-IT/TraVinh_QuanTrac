@@ -78,6 +78,8 @@ click "Xem dữ liệu" các lần chẵn (tức là lần 2, 4, 6, ...) thì kh
 + Kiểm tra bảng có dữ liệu hay chưa: https://datatables.net/reference/api/%24.fn.dataTable.isDataTable
 + Cần xử lý cách DOM bảng Child (pending)
 
+### Xử lý DOM dữ liệu danh sách vượt ngưỡng
+
 ### Tối ưu hóa đợt 1
 + Tìm các thư viện nặng nhưng không sử dụng đến để loại bỏ
 + Tối ưu hóa thuật toán fitbounds (xem ở phần "Note xử lý onChange in map using Select Option/Checkbox Input"
