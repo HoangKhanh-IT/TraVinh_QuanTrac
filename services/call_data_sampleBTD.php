@@ -7,6 +7,9 @@
     $station_id = $_GET['stationid'];
     $fromDate = $_GET['fromDate'];
     $toDate = $_GET['toDate'];
+    /*** Đối với 1 số VPS không hỗ trợ xuất Date có dấu nháy nên cần dùng hàm date() để lấy ***/
+    $fromDate = date($_GET['fromDate']);
+    $toDate = date($_GET['toDate']);
 
     /*** Querry lựa chọn sample bán tự động ***/
     $querry_option_sampleBTD = 'SELECT "Sample_BanTuDong".*, "Observation".detail
@@ -20,6 +23,8 @@
     }
     if ($fromDate != '' && $toDate != ''){
         $querry_option_sampleBTD.= ' AND "dateOfSamping" between'.$fromDate.'AND'.$toDate;
+        /*** Đối với 1 số VPS không hỗ trợ xuất Date có dấu nháy nên phải truy vấn cộng dấu nháy ***/
+        /* $querry_option_sampleBTD.= ' AND "dateOfSamping" between '."'".$fromDate."'".' AND '."'".$toDate."'"; */
     }
 
     $result = pg_query($travinh_db, $querry_option_sampleBTD);

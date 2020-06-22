@@ -2,6 +2,41 @@ var fromDate_data, toDate_data;
 var table_sample;
 function getData_sample_Bantudong() {
     $(document).ready(function () {
+        /*** Đối với 1 số VPS không hỗ trợ xuất Date có dấu nháy thì cần phải sinh ra các
+         * trường hợp để tạo truy vấn khi người dùng không nhập input date ***/
+
+        /* var url_datatable_sample = "";
+        fromDate_data = $("#FromDate_data").val();
+        toDate_data = $("#ToDate_data").val();
+        if (fromDate_data == '' && toDate_data != '') {
+            url_datatable_sample = "services/call_data_sampleBTD.php?" +
+                "stationid=" + station_id +
+                "&fromDate=1900-01-01" +
+                "&toDate=" + toDate_data;
+        }
+
+        if (fromDate_data != '' && toDate_data == '') {
+            url_datatable_sample = "services/call_data_sampleBTD.php?" +
+                "stationid=" + station_id +
+                "&fromDate=" + fromDate_data +
+                "&toDate=2200-01-01";
+        }
+
+        if (fromDate_data == '' && toDate_data == '') {
+            url_datatable_sample = "services/call_data_sampleBTD.php?" +
+                "stationid=" + station_id +
+                "&fromDate=1900-01-01" +
+                "&toDate=2200-01-01";
+        }
+
+        if (fromDate_data != '' && toDate_data != '') {
+            url_datatable_sample = "services/call_data_sampleBTD.php?" +
+                "stationid=" + station_id +
+                "&fromDate=" + fromDate_data +
+                "&toDate=" + toDate_data;
+
+        } */
+
         fromDate_data = $("#FromDate_data").val();
         toDate_data = $("#ToDate_data").val();
 
