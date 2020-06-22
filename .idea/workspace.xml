@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="461f7496-579b-4c31-90e4-a3dfaeb4f371" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/tables/feature_infoBTD.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/tables/feature_infoBTD.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/call_data_sampleBTD.php" beforeDir="false" afterPath="$PROJECT_DIR$/services/call_data_sampleBTD.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,14 +159,7 @@
       <workItem from="1592653332828" duration="8000" />
       <workItem from="1592723845663" duration="12872000" />
       <workItem from="1592785572120" duration="3206000" />
-      <workItem from="1592818453957" duration="383000" />
-    </task>
-    <task id="LOCAL-00008" summary="TraVinh_QuanTrac">
-      <created>1588757832263</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1588757832263</updated>
+      <workItem from="1592818453957" duration="451000" />
     </task>
     <task id="LOCAL-00009" summary="TraVinh_QuanTrac">
       <created>1588815605990</created>
@@ -505,7 +497,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592793574845</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="TraVinh_QuanTrac">
+      <created>1592818842874</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1592818842875</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -523,7 +522,7 @@
     <state x="361" y="75" key="#Notifications/0.0.1536.834/1920.30.1366.738@0.0.1536.834" timestamp="1590236187145" />
     <state x="321" y="44" key="#Notifications/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1592542406746" />
     <state x="321" y="45" key="#Notifications/1366.0.1366.738/0.0.1366.738@0.0.1366.738" timestamp="1592648914453" />
-    <state x="333" y="0" key="CommitChangelistDialog2" timestamp="1592793573249">
+    <state x="333" y="0" key="CommitChangelistDialog2" timestamp="1592818841285">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="375" y="0" key="CommitChangelistDialog2/0.0.1536.834/1920.0.1024.738@0.0.1536.834" timestamp="1588905135465" />
@@ -531,7 +530,7 @@
     <state x="375" y="0" key="CommitChangelistDialog2/0.0.1536.834/1920.30.1366.738@0.0.1536.834" timestamp="1591465668796" />
     <state x="375" y="0" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1592561250643" />
     <state x="333" y="0" key="CommitChangelistDialog2/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1592560818398" />
-    <state x="333" y="0" key="CommitChangelistDialog2/1366.0.1366.738/0.0.1366.738@0.0.1366.738" timestamp="1592793573249" />
+    <state x="333" y="0" key="CommitChangelistDialog2/1366.0.1366.738/0.0.1366.738@0.0.1366.738" timestamp="1592818841285" />
     <state x="488" y="152" key="FileChooserDialogImpl" timestamp="1592648939549">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

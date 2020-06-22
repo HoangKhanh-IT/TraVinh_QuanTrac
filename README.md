@@ -76,7 +76,8 @@ https://www.semicolonworld.com/question/32508/add-json-element-to-multidimension
 click "Xem dữ liệu" các lần chẵn (tức là lần 2, 4, 6, ...) thì không mở được data-child ==> sử dụng cơ chế
 `ajax.url().load` khi có url mới cho Datatables: https://datatables.net/reference/api/ajax.url().load()
 + Kiểm tra bảng có dữ liệu hay chưa: https://datatables.net/reference/api/%24.fn.dataTable.isDataTable
-+ Cần xử lý cách DOM bảng Child (pending)
++ Cần xử lý cách DOM bảng Child (done)
++ Đối với 1 số VPS không hỗ trợ lấy Date có dấu nháy cần phải làm cách khác (đã note trong code)
 
 ### Xử lý DOM dữ liệu danh sách vượt ngưỡng
 
