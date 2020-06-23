@@ -54,7 +54,6 @@ function getData_sample_Bantudong() {
             "&fromDate=%27" + fromDate_data + "%27" +
             "&toDate=%27" + toDate_data + "%27";
 
-        console.log(url_datatable_sample);
         /*---- Datatable Mẫu từng trạm ----*/
         /*** Kiểm tra table_sample đã có dữ liệu chưa, nếu có từ trước thì load ajax url mới ***/
         if ($.fn.DataTable.isDataTable('#table_sample')) {
@@ -98,7 +97,7 @@ function getData_sample_Bantudong() {
                         'next': $('html').attr('dir') == 'rtl' ? '<span style="font-size:13px;">Trước</span>' :
                             '<span style="font-size:13px;">Sau</span>',
                         'previous': $('html').attr('dir') == 'rtl' ? '<span style="font-size:13px;">Sau</span>' :
-                            '<span style="font-size:13;">Trước</span>'
+                            '<span style="font-size:13px;">Trước</span>'
                     },
                     sLengthMenu: "<span>Hiển thị&nbsp;</span> _MENU_<span> kết quả</span>",
                     sZeroRecords: "Không tìm thấy kết quả",
@@ -121,7 +120,7 @@ function getData_sample_Bantudong() {
                     tr.removeClass('shown');
                 } else {
                     /***  Open this row ***/
-                    row.child(format(row.data())).show();
+                    row.child(format(row.data(), "sampleModal")).show();
                     tr.addClass('shown');
                 }
             });
