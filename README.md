@@ -72,6 +72,7 @@ https://www.semicolonworld.com/question/32508/add-json-element-to-multidimension
 + Lựa chọn cơ chế chọn điểm fitbounds mới: https://github.com/geosquare/geojson-bbox
 
 ### Xử lý DOM dữ liệu bán tự động
++ Cố định 1 cột và scroll các cột còn lại: https://jsfiddle.net/DTcHh/19842/
 + Cần `destroy` bảng trước khi tạo bảng mới: https://datatables.net/manual/tech-notes/3 ==> lỗi khi người dùng
 click "Xem dữ liệu" các lần chẵn (tức là lần 2, 4, 6, ...) thì không mở được data-child ==> sử dụng cơ chế
 `ajax.url().load` khi có url mới cho Datatables: https://datatables.net/reference/api/ajax.url().load()
@@ -84,6 +85,8 @@ click "Xem dữ liệu" các lần chẵn (tức là lần 2, 4, 6, ...) thì kh
 + `Date và time` ở ngoài cần phải giống với `Date và time` trong detail
 
 ### Xử lý DOM dữ liệu danh sách vượt ngưỡng
++ Xử lý gộp tất cả detail của 1 trạm vào 1 detail duy nhất
++ Khi xử lý gộp thì sử dụng hàm `distinct` trong SQL để tránh trường hợp trùng `obstype_namelist`
 
 ### Tối ưu hóa đợt 1
 + Tìm các thư viện nặng nhưng không sử dụng đến để loại bỏ

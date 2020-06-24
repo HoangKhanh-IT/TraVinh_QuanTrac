@@ -15,16 +15,18 @@ input[type="radio"], input[type="checkbox"] {
 
 /*** Custom Scrollbar if navbar have overflow ***/
 ::-webkit-scrollbar {
-    width: 14px;
+    /*** Đối với thanh dọc ***/
+    width: 10px;
+    /*** Đối với thanh ngang ***/
+    height: 7px;
 }
 
 ::-webkit-scrollbar-track {
-    border-radius: 15px;
+    background: #f1f1f1;
 }
 
 ::-webkit-scrollbar-thumb {
     background: #88d7fa;
-    border-radius: 15px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -349,7 +351,7 @@ label {
     float: left;
     margin-left: 1px;
     display: block;
-    width: 365px;
+    width: 360px;
     height: 100%;
     max-width: 100%;
     background-color: #ffffff;
@@ -670,6 +672,25 @@ label {
 .modal-sample {
     margin-top: 10%;
     width: 90%;
+}
+
+/*** DOM Child Table ***/
+.first-col {
+    position: absolute;
+    width: 8em;
+    margin-left: -9.5em;
+    border-right: none !important;
+    border-left: 1px solid #ddd !important;
+}
+
+.table-wrapper td, .table-wrapper th {
+    white-space: nowrap;
+}
+
+.table-wrapper {
+    overflow-x: scroll;
+    width: 80%;
+    margin-left: 15%
 }
 
 .modal-body-statistic {
