@@ -84,9 +84,12 @@ click "Xem dữ liệu" các lần chẵn (tức là lần 2, 4, 6, ...) thì kh
 + Mỗi 1 thời điểm (tức cứ 5 phút) là sẽ có 1 row/1 trạm/1 thời điểm (time, date)/1 detail
 + `Date và time` ở ngoài cần phải giống với `Date và time` trong detail
 
-### Xử lý DOM dữ liệu danh sách vượt ngưỡng
+### Xử lý DOM dữ liệu danh sách vượt ngưỡng (chỉ áp dụng cho trạm tự động và trạm doanh nghiệp)
 + Xử lý gộp tất cả detail của 1 trạm vào 1 detail duy nhất
 + Khi xử lý gộp thì sử dụng hàm `distinct` trong SQL để tránh trường hợp trùng `obstype_namelist`
++ Để có thể DOM dữ liệu vượt ngưỡng cần phải DOM đúng vị trí các cột ==> Cần phải xây dựng hàm dựng 
+lại layout bảng, sau đó mới DOM các giá trị vào trong thành phần bảng con
++ Hiện tại đang gán cứng `total_threshold_station` ==> cần onChange theo số giờ của dữ liệu (pending)
 
 ### Tối ưu hóa đợt 1
 + Tìm các thư viện nặng nhưng không sử dụng đến để loại bỏ

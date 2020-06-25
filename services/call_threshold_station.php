@@ -3,7 +3,7 @@
 ?>
 
 <?php
-    /*** Querry Data Threshold Station ***/
+    /*** Querry Data Threshold Station (áp dụng cho trạm Tự động và trạm Doanh nghiệp ***/
     $querry_data_threshold_station = 'SELECT 
                                     "station"."id", "station"."name", 
                                     "district"."name" "districtName",
@@ -12,7 +12,7 @@
                                     "category"."id" "categoryID",
                                     /*** Ghép cột Name của bảng ObservationType cần có hàm distinct để trở nên duy nhất ***/
                                     string_agg(distinct "obs_type"."name", \'; \') "obstype_namelist", 
-                                    concat(\'[\', string_agg("obs"."detail", \', \'), \']\') "total_detail"
+                                    concat(\'[\', string_agg(distinct "obs"."detail", \', \'), \']\') "total_detail"
                                                                         
                                     FROM "Observationstation" "station"
                                     LEFT JOIN "Category" "category" ON "category"."id" = "station"."categoryid"
@@ -21,6 +21,7 @@
                                     LEFT JOIN "ObservationType" "obs_type" ON "obs_type"."id" = "obs_station"."obstypesid"
                                     LEFT JOIN "Observation" "obs" ON "obs"."stationid" = "station"."id"
                                     
+                                    WHERE "category"."id" = \'1\' OR "category"."id" = \'3\'
                                     GROUP BY "station"."id", 
                                     "category"."name", "category"."id", 
                                     "district"."name", "district"."id"
@@ -54,6 +55,11 @@
         );
     }
 
-    $final_data = json_encode($option);
+    /*** Để Dom dữ liệu vào Danh sách vượt ngưỡng ***/
+    $option_final = array(
+        'data' => $option
+    );
+
+    $final_data = json_encode($option_final);
     echo $final_data;
 ?>
