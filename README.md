@@ -89,6 +89,7 @@ click "Xem dữ liệu" các lần chẵn (tức là lần 2, 4, 6, ...) thì kh
 + Khi xử lý gộp thì sử dụng hàm `distinct` trong SQL để tránh trường hợp trùng `obstype_namelist`
 + Để có thể DOM dữ liệu vượt ngưỡng cần phải DOM đúng vị trí các cột ==> Cần phải xây dựng hàm dựng 
 lại layout bảng, sau đó mới DOM các giá trị vào trong thành phần bảng con
++ Khi load dữ liệu lần đầu luôn là 1 giờ trước sau đó mới onChange theo 8 giờ hoặc 24 giờ
 + Hiện tại đang gán cứng `total_threshold_station` ==> cần onChange theo số giờ của dữ liệu (pending)
 
 ### Tối ưu hóa đợt 1
