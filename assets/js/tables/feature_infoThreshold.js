@@ -14,8 +14,7 @@ function DOM_data_child_Threshold(row_detail) {
 
             value = Object.values(detail_data_value[j_threshold]);
             for (var k_value_threshold = 0; k_value_threshold < total_std_param.length; k_value_threshold++) {
-                if (parseInt(spidID) == total_std_param[k_value_threshold].id
-                    && value[0].inlimit == "Y") {
+                if (parseInt(spidID) == total_std_param[k_value_threshold].id && value[0].inlimit == "Y") {
                     valueinlimit = value[0].v;
                     unitName = total_std_param[k_value_threshold].unitName;
                     // console.log($("#" + td_id_threshold + " b"))
@@ -35,30 +34,31 @@ function getData_threshold_station() {
         $('#table_threshold').DataTable().ajax.url(url_datatable_threshold).load();
     }
     if (!$.fn.DataTable.isDataTable('#table_threshold')) {
-        $(document).ready(function () {
+        $(document).ready(function() {
             /*** Datatable Vượt ngưỡng ***/
             var table_threshold = $('#table_threshold').DataTable({
                 ajax: url_datatable_threshold,
-                columns: [
-                    {
+                columns: [{
                         "className": 'details-control',
                         "orderable": false,
                         "data": null,
                         "defaultContent": ''
                     },
-                    {"data": "name"},
-                    {"data": "obstype_namelist"},
-                    {"data": "categoryName"},
-                    {"data": "districtName"}
+                    { "data": "name" },
+                    { "data": "obstype_namelist" },
+                    { "data": "categoryName" },
+                    { "data": "districtName" }
                 ],
-                order: [[1, 'asc']],
+                order: [
+                    [1, 'asc']
+                ],
 
                 dom: "<'row'<'col-sm-7'B><'col-sm-3'l><'col-sm-2'f>>" +
                     "<'row'<'col-sm-12'tr>>" +
                     "<'row'<'col-sm-5'i><'col-sm-7'p>>",
                 buttons: [
-                    {extend: 'pdf', className: 'btn btn-info btn-sm'},
-                    {extend: 'excel', className: 'btn btn-info btn-sm'}
+                    { extend: 'pdf', className: 'btn btn-info btn-sm' },
+                    { extend: 'excel', className: 'btn btn-info btn-sm' }
                 ],
                 paging: true,
                 autoWidth: false,
@@ -69,10 +69,8 @@ function getData_threshold_station() {
                     paginate: {
                         'first': 'First',
                         'last': 'Last',
-                        'next': $('html').attr('dir') == 'rtl' ? '<span style="font-size:13px;">Trước</span>' :
-                            '<span style="font-size:13px;">Sau</span>',
-                        'previous': $('html').attr('dir') == 'rtl' ? '<span style="font-size:13px;">Sau</span>' :
-                            '<span style="font-size:13px;">Trước</span>'
+                        'next': $('html').attr('dir') == 'rtl' ? '<span style="font-size:13px;">Trước</span>' : '<span style="font-size:13px;">Sau</span>',
+                        'previous': $('html').attr('dir') == 'rtl' ? '<span style="font-size:13px;">Sau</span>' : '<span style="font-size:13px;">Trước</span>'
                     },
                     sLengthMenu: "<span>Hiển thị&nbsp;</span> _MENU_<span> kết quả</span>",
                     sZeroRecords: "Không tìm thấy kết quả",
@@ -100,7 +98,7 @@ function getData_threshold_station() {
                 '</button>'
             ).appendTo("#table_threshold_wrapper .dt-buttons");
 
-            $('#table_threshold tbody').on('click', 'td.details-control', function () {
+            $('#table_threshold tbody').on('click', 'td.details-control', function() {
                 var tr = $(this).closest('tr');
                 var row = table_threshold.row(tr);
 
