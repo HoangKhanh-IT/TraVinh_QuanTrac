@@ -1,44 +1,45 @@
 var map, featureList;
 
-$(window).resize(function () {
+$(window).resize(function() {
     sizeLayerControl();
 });
 
-$(document).on("click", ".feature-row", function (e) {
+$(document).on("click", ".feature-row", function(e) {
     $(document).off("mouseout", ".feature-row", clearHighlight);
     sidebarClick(parseInt($(this).attr("id"), 10));
 });
 
 if (!("ontouchstart" in window)) {
-    $(document).on("mouseover", ".feature-row", function (e) {
+    $(document).on("mouseover", ".feature-row", function(e) {
         highlight.clearLayers().addLayer(L.circleMarker([$(this).attr("lat"),
-            $(this).attr("lng")], highlightStyle));
+            $(this).attr("lng")
+        ], highlightStyle));
     });
 }
 
 $(document).on("mouseout", ".feature-row", clearHighlight);
 
 /*---- Reset Input ----*/
-$(".reset_input").click(function () {
+$(".reset_input").click(function() {
     $("input[type=date]").val("")
 })
 
 /*---- Modal About Us ----*/
-$("#about-btn").click(function () {
+$("#about-btn").click(function() {
     $("#aboutModal").modal("show");
     $(".navbar-collapse.in").collapse("hide");
     return false;
 });
 
 /*---- Modal Login ----*/
-$("#login-btn").click(function () {
+$("#login-btn").click(function() {
     $("#loginModal").modal("show");
     $(".navbar-collapse.in").collapse("hide");
     return false;
 });
 
 /*---- Modal Threshold ----*/
-$("#threshold-btn").click(function () {
+$("#threshold-btn").click(function() {
     $("#thresholdModal").modal("show");
     getData_threshold_station();
     $(".navbar-collapse.in").collapse("hide");
@@ -46,7 +47,7 @@ $("#threshold-btn").click(function () {
 });
 
 /*---- Modal Sample ----*/
-$("#sample-btn").click(function () {
+$("#sample-btn").click(function() {
     $("#sampleModal").modal("show");
     getData_sample_Bantudong();
     $(".navbar-collapse.in").collapse("hide");
@@ -54,14 +55,14 @@ $("#sample-btn").click(function () {
 });
 
 /*---- Modal Statistic ----*/
-$("#statistic-btn").click(function () {
+$("#statistic-btn").click(function() {
     $("#statisticModal").modal("show");
     $(".navbar-collapse.in").collapse("hide");
     return false;
 });
 
 /*---- Modal Statistic Result ----*/
-$("#statistic-result-btn").click(function () {
+$("#statistic-result-btn").click(function() {
     $("#statisticModal").modal("hide");
     $("#statistic_resultModal").modal("show");
     $(".navbar-collapse.in").collapse("hide");
@@ -69,35 +70,35 @@ $("#statistic-result-btn").click(function () {
 });
 
 /*---- Modal Search Stats Trạm ----*/
-$("#search_stats_tramqt").click(function () {
+$("#search_stats_tramqt").click(function() {
     $("#search_stats_tramqtModal").modal("show");
     $(".navbar-collapse.in").collapse("hide");
     return false;
 });
 
 /*---- Modal Search Checkbox Parameters ----*/
-$("#search_para").click(function () {
+$("#search_para").click(function() {
     $("#search_paraqtModal").modal("show");
     $(".navbar-collapse.in").collapse("hide");
     return false;
 });
 
-$("#list-btn").click(function () {
+$("#list-btn").click(function() {
     animateSidebar();
     return false;
 });
 
-$("#nav-btn").click(function () {
+$("#nav-btn").click(function() {
     $(".navbar-collapse").collapse("toggle");
     return false;
 });
 
-$("#sidebar-toggle-btn").click(function () {
+$("#sidebar-toggle-btn").click(function() {
     animateSidebar();
     return false;
 });
 
-$("#sidebar-hide-btn").click(function () {
+$("#sidebar-hide-btn").click(function() {
     animateSidebar();
     return false;
 });
@@ -105,7 +106,7 @@ $("#sidebar-hide-btn").click(function () {
 function animateSidebar() {
     $("#sidebar").animate({
         width: "toggle"
-    }, 350, function () {
+    }, 350, function() {
         map.invalidateSize();
     });
 }
@@ -119,32 +120,32 @@ function clearHighlight() {
 }
 
 /*---- Highlight search box text on click ----*/
-$("#searchbox").click(function () {
+$("#searchbox").click(function() {
     $(this).select();
 });
 
 /*---- Prevent hitting enter from refreshing the page ----*/
-$("#searchbox").keypress(function (e) {
+$("#searchbox").keypress(function(e) {
     if (e.which == 13) {
         e.preventDefault();
     }
 });
 
 /*---- Draggable Modal ----*/
-$(".modal-header").on("mousedown", function (mousedownEvt) {
+$(".modal-header").on("mousedown", function(mousedownEvt) {
     var $draggable = $(this);
     var x = mousedownEvt.pageX - $draggable.offset().left,
         y = mousedownEvt.pageY - $draggable.offset().top;
-    $("body").on("mousemove.draggable", function (mousemoveEvt) {
+    $("body").on("mousemove.draggable", function(mousemoveEvt) {
         $draggable.closest(".modal-dialog").offset({
             "left": mousemoveEvt.pageX - x,
             "top": mousemoveEvt.pageY - y
         });
     });
-    $("body").one("mouseup", function () {
+    $("body").one("mouseup", function() {
         $("body").off("mousemove.draggable");
     });
-    $draggable.closest(".modal").one("bs.modal.hide", function () {
+    $draggable.closest(".modal").one("bs.modal.hide", function() {
         $("body").off("mousemove.draggable");
     });
 });
@@ -155,7 +156,7 @@ $.ajax({
     url: "services/call_standard_param.php",
     async: false,
     dataType: 'json',
-    success: function (data) {
+    success: function(data) {
         total_std_param = data;
     }
 });
@@ -166,7 +167,7 @@ $.ajax({
     url: "services/call_threshold_station.php",
     async: false,
     dataType: 'json',
-    success: function (data) {
+    success: function(data) {
         total_threshold_station = data;
     }
 });
@@ -251,8 +252,8 @@ function format(d, ID_modal) {
                         }
                     }
                 }
-                DOM_child_table += '<th scope="col" class="parameter_tab" id="' + spidID + '">'
-                    + parameterName + ' (' + dom_min_max + ')</th>';
+                DOM_child_table += '<th scope="col" class="parameter_tab" id="' + spidID + '">' +
+                    parameterName + ' (' + dom_min_max + ')</th>';
             }
 
             /*** DOM value vượt ngưỡng ***/

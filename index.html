@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Quan trắc Trà Vinh</title>
-    <meta content="width=device-width, maximum-scale = 1, minimum-scale=1" name="viewport"/>
+    <meta content="width=device-width, maximum-scale = 1, minimum-scale=1" name="viewport" />
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width" name="viewport">
     <meta content="yes" name="mobile-web-app-capable">
     <meta content="yes" name="apple-mobile-web-app-capable">
 
     <!-- Favicon -->
-    <link href="assets/images/SoTNMT.ico" rel="icon" type="image/x-icon"/>
+    <link href="assets/images/SoTNMT.ico" rel="icon" type="image/x-icon" />
 
     <!-- Main CSS -->
     <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -19,14 +20,14 @@
     <link href="assets/css/font-awesome/css/font-awesome.css" rel="stylesheet">
     <link href="assets/css/icomoon/styles.min.css" rel="stylesheet">
     <link href="assets/css/pretty-checkbox/dist/pretty-checkbox.min.css" rel="stylesheet">
-    <link href="assets/css/material-icon/materialdesignicons.css" rel="stylesheet" >
+    <link href="assets/css/material-icon/materialdesignicons.css" rel="stylesheet">
     <link href="assets/css/main.css" rel="stylesheet">
 
     <!-- Map CSS -->
     <link href="assets_map/css/leaflet.css" rel="stylesheet">
     <link href="assets_map/css/leaflet.zoomhome.css" rel="stylesheet">
     <link href="assets_map/css/leaflet-gps.css" rel="stylesheet">
-    <link href="assets_map/css/Control.FullScreen.css" rel="stylesheet"/>
+    <link href="assets_map/css/Control.FullScreen.css" rel="stylesheet" />
     <link href="assets_map/css/L.Icon.Pulse.css" rel="stylesheet">
     <link href="assets_map/css/L.Control.Basemaps.css" rel="stylesheet">
     <link href="assets_map/css/MapStyle.css" rel="stylesheet">
@@ -37,6 +38,7 @@
     <!-- Tree CSS -->
     <link href="assets/css/tree/default/style.css" rel="stylesheet">
 </head>
+
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container-fluid">
@@ -54,7 +56,7 @@
                         <i class="fa fa-list blue collapse_menu"></i>
                     </a>
                 </div>
-                <img id="logo" src="assets/images/SoTNMT.png"/>
+                <img id="logo" src="assets/images/SoTNMT.png" />
                 <div class="title">
                     <div id="titlefont1">SỞ TÀI NGUYÊN VÀ MÔI TRƯỜNG TỈNH TRÀ VINH</div>
                     <div id="titlefont2">CHẤT LƯỢNG MÔI TRƯỜNG TRÀ VINH (THỬ NGHIỆM)</div>
@@ -64,18 +66,17 @@
                 <ul class="nav navbar-nav" style="margin-top: 1.25%">
                     <li>
                         <a data-target=".navbar-collapse.in" data-toggle="collapse" href="#" id="about-btn">
-                            <i class="icon-accessibility blue" style="font-size: 16px; margin-top: -2px;"></i>
-                            &nbsp;&nbsp;Về chúng tôi
+                            <i class="icon-accessibility blue" style="font-size: 16px; margin-top: -2px;"></i> &nbsp;&nbsp;Về chúng tôi
                         </a>
                     </li>
                     <li>
                         <a data-target=".navbar-collapse.in" data-toggle="collapse" href="#" id="login-btn">
-                            <i class="fa fa-user blue" style="font-size: 16px; margin-top: -2px;"></i>
-                            &nbsp;&nbsp;Nguyễn Đức Lâm
+                            <i class="fa fa-user blue" style="font-size: 16px; margin-top: -2px;"></i> &nbsp;&nbsp;Nguyễn Đức Lâm
                         </a>
                     </li>
                 </ul>
-            </div><!--/.navbar-collapse -->
+            </div>
+            <!--/.navbar-collapse -->
         </div>
     </div>
 
@@ -84,11 +85,9 @@
             <div class="sidebar-wrapper">
                 <div class="panel panel-default" id="features">
                     <!-- Lớp dữ liệu -->
-                    <div class="panel-heading panel-data-quantrac"
-                         data-toggle="collapse" href="#data_layer_tramqt" style="border-top: unset">
+                    <div class="panel-heading panel-data-quantrac" data-toggle="collapse" href="#data_layer_tramqt" style="border-top: unset">
                         <h3 class="panel-title blue">
-                            <i class="glyphicon glyphicon-list-alt"
-                               style="font-size: 16px; margin-top: -5px;"></i>&nbsp;&nbsp;&nbsp;Lớp dữ liệu trạm quan trắc
+                            <i class="glyphicon glyphicon-list-alt" style="font-size: 16px; margin-top: -5px;"></i>&nbsp;&nbsp;&nbsp;Lớp dữ liệu trạm quan trắc
                             <!-- <button class="btn btn-xs btn-default pull-right" id="sidebar-hide-btn" type="button">
                                 <i class="fa fa-chevron-left blue" style="font-size: 16px; margin-top: -2px;"></i>
                             </button> -->
@@ -197,27 +196,22 @@
                     <!-- Tìm kiếm dữ liệu -->
                     <div class="panel-heading" data-toggle="collapse" href="#search_tramqt">
                         <h3 class="panel-title blue">
-                            <i class="icon-cog52"
-                               style="font-size: 16px; margin-top: -2px;"></i>&nbsp;&nbsp;&nbsp;Tìm kiếm dữ liệu
+                            <i class="icon-cog52" style="font-size: 16px; margin-top: -2px;"></i>&nbsp;&nbsp;&nbsp;Tìm kiếm dữ liệu
                         </h3>
                     </div>
                     <div class="panel-body collapse" id="search_tramqt" aria-multiselectable="true">
                         <div class="panel">
-                            <div class="col-xs-12 col-md-12" data-toggle="collapse" data-parent="#search_tramqt"
-                                 aria-expanded="true" aria-controls="search_basic"
-                                 href="#search_basic" id="search_basic_heading">
+                            <div class="col-xs-12 col-md-12" data-toggle="collapse" data-parent="#search_tramqt" aria-expanded="true" aria-controls="search_basic" href="#search_basic" id="search_basic_heading">
                                 <i class="fa fa-location-arrow" style="font-size: 16px; margin-top: -2px; color: #999"></i>
                                 <span class="panel-search">&nbsp;&nbsp;Tìm kiếm cơ bản</span>
-                                <i class="glyphicon glyphicon-triangle-bottom"
-                                   style="font-size: 13px; color: #999"></i>
+                                <i class="glyphicon glyphicon-triangle-bottom" style="font-size: 13px; color: #999"></i>
                             </div>
                             <div class="collapse in" id="search_basic">
                                 <div class="col-xs-12 col-md-12">
                                     <form class="navbar-form navbar-left" role="search" style="margin-bottom: -5px">
                                         <div class="form-group has-feedback">
                                             <span class="fa fa-search form-control-feedback blue" id="searchicon"></span>
-                                            <input class="form-control" id="searchbox"
-                                                   placeholder="Nhập tên vị trí" type="text" onclick="Refresh_Option()"/>
+                                            <input class="form-control" id="searchbox" placeholder="Nhập tên vị trí" type="text" onclick="Refresh_Option()" />
                                         </div>
                                     </form>
                                 </div>
@@ -227,13 +221,10 @@
                             <hr class="line-search">
                         </div>
                         <div class="panel">
-                            <div class="col-xs-8 col-md-8" data-toggle="collapse" data-parent="#search_tramqt"
-                                 aria-expanded="false" aria-controls="search_advanced"
-                                 href="#search_advanced" id="search_advanced_heading">
+                            <div class="col-xs-8 col-md-8" data-toggle="collapse" data-parent="#search_tramqt" aria-expanded="false" aria-controls="search_advanced" href="#search_advanced" id="search_advanced_heading">
                                 <i class="mdi mdi-map-search" style="font-size: 16px; margin-top: -2px; color: #999"></i>
                                 <span class="panel-search">&nbsp;&nbsp;Tìm kiếm nâng cao</span>
-                                <i class="glyphicon glyphicon-triangle-bottom"
-                                   style="font-size: 13px; color: #999"></i>
+                                <i class="glyphicon glyphicon-triangle-bottom" style="font-size: 13px; color: #999"></i>
                             </div>
                             <div class="collapse" id="search_advanced">
                                 <div class="col-xs-12 col-md-12 search-advanced-titles">
@@ -315,8 +306,7 @@
                     <!-- Công cụ hỗ trợ -->
                     <div class="panel-heading" data-toggle="collapse" href="#tools_qt">
                         <h3 class="panel-title blue">
-                            <i class="icon-wrench"
-                               style="font-size: 16px; margin-top: -2px;"></i>&nbsp;&nbsp;&nbsp;Công cụ hỗ trợ và thống kê quan trắc
+                            <i class="icon-wrench" style="font-size: 16px; margin-top: -2px;"></i>&nbsp;&nbsp;&nbsp;Công cụ hỗ trợ và thống kê quan trắc
                         </h3>
                     </div>
                     <div class="panel-body collapse" id="tools_qt">
@@ -347,8 +337,7 @@
                             </button>
                         </div>
                         <div class="col-xs-6 col-md-6" style="margin-bottom: 10px">
-                            <button class="btn btn-warning btn-block" id="threshold-btn" type="button"
-                                    style="padding-left: 7%;">
+                            <button class="btn btn-warning btn-block" id="threshold-btn" type="button" style="padding-left: 7%;">
                                 <!-- <i class="icon-warning" style="font-size: 16px; margin-top: -1px"></i> -->
                                 <label style="font-size: 10pt">DS vượt ngưỡng</label>
                             </button>
@@ -357,8 +346,7 @@
                     <!-- Hướng dẫn sử dụng -->
                     <div class="panel-heading" data-toggle="collapse" href="#help_qt">
                         <h3 class="panel-title blue">
-                            <i class="icon-help"
-                               style="font-size: 16px; margin-top: -2px;"></i>&nbsp;&nbsp;&nbsp;Hướng dẫn sử dụng
+                            <i class="icon-help" style="font-size: 16px; margin-top: -2px;"></i>&nbsp;&nbsp;&nbsp;Hướng dẫn sử dụng
                         </h3>
                     </div>
                     <div class="panel-body collapse" id="help_qt">
@@ -393,39 +381,31 @@
                 <div class="modal-header">
                     <button aria-hidden="true" class="close" data-dismiss="modal" type="button">&times;</button>
                     <h4 class="modal-title" style="text-transform: uppercase">
-                        <i class="icon-profile" style="font-size: 16px; margin-top: -2px"></i>
-                        Giới thiệu về hệ thống quan trắc Trà Vinh
+                        <i class="icon-profile" style="font-size: 16px; margin-top: -2px"></i> Giới thiệu về hệ thống quan trắc Trà Vinh
                     </h4>
                 </div>
                 <div class="modal-body">
                     <ul class="nav nav-tabs nav-justified" id="aboutTabs">
                         <li class="active">
                             <a data-toggle="tab" href="#about">
-                                <i class="fa fa-question-circle" style="font-size: 16px; margin-top: -2px"></i>
-                            &nbsp;Giới thiệu về dự án
+                                <i class="fa fa-question-circle" style="font-size: 16px; margin-top: -2px"></i> &nbsp;Giới thiệu về dự án
                             </a>
                         </li>
                         <li>
                             <a data-toggle="tab" href="#contact">
-                                <i class="fa fa-envelope" style="font-size: 16px; margin-top: -2px"></i>
-                            &nbsp;Liên hệ chúng tôi
+                                <i class="fa fa-envelope" style="font-size: 16px; margin-top: -2px"></i> &nbsp;Liên hệ chúng tôi
                             </a>
                         </li>
                         <li>
                             <a data-toggle="tab" href="#developers">
-                                <i class="fa fa-exclamation-circle" style="font-size: 16px; margin-top: -2px"></i>
-                            &nbsp;Đơn vị phát triển phần mềm
+                                <i class="fa fa-exclamation-circle" style="font-size: 16px; margin-top: -2px"></i> &nbsp;Đơn vị phát triển phần mềm
                             </a>
                         </li>
                     </ul>
                     <div class="tab-content" id="aboutTabsContent">
                         <div class="tab-pane fade active in" id="about">
-                            <p>Hệ thống truyền, nhận, quản lý và công bố dữ liệu các hệ thống quan trắc môi trường
-                                của tỉnh Trà Vinh tích hợp số liệu quan trắc các nguồn thải từ các khu công nghiệp,
-                                khu chế xuất và khu công nghệ cao nói riêng và quan trắc nguồn điểm nói chung
-                                nhằm mục đích bảo vệ nguồn tiếp nhận (sông, hồ),
-                                đảm bảo chất lượng nước thải của các khu công nghiệp, khu chế xuất,
-                                khu công nghệ cao trước khi thải vào nguồn tiếp nhận;</p>
+                            <p>Hệ thống truyền, nhận, quản lý và công bố dữ liệu các hệ thống quan trắc môi trường của tỉnh Trà Vinh tích hợp số liệu quan trắc các nguồn thải từ các khu công nghiệp, khu chế xuất và khu công nghệ cao nói riêng và quan trắc
+                                nguồn điểm nói chung nhằm mục đích bảo vệ nguồn tiếp nhận (sông, hồ), đảm bảo chất lượng nước thải của các khu công nghiệp, khu chế xuất, khu công nghệ cao trước khi thải vào nguồn tiếp nhận;</p>
                             <div class="panel panel-primary">
                                 <div class="panel-heading">Các nguồn tiếp nhận</div>
                                 <ul class="list-group">
@@ -469,8 +449,7 @@
                                         </div>
                                         <div class="col-md-12">
                                             <p>
-                                                <button class="btn btn-primary pull-right" data-dismiss="modal"
-                                                        type="submit">Gửi đến chúng tôi
+                                                <button class="btn btn-primary pull-right" data-dismiss="modal" type="submit">Gửi đến chúng tôi
                                                 </button>
                                             </p>
                                         </div>
@@ -483,9 +462,12 @@
                 <div class="modal-footer">
                     <button class="btn btn-default" data-dismiss="modal" type="button">Close</button>
                 </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
 
     <!-- Modal Login -->
     <div class="modal fade" id="loginModal" role="dialog" tabindex="-1">
@@ -520,9 +502,12 @@
                     <button class="btn btn-primary" data-dismiss="modal" type="submit">Đăng xuất</button>
                     <button class="btn btn-default" data-dismiss="modal" type="button">Cancel</button>
                 </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
 
     <!-- Modal thuộc tính điểm Quan trắc (cho trạm tự động) -->
     <div class="modal fade" id="featureModal" role="dialog" tabindex="-1" data-backdrop="static" data-keyboard="false">
@@ -541,19 +526,16 @@
                         </li>
                         <li>
                             <a data-toggle="tab" href="#chart_data_qt">
-                                <i class="icon-chart" style="font-size: 16px; margin-top: -2px"></i>
-                                &nbsp;Lịch sử số liệu
+                                <i class="icon-chart" style="font-size: 16px; margin-top: -2px"></i> &nbsp;Lịch sử số liệu
                             </a>
                         </li>
                     </ul>
                 </div>
                 <div class="tab-content" id="feature-result-TabsContent">
                     <div class="tab-pane fade active in" id="info_data_qt">
-                        <i class="icon-info3" style="font-size: 16px; margin-top: -2px; padding-left: 15px"></i>
-                        &nbsp;Thông tin trạm
+                        <i class="icon-info3" style="font-size: 16px; margin-top: -2px; padding-left: 15px"></i> &nbsp;Thông tin trạm
                         <div class="info_qt"></div>
-                        <i class="icon-table" style="font-size: 16px; margin-top: -2px; padding-left: 15px"></i>
-                        &nbsp;Số liệu mới nhất
+                        <i class="icon-table" style="font-size: 16px; margin-top: -2px; padding-left: 15px"></i> &nbsp;Số liệu mới nhất
                         <div id="data_qt" style="padding-right: 10px"></div>
                     </div>
                     <!-- <div class="tab-pane fade" id="data_qt"></div> -->
@@ -565,9 +547,12 @@
                 <div class="modal-footer">
                     <button class="btn btn-default closemodal" data-dismiss="modal" type="button">Close</button>
                 </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
 
     <!-- Modal thuộc tính điểm Quan trắc (cho trạm bán tự động) -->
     <div class="modal fade" id="featureModal-btd" role="dialog" tabindex="-1" data-backdrop="static" data-keyboard="false">
@@ -579,12 +564,10 @@
                 </div>
                 <div class="modal-body">
                     <div>
-                        <i class="icon-info3" style="font-size: 16px; margin-top: -2px; padding-left: 0px"></i>
-                        &nbsp;Thông tin trạm
+                        <i class="icon-info3" style="font-size: 16px; margin-top: -2px; padding-left: 0px"></i> &nbsp;Thông tin trạm
                         <div class="info_qt" style="padding: 10px 0 10px 0"></div>
                         <i class="icon-database-time2" style="font-size: 16px;
-                        margin-top: -2px; padding-left: 0px"></i>
-                        &nbsp;Xem số liệu theo từng đợt
+                        margin-top: -2px; padding-left: 0px"></i> &nbsp;Xem số liệu theo từng đợt
                     </div>
                     <form class="filter-time-form">
                         <fieldset>
@@ -605,9 +588,12 @@
                     <button class="btn btn-success" data-dismiss="modal" type="submit" id="sample-btn">Xem dữ liệu</button>
                     <button class="btn btn-default closemodal reset_input" data-dismiss="modal" type="button">Close</button>
                 </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
 
     <!-- Modal danh sách mẫu/đợt của trạm bán tự động -->
     <div class="modal fade" id="sampleModal" role="dialog" tabindex="-1" data-backdrop="static" data-keyboard="false">
@@ -616,27 +602,25 @@
                 <div class="modal-header" style="border-bottom-color: #00a709">
                     <button aria-hidden="true" class="close" data-dismiss="modal" type="button">&times;</button>
                     <h4 class="modal-title green" style="font-weight: bold; text-transform: uppercase">
-                        <i class="icon-table2 green" style="font-size: 16px; margin-top: -2px"></i>
-                        &nbsp;Thông tin dữ liệu
+                        <i class="icon-table2 green" style="font-size: 16px; margin-top: -2px"></i> &nbsp;Thông tin dữ liệu
                     </h4>
                 </div>
                 <div class="modal-body modal-body-sample">
                     <!-- Demo bảng vượt ngưỡng -->
-                    <table class="table table-striped table-hover table-bordered table-condensed table-responsive"
-                           id="table_sample">
+                    <table class="table table-striped table-hover table-bordered table-condensed table-responsive" id="table_sample">
                         <thead>
-                        <tr class="bg-success" role="row" style="color: #000">
-                            <th scope="col"></th>
-                            <th scope="col">Tên Mẫu</th>
-                            <!-- Ngày và giờ lấy mẫu gộp chung -->
-                            <th scope="col">Thời gian lấy mẫu</th>
-                            <th scope="col">Ngày phân tích mẫu</th>
-                            <th scope="col">Vị trí lấy mẫu</th>
-                            <th scope="col">Thời tiết</th>
-                        </tr>
+                            <tr class="bg-success" role="row" style="color: #000">
+                                <th scope="col"></th>
+                                <th scope="col">Tên Mẫu</th>
+                                <!-- Ngày và giờ lấy mẫu gộp chung -->
+                                <th scope="col">Thời gian lấy mẫu</th>
+                                <th scope="col">Ngày phân tích mẫu</th>
+                                <th scope="col">Vị trí lấy mẫu</th>
+                                <th scope="col">Thời tiết</th>
+                            </tr>
                         </thead>
                         <tbody>
-                        <!-- Dom data vượt ngưỡng -->
+                            <!-- Dom data vượt ngưỡng -->
                         </tbody>
                     </table>
                 </div>
@@ -654,14 +638,12 @@
                 <div class="modal-header" style="border-bottom-color: #ee0000">
                     <button aria-hidden="true" class="close" data-dismiss="modal" type="button">&times;</button>
                     <h4 class="modal-title red" style="font-weight: bold; text-transform: uppercase">
-                        <i class="icon-warning red" style="font-size: 16px; margin-top: -2px"></i>
-                        &nbsp;Danh sách vượt ngưỡng
+                        <i class="icon-warning red" style="font-size: 16px; margin-top: -2px"></i> &nbsp;Danh sách vượt ngưỡng
                     </h4>
                 </div>
                 <div class="modal-body modal-body-threshold">
                     <!-- Demo bảng vượt ngưỡng -->
-                    <table class="table table-striped table-hover table-bordered table-condensed table-responsive"
-                           id="table_threshold">
+                    <table class="table table-striped table-hover table-bordered table-condensed table-responsive" id="table_threshold">
                         <thead>
                             <tr class="bg-info" role="row" style="color: #000">
                                 <th scope="col"></th>
@@ -690,8 +672,7 @@
                 <div class="modal-header">
                     <button aria-hidden="true" class="close" data-dismiss="modal" type="button">&times;</button>
                     <h4 class="modal-title blue" style="font-weight: bold; text-transform: uppercase">
-                        <i class="icon-statistics blue" style="font-size: 16px; margin-top: -2px"></i>
-                        &nbsp;Thống kê chi tiết
+                        <i class="icon-statistics blue" style="font-size: 16px; margin-top: -2px"></i> &nbsp;Thống kê chi tiết
                     </h4>
                 </div>
                 <div class="modal-body modal-body-statistic">
@@ -735,8 +716,7 @@
                                     <i class="icon-home4 brown" style="font-size: 16px; margin-top: -2px"></i>
                                     <span for="" class="black" style="margin-left: 1px">&nbsp;Trạm quan trắc</span>
                                 </div>
-                                <div class="form-group col-xs-7 col-md-7 modal-advanced"
-                                     style="height: 30px !important;">
+                                <div class="form-group col-xs-7 col-md-7 modal-advanced" style="height: 30px !important;">
                                     <input class="form-control" id="search_quantrac" type="text">
                                     <i class="icon-search4 black" id="search_stats_tramqt"></i>
                                 </div>
@@ -881,8 +861,7 @@
                 <div class="modal-header">
                     <button aria-hidden="true" class="close" data-dismiss="modal" type="button">&times;</button>
                     <h4 class="modal-title blue" style="font-weight: bold; text-transform: uppercase">
-                        <i class="icon-statistics blue" style="font-size: 16px; margin-top: -2px"></i>
-                        &nbsp;Tìm kiếm trạm quan trắc
+                        <i class="icon-statistics blue" style="font-size: 16px; margin-top: -2px"></i> &nbsp;Tìm kiếm trạm quan trắc
                     </h4>
                 </div>
                 <div class="modal-body">
@@ -926,8 +905,7 @@
                 <div class="modal-header">
                     <button aria-hidden="true" class="close" data-dismiss="modal" type="button">&times;</button>
                     <h4 class="modal-title blue" style="font-weight: bold; text-transform: uppercase">
-                        <i class="icon-statistics blue" style="font-size: 16px; margin-top: -2px"></i>
-                        &nbsp;Tìm kiếm thông số
+                        <i class="icon-statistics blue" style="font-size: 16px; margin-top: -2px"></i> &nbsp;Tìm kiếm thông số
                     </h4>
                 </div>
                 <div class="modal-body">
@@ -962,34 +940,29 @@
                 <div class="modal-header">
                     <button aria-hidden="true" class="close" data-dismiss="modal" type="button">&times;</button>
                     <h4 class="modal-title blue" style="font-weight: bold; text-transform: uppercase">
-                        <i class="icon-statistics blue" style="font-size: 16px; margin-top: -2px"></i>
-                        &nbsp;Kết quả Thống kê chi tiết
+                        <i class="icon-statistics blue" style="font-size: 16px; margin-top: -2px"></i> &nbsp;Kết quả Thống kê chi tiết
                     </h4>
                 </div>
                 <div class="modal-body">
                     <ul class="nav nav-tabs nav-justified" id="">
                         <li class="active">
                             <a data-toggle="tab" href="#chart_qt">
-                                <i class="icon-chart" style="font-size: 16px; margin-top: -2px"></i>
-                                &nbsp;Biểu đồ
+                                <i class="icon-chart" style="font-size: 16px; margin-top: -2px"></i> &nbsp;Biểu đồ
                             </a>
                         </li>
                         <li>
                             <a data-toggle="tab" href="#table_qt">
-                                <i class="icon-table2" style="font-size: 16px; margin-top: -2px"></i>
-                                &nbsp;Bảng số liệu trạm quan trắc
+                                <i class="icon-table2" style="font-size: 16px; margin-top: -2px"></i> &nbsp;Bảng số liệu trạm quan trắc
                             </a>
                         </li>
                         <li>
                             <a data-toggle="tab" href="#WQI_qt">
-                                <i class="icon-wave2" style="font-size: 16px; margin-top: -2px"></i>
-                                &nbsp;Chỉ số chất lượng nước (WQI)
+                                <i class="icon-wave2" style="font-size: 16px; margin-top: -2px"></i> &nbsp;Chỉ số chất lượng nước (WQI)
                             </a>
                         </li>
                         <li>
                             <a data-toggle="tab" href="#AQI_qt">
-                                <i class="icon-air" style="font-size: 16px; margin-top: -2px"></i>
-                                &nbsp;Chỉ số chất lượng không khí (AQI)
+                                <i class="icon-air" style="font-size: 16px; margin-top: -2px"></i> &nbsp;Chỉ số chất lượng không khí (AQI)
                             </a>
                         </li>
                     </ul>
@@ -1071,4 +1044,5 @@
     <!-- <script src="assets_map/js/mapfunc/MapVS_data.js"></script> -->
     <script src="assets_map/js/mapfunc/MapVS_chart.js"></script>
 </body>
+
 </html>
