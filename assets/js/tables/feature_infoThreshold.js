@@ -1,5 +1,6 @@
 /*** Hàm này được thực hiện sau khi tạo được bảng con hoàn chỉnh ***/
-function DOM_data_child_Threshold(row_detail) {
+function DOM_data_child_Threshold(row_detail, time) {
+    var total_threshold_station = onChangeTime_feature(time);
     var total_detail = total_threshold_station.data[row_detail].total_detail;
 
     for (var i_dom_threshold = 0; i_dom_threshold < total_detail.length; i_dom_threshold++) {
@@ -17,7 +18,7 @@ function DOM_data_child_Threshold(row_detail) {
                 if (parseInt(spidID) == total_std_param[k_value_threshold].id && value[0].inlimit == "Y") {
                     valueinlimit = value[0].v;
                     unitName = total_std_param[k_value_threshold].unitName;
-                    // console.log($("#" + td_id_threshold + " b"))
+                    /*** DOM values into Cell with ID ***/
                     $("#" + td_id_threshold + " b").html(valueinlimit + " " + unitName)
                 }
             }
@@ -27,17 +28,15 @@ function DOM_data_child_Threshold(row_detail) {
 
 function getData_threshold_station() {
     /*---- Datables danh sách vượt ngưỡng ----*/
-    var url_datatable_threshold = "services/call_threshold_station.php";
-
+    var data_onchange = onChangeTime_feature(1);
     if ($.fn.DataTable.isDataTable('#table_threshold')) {
-        /*** Hàm để load ajax url mới để tạo bảng mới ***/
-        $('#table_threshold').DataTable().ajax.url(url_datatable_threshold).load();
+
     }
     if (!$.fn.DataTable.isDataTable('#table_threshold')) {
         $(document).ready(function() {
             /*** Datatable Vượt ngưỡng ***/
             var table_threshold = $('#table_threshold').DataTable({
-                ajax: url_datatable_threshold,
+                data: data_onchange.data,
                 columns: [{
                         "className": 'details-control',
                         "orderable": false,
@@ -107,12 +106,50 @@ function getData_threshold_station() {
                     row.child.hide();
                     tr.removeClass('shown');
                 } else {
-                    /*** Open this row ***/
+                    /*** Tạo biến lấy vị trí hàng dữ liệu được chọn để mở row_child ***/
+                    onChangeTime_feature(1);
                     var row_detail = row.child(format(row.data(), "thresholdModal"))[0][0];
+                    /*** Open this row ***/
                     row.child(format(row.data(), "thresholdModal")).show();
-                    DOM_data_child_Threshold(row_detail);
+                    /*** Onchange Dữ liệu theo time ***/
+                    DOM_data_child_Threshold(row_detail, 1);
                     tr.addClass('shown');
                 }
+            });
+
+            /*** Control Button Fillter Times ***/
+            $('#fillter_1h').on('click', function() {
+                $('#fillter_1h').addClass('active');
+                /*** Phải remove các Class Active sau khi nhấn 1 Button ***/
+                $('#fillter_8h').removeClass('active');
+                $('#fillter_24h').removeClass('active');
+                /*** Xử lý Change dữ liệu ***/
+
+                $('#table_threshold').DataTable().destroy();
+                $('#table_threshold').empty();
+
+                /* onChangeTime_feature(1);
+                DOM_data_child_Threshold(row_detail, 1); */
+            });
+
+            $('#fillter_8h').on('click', function() {
+                $('#fillter_8h').addClass('active');
+                $('#fillter_1h').removeClass('active');
+                $('#fillter_24h').removeClass('active');
+
+                $('#table_threshold').DataTable().clear();
+                // onChangeTime_feature(8);
+                // DOM_data_child_Threshold(row_detail, 8);
+            });
+
+            $('#fillter_24h').on('click', function() {
+                $('#fillter_24h').addClass('active');
+                $('#fillter_1h').removeClass('active');
+                $('#fillter_8h').removeClass('active');
+
+                $('#table_threshold').DataTable().clear();
+                // onChangeTime_feature(24);
+                // DOM_data_child_Threshold(row_detail, 24);
             });
         });
     }

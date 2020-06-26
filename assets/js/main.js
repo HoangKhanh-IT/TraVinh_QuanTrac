@@ -42,6 +42,12 @@ $("#login-btn").click(function() {
 $("#threshold-btn").click(function() {
     $("#thresholdModal").modal("show");
     getData_threshold_station();
+
+    /*** Reset Button ***/
+    $('#fillter_1h').addClass('active');
+    $('#fillter_8h').removeClass('active');
+    $('#fillter_24h').removeClass('active');
+
     $(".navbar-collapse.in").collapse("hide");
     return false;
 });
@@ -158,17 +164,6 @@ $.ajax({
     dataType: 'json',
     success: function(data) {
         total_std_param = data;
-    }
-});
-
-/*---- Call Threshold Station using Ajax ----*/
-var total_threshold_station;
-$.ajax({
-    url: "services/call_threshold_station.php",
-    async: false,
-    dataType: 'json',
-    success: function(data) {
-        total_threshold_station = data;
     }
 });
 

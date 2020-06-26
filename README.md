@@ -90,7 +90,13 @@ click "Xem dữ liệu" các lần chẵn (tức là lần 2, 4, 6, ...) thì kh
 + Để có thể DOM dữ liệu vượt ngưỡng cần phải DOM đúng vị trí các cột ==> Cần phải xây dựng hàm dựng 
 lại layout bảng, sau đó mới DOM các giá trị vào trong thành phần bảng con
 + Khi load dữ liệu lần đầu luôn là 1 giờ trước sau đó mới onChange theo 8 giờ hoặc 24 giờ
+
+### Xử lý DOM dữ liệu danh sách vượt ngưỡng (onChange theo 1, 8 hoặc 24)
 + Hiện tại đang gán cứng `total_threshold_station` ==> cần onChange theo số giờ của dữ liệu (pending)
++ Xây dựng hàm `feature_onChange` (done)
++ DOM dữ liệu lần đầu luôn là 1 giờ (done)
++ Xử lý onChange theo các nút 1, 8, 24h (pending)
++ Ý tưởng tiếp theo: viết function để tạo bảng datatable
 
 ### Tối ưu hóa đợt 1
 + Tìm các thư viện nặng nhưng không sử dụng đến để loại bỏ

@@ -1,5 +1,8 @@
 /*** Web Page ***/
-html, body, #container {
+
+html,
+body,
+#container {
     height: 100%;
     width: 100%;
     overflow: hidden;
@@ -9,11 +12,14 @@ body {
     padding-top: 50px;
 }
 
-input[type="radio"], input[type="checkbox"] {
+input[type="radio"],
+input[type="checkbox"] {
     margin: 0;
 }
 
+
 /*** Custom Scrollbar if navbar have overflow ***/
+
 ::-webkit-scrollbar {
     /*** Đối với thanh dọc ***/
     width: 10px;
@@ -33,18 +39,26 @@ input[type="radio"], input[type="checkbox"] {
     background: #1aceff;
 }
 
+
 /*** Form control thẻ select ***/
+
 .form-control {
     height: 32px;
 }
 
+
 /*** Tool quan trắc***/
+
 label {
     margin-bottom: 0;
 }
 
+
 /*** Boostrap Toggle ***/
-.toggle.ios, .toggle-on.ios, .toggle-off.ios {
+
+.toggle.ios,
+.toggle-on.ios,
+.toggle-off.ios {
     border-radius: 20px;
 }
 
@@ -63,18 +77,23 @@ label {
     width: 60px !important;
 }
 
+
 /*** Custom class `bg` Boostrap ***/
+
 .bg-danger {
     background-color: #ff001e;
 }
 
+
 /*** Custom class `btn` Boostrap ***/
+
 .btn-cus {
     margin-top: -2px;
     margin-right: 10px;
 }
 
-.btn-sm, .btn-group-sm > .btn {
+.btn-sm,
+.btn-group-sm>.btn {
     margin-top: 1px !important;
 }
 
@@ -130,7 +149,9 @@ label {
     margin-bottom: 8px;
 }
 
+
 /*** Màu label cho các toggle lớp quan trắc ***/
+
 .tramqt_dat_label {
     color: #cf540f;
 }
@@ -155,8 +176,11 @@ label {
     color: #fa0086;
 }
 
+
 /*** Switch Toggle Label ***/
-.nav-titles, .nav-titles-icon {
+
+.nav-titles,
+.nav-titles-icon {
     position: relative;
     display: inline-block;
     /* margin-top: 7px; */
@@ -214,16 +238,20 @@ label {
     background-color: #606060;
 }
 
+
 /*** Search Advanced ***/
+
 #searchbox {
     margin-left: 14px;
 }
 
-#search_advanced_heading, #search_basic_heading {
+#search_advanced_heading,
+#search_basic_heading {
     cursor: pointer;
 }
 
-.search-advanced-titles, .modal-advanced-titles {
+.search-advanced-titles,
+.modal-advanced-titles {
     color: #0099fa;
     font-weight: bold;
 }
@@ -236,13 +264,15 @@ label {
     margin-top: 10px;
 }
 
-.search-advanced, .modal-advanced {
+.search-advanced,
+.modal-advanced {
     margin-left: -10px;
     margin-top: 5px;
     margin-bottom: 5px;
 }
 
-.search-error, .search-error-basic {
+.search-error,
+.search-error-basic {
     margin-top: 5px;
     margin-left: 20px;
     margin-bottom: 0px;
@@ -250,7 +280,8 @@ label {
     font-weight: bold;
 }
 
-.search-success, .search-success-basic {
+.search-success,
+.search-success-basic {
     margin-top: 5px;
     margin-left: 20px;
     margin-bottom: 0px;
@@ -258,7 +289,9 @@ label {
     font-weight: bold;
 }
 
-#search-advanced-btn, #search-basic-btn, #statistic-btn {
+#search-advanced-btn,
+#search-basic-btn,
+#statistic-btn {
     width: 96.5% !important;
     font-size: 16px;
 }
@@ -269,9 +302,12 @@ label {
     overflow-x: auto;
 }
 
+
 /*** Custom tag <hr> ***/
+
 .line-search {
-    overflow: visible; /* For IE */
+    overflow: visible;
+    /* For IE */
     padding: 0;
     border: none;
     border-top: medium double #999;
@@ -289,28 +325,30 @@ label {
     background: white;
 }
 
+
 /*** Navbar ***/
+
 .navbar-inverse {
     background-color: #e6f2ff;
     border-color: #0099fa;
 }
 
-.navbar-inverse .navbar-nav > li > a {
+.navbar-inverse .navbar-nav>li>a {
     color: #1a6aff;
 }
 
-.navbar-inverse .navbar-nav > li > a:hover {
+.navbar-inverse .navbar-nav>li>a:hover {
     color: #000000;
 }
 
-.navbar-inverse .navbar-nav > .open > a,
-.navbar-inverse .navbar-nav > .open > a:hover,
-.navbar-inverse .navbar-nav > .open > a:focus {
+.navbar-inverse .navbar-nav>.open>a,
+.navbar-inverse .navbar-nav>.open>a:hover,
+.navbar-inverse .navbar-nav>.open>a:focus {
     background-color: #e3846f
 }
 
-.navbar-inverse .navbar-nav > li > a:hover,
-.navbar-inverse .navbar-nav > li > a:focus {
+.navbar-inverse .navbar-nav>li>a:hover,
+.navbar-inverse .navbar-nav>li>a:focus {
     color: #000000 !important;
     background-color: transparent;
 }
@@ -411,7 +449,7 @@ label {
     color: #4c4c4c;
 }
 
-.panel-default > .panel-heading {
+.panel-default>.panel-heading {
     color: #333;
     background-color: #e6f2ff;
     border: 1px solid #0099fa;
@@ -422,6 +460,7 @@ label {
 .panel-dropdown-content {
     display: none;
 }
+
 
 /* .panel-data-quantrac {
     border-radius: 0px 0px 20px 20px !important;
@@ -453,7 +492,8 @@ label {
     color: #999999;
 }
 
-.panel-help, .panel-version {
+.panel-help,
+.panel-version {
     margin-left: 7.5px;
     color: #999999;
     font-size: 14px;
@@ -500,7 +540,8 @@ label {
     margin-bottom: 0px;
 }
 
-.leaflet-control-layers-list input[type="radio"], input[type="checkbox"] {
+.leaflet-control-layers-list input[type="radio"],
+input[type="checkbox"] {
     margin: 2px;
 }
 
@@ -564,7 +605,7 @@ label {
     margin: 0;
 }
 
-.tt-suggestion + .tt-suggestion {
+.tt-suggestion+.tt-suggestion {
     border-top: 1px solid #ccc;
 }
 
@@ -586,16 +627,20 @@ label {
     text-align: center;
 }
 
+
 /*** Statictis ***/
+
 .amcharts-amexport-item.amcharts-amexport-item-level-0 {
     width: 100px !important;
 }
 
-.amcharts-amexport-item.amcharts-amexport-item-level-0 > a {
+.amcharts-amexport-item.amcharts-amexport-item-level-0>a {
     padding-top: 6px !important;
 }
 
+
 /*** Custom Control Label ***/
+
 .image-checkbox {
     margin-top: -2px;
     margin-left: -2px;
@@ -603,12 +648,17 @@ label {
     height: 20px !important;
 }
 
+
 /*** Modal ***/
-.info_qt, #data_qt, #chart_data_qt {
+
+.info_qt,
+#data_qt,
+#chart_data_qt {
     padding: 15px;
 }
 
-#data_qt, .table-overflow {
+#data_qt,
+.table-overflow {
     height: 200px;
     overflow-y: auto;
     overflow-x: hidden;
@@ -620,7 +670,8 @@ label {
     overflow-x: hidden;
 }
 
-.gender-chart, .gender-chart_stats {
+.gender-chart,
+.gender-chart_stats {
     height: 400px;
 }
 
@@ -675,7 +726,9 @@ label {
     width: 90%;
 }
 
+
 /*** DOM Child Table ***/
+
 .first-col {
     position: absolute;
     width: 8em;
@@ -684,7 +737,8 @@ label {
     border-left: 1px solid #ddd !important;
 }
 
-.table-wrapper td, .table-wrapper th {
+.table-wrapper td,
+.table-wrapper th {
     white-space: nowrap;
 }
 
@@ -700,7 +754,8 @@ label {
     overflow-x: hidden;
 }
 
-.modal-stats-search, .modal-stats-para {
+.modal-stats-search,
+.modal-stats-para {
     margin-top: 3.75%;
     height: 90%;
     border-radius: 0%;
@@ -734,7 +789,9 @@ label {
     overflow-x: hidden; */
 }
 
+
 /*** Datatables ***/
+
 table.dataTable thead .sorting::before,
 table.dataTable thead .sorting_asc::before,
 table.dataTable thead .sorting_asc::after {
@@ -756,8 +813,10 @@ tr.shown td.details-control {
     background: url('../images/details_close.png') no-repeat center center;
 }
 
-table.dataTable thead .sorting, table.dataTable thead .sorting_asc,
-table.dataTable thead .sorting_desc, table.dataTable thead .sorting_asc_disabled,
+table.dataTable thead .sorting,
+table.dataTable thead .sorting_asc,
+table.dataTable thead .sorting_desc,
+table.dataTable thead .sorting_asc_disabled,
 table.dataTable thead .sorting_desc_disabled {
     text-align: center;
 }
@@ -789,7 +848,14 @@ span .paginate_button {
     box-shadow: none;
 }
 
+#table_threshold_wrapper .btn.active:focus,
+#table_threshold_wrapper .btn:focus {
+    outline: none !important;
+}
+
+
 /*** Reponsive ***/
+
 @media (max-width: 992px) {
     .navbar .navbar-brand {
         font-size: 18px;
@@ -800,34 +866,28 @@ span .paginate_button {
     #sidebar {
         display: none;
     }
-
     .modal-statistic {
         margin-right: 0;
         width: 100%;
         height: 90%;
     }
-
     .modal-body-statistic {
         height: 350px;
         overflow-y: auto;
         overflow-x: hidden;
     }
-
     .url-break {
         word-break: break-all;
         word-break: break-word;
         -webkit-hyphens: auto;
         hyphens: auto;
     }
-
     .dropdown-menu a i {
         color: #FFFFFF;
     }
-
     #titlefont1 {
         font-size: 8px;
     }
-
     #titlefont2 {
         margin-top: 5px;
         margin-left: -5px;
@@ -839,15 +899,12 @@ span .paginate_button {
     .navbar-nav {
         float: right;
     }
-
     .modal-statistic {
         margin-right: 0;
     }
-
     .navbar-form .has-feedback .form-control-feedback {
         top: -3px;
     }
-
     .collapse_menu {
         margin-top: 24px;
     }
@@ -858,19 +915,19 @@ span .paginate_button {
         margin-top: 5px;
         font-size: 6px;
     }
-
     #titlefont2 {
         margin-left: -5px;
         font-size: 8px;
     }
 }
 
+
 /* Print Handling */
+
 @media print {
     .navbar {
         display: none !important;
     }
-
     /* .leaflet-control-container {
         display: none !important;
     } */
