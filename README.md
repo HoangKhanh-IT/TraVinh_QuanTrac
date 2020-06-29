@@ -95,8 +95,21 @@ lại layout bảng, sau đó mới DOM các giá trị vào trong thành phần
 + Hiện tại đang gán cứng `total_threshold_station` ==> cần onChange theo số giờ của dữ liệu (pending)
 + Xây dựng hàm `feature_onChange` (done)
 + DOM dữ liệu lần đầu luôn là 1 giờ (done)
-+ Xử lý onChange theo các nút 1, 8, 24h (pending)
-+ Ý tưởng tiếp theo: viết function để tạo bảng datatable
++ Xử lý onChange theo các nút 1, 8, 24h (done)
++ Ý tưởng tiếp theo: viết function để tạo bảng datatable ==> Không khả thi khi tạo hàm
++ Khi các button kích hoạt, phải clear dữ liệu trước đó `$('#table_threshold').DataTable().clear().draw();`, sau đó
+add data mới vào bảng dữ liệu
++ Cách add dữ liệu: điều kiện phụ thuộc vào việc kích hoạt của các button, nếu button có class `active` sẽ chạy hàm
+`DOM_data_child_Threshold(row_detail, time)`
++ Luồng của hàm onChange vượt ngưỡng: click button `DS vượt ngưỡng` ==> `getData_threshold_station()` 
+==> `onChangeTime_feature(1)` chạy hàm để lấy data từ db lấy dữ liệu trong 1 giờ gần nhất
+==> `format()` có ID là thresholdModal, lấy row_detail (là hàng dữ liệu để show child) 
+==> Tạo bảng chứa sẵn ==> `DOM_data_child_Threshold(row_detail, time)` để DOM dữ liệu child theo time nào và tại dòng nào
+    + Nếu button nào được bật theo `time` nào ==> xóa bảng dữ liệu trước đó bằng `clear().draw()`
+    + Đẩy dữ liệu mới dùng `onChangeTime_feature(time)`
+    + DOM lại cột cho bảng dữ liệu dùng `table_threshold.columns.adjust().draw();`
+    + Quay lại từ chỗ quy trình từ `format()` có ID là thresholdModal trở đi
++ Khi tắt thresholdModal và mở lại, sử dụng hàm `trigger` để kích hoạt nút button 1 giờ
 
 ### Tối ưu hóa đợt 1
 + Tìm các thư viện nặng nhưng không sử dụng đến để loại bỏ
