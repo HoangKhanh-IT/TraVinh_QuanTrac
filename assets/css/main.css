@@ -16,9 +16,7 @@ input[type="checkbox"] {
     margin: 0;
 }
 
-
 /*** Custom Scrollbar if navbar have overflow ***/
-
 ::-webkit-scrollbar {
     /*** Đối với thanh dọc ***/
     width: 10px;
@@ -38,23 +36,17 @@ input[type="checkbox"] {
     background: #1aceff;
 }
 
-
 /*** Form control thẻ select ***/
-
 .form-control {
     height: 32px;
 }
 
-
 /*** Tool quan trắc***/
-
 label {
     margin-bottom: 0;
 }
 
-
 /*** Boostrap Toggle ***/
-
 .toggle.ios,
 .toggle-on.ios,
 .toggle-off.ios {
@@ -76,16 +68,12 @@ label {
     width: 60px !important;
 }
 
-
 /*** Custom class `bg` Boostrap ***/
-
 .bg-danger {
     background-color: #ff001e;
 }
 
-
 /*** Custom class `btn` Boostrap ***/
-
 .btn-cus {
     margin-top: -2px;
     margin-right: 10px;
@@ -148,9 +136,7 @@ label {
     margin-bottom: 8px;
 }
 
-
 /*** Màu label cho các toggle lớp quan trắc ***/
-
 .tramqt_dat_label {
     color: #cf540f;
 }
@@ -175,9 +161,7 @@ label {
     color: #fa0086;
 }
 
-
 /*** Switch Toggle Label ***/
-
 .nav-titles,
 .nav-titles-icon {
     position: relative;
@@ -239,7 +223,6 @@ label {
 
 
 /*** Search Advanced ***/
-
 #searchbox {
     margin-left: 14px;
 }
@@ -303,7 +286,6 @@ label {
 
 
 /*** Custom tag <hr> ***/
-
 .line-search {
     overflow: visible;
     /* For IE */
@@ -324,9 +306,7 @@ label {
     background: white;
 }
 
-
 /*** Navbar ***/
-
 .navbar-inverse {
     background-color: #e6f2ff;
     border-color: #0099fa;
@@ -459,7 +439,6 @@ label {
 .panel-dropdown-content {
     display: none;
 }
-
 
 /* .panel-data-quantrac {
     border-radius: 0px 0px 20px 20px !important;
@@ -626,9 +605,7 @@ input[type="checkbox"] {
     text-align: center;
 }
 
-
 /*** Statictis ***/
-
 .amcharts-amexport-item.amcharts-amexport-item-level-0 {
     width: 100px !important;
 }
@@ -637,9 +614,7 @@ input[type="checkbox"] {
     padding-top: 6px !important;
 }
 
-
 /*** Custom Control Label ***/
-
 .image-checkbox {
     margin-top: -2px;
     margin-left: -2px;
@@ -649,7 +624,6 @@ input[type="checkbox"] {
 
 
 /*** Modal ***/
-
 .info_qt,
 #data_qt,
 #chart_data_qt {
@@ -830,9 +804,7 @@ div.dataTables_scrollBody table tbody tr:first-child td {
     overflow-x: hidden; */
 }
 
-
 /*** Datatables ***/
-
 table.dataTable thead .sorting::before,
 table.dataTable thead .sorting_asc::before,
 table.dataTable thead .sorting_asc::after {
@@ -896,7 +868,6 @@ span .paginate_button {
 
 
 /*** Reponsive ***/
-
 @media (max-width: 992px) {
     .navbar .navbar-brand {
         font-size: 18px;
@@ -972,9 +943,7 @@ span .paginate_button {
     }
 }
 
-
 /* Print Handling */
-
 @media print {
     .navbar {
         display: none !important;
