@@ -725,8 +725,10 @@ input[type="checkbox"] {
     width: 90%;
 }
 
+/*** DOM Child DataTable ***/
+.dataTables_scrollBody {
+}
 
-/*** DOM Child Table ***/
 .first-col {
     position: absolute;
     width: 8em;
@@ -737,8 +739,8 @@ input[type="checkbox"] {
 
 .first-col-threshold {
     position: absolute !important;
-    width: 10.5em;
-    margin-left: -12em;
+    width: 11em;
+    margin-left: -12.5em;
     border-right: none !important;
     border-left: 1px solid #ddd !important;
 }
@@ -748,9 +750,31 @@ input[type="checkbox"] {
     white-space: nowrap;
 }
 
-.table-wrapper-threshold td,
-.table-wrapper-threshold th {
-    white-space: nowrap;
+/*** Không sử dụng thuộc tính scrollY trong datatable ***/
+#table_threshold {
+    width: 100%;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+#table_threshold_wrapper .row:nth-child(2) {
+    margin-top: 6px;
+}
+
+#table_threshold_wrapper .col-sm-12 {
+    height: 40vh;
+    overflow-y: scroll;
+}
+
+#table_threshold_wrapper .col-sm-12 thead .fixed_header{
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+div.dataTables_scrollBody table tbody tr:first-child th,
+div.dataTables_scrollBody table tbody tr:first-child td {
+    border-top: 1px solid #ddd !important;
 }
 
 .table-wrapper {

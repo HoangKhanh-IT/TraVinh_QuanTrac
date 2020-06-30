@@ -92,11 +92,34 @@ lại layout bảng, sau đó mới DOM các giá trị vào trong thành phần
 + Khi load dữ liệu lần đầu luôn là 1 giờ trước sau đó mới onChange theo 8 giờ hoặc 24 giờ
 
 ### Xử lý DOM dữ liệu danh sách vượt ngưỡng (onChange theo 1, 8 hoặc 24)
-+ Hiện tại đang gán cứng `total_threshold_station` ==> cần onChange theo số giờ của dữ liệu (pending)
++ Hiện tại đang gán cứng `total_threshold_station` ==> cần onChange theo số giờ của dữ liệu (done)
 + Xây dựng hàm `feature_onChange` (done)
 + DOM dữ liệu lần đầu luôn là 1 giờ (done)
 + Xử lý onChange theo các nút 1, 8, 24h (done)
 + Ý tưởng tiếp theo: viết function để tạo bảng datatable ==> Không khả thi khi tạo hàm
++ Thêm thuộc tính ScrollY cho datatable ==> Lỗi trong lần load đầu tiên (gom cột) ==> thêm phần style CSS
+```
+    #table_threshold {
+        width: 100%;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+    
+    #table_threshold_wrapper .row:nth-child(2) {
+        margin-top: 6px;
+    }
+    
+    #table_threshold_wrapper .col-sm-12 {
+        height: 40vh;
+        overflow-y: scroll;
+    }
+    
+    #table_threshold_wrapper .col-sm-12 thead .fixed_header{
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+```
 + Khi các button kích hoạt, phải clear dữ liệu trước đó `$('#table_threshold').DataTable().clear().draw();`, sau đó
 add data mới vào bảng dữ liệu
 + Cách add dữ liệu: điều kiện phụ thuộc vào việc kích hoạt của các button, nếu button có class `active` sẽ chạy hàm

@@ -221,16 +221,17 @@ function format(d, ID_modal) {
                 '<table class="table table-bordered table-striped table-hover">';
             DOM_child_table += '<thead>' +
                 '<tr>' +
-                '<th class="first-col-threshold"></th>' +
+                '<th class="first-col-threshold" scope="col" ' +
+                'style="border-top: none !important"></th>' +
                 '<th class="first-col-threshold" scope="col" ' +
                 'style="border-top: 1px solid #ddd !important; ' +
-                'margin-top: -1px; text-align: center;"> Thời gian/Thông số </th>'
+                'margin-top: -1px; text-align: center;">Thời gian/Thông số</th>'
 
             /*** DOM tên thông số chung kèm Min Max***/
             var detail_data_param = total_detail[0].data;
             for (var i_threshold = 0; i_threshold < detail_data_param.length; i_threshold++) {
                 spidID = Object.keys(detail_data_param[i_threshold]);
-                var min, max, dom_min_max;
+                // var min, max, dom_min_max;
                 for (var k_para_threshold = 0; k_para_threshold < total_std_param.length; k_para_threshold++) {
                     if (parseInt(spidID) == total_std_param[k_para_threshold].id) {
                         parameterID = total_std_param[k_para_threshold].parameterid;
@@ -255,7 +256,7 @@ function format(d, ID_modal) {
                     'class="parameter_tab" id="' + spidID + '">' +
                     parameterName + ' (' + dom_min_max + ')</th>'; ***/
 
-                DOM_child_table += '<th scope="col" style="" ' +
+                DOM_child_table += '<th scope="col" style="white-space: nowrap;" ' +
                     'class="parameter_tab" id="' + spidID + '">' +
                     parameterName + '</th>';
             }

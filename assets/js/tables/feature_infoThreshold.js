@@ -62,7 +62,6 @@ function getData_threshold_station() {
                 order: [
                     [1, 'asc']
                 ],
-
                 dom: "<'row'<'col-sm-7'B><'col-sm-3'l><'col-sm-2'f>>" +
                     "<'row'<'col-sm-12'tr>>" +
                     "<'row'<'col-sm-5'i><'col-sm-7'p>>",
@@ -70,7 +69,7 @@ function getData_threshold_station() {
                     {extend: 'pdf', className: 'btn btn-info btn-sm'},
                     {extend: 'excel', className: 'btn btn-info btn-sm'}
                 ],
-                paging: true,
+                paging: false,
                 autoWidth: false,
                 "language": {
                     pagingType: "full_numbers",

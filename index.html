@@ -33,7 +33,8 @@
     <link href="assets_map/css/MapStyle.css" rel="stylesheet">
     <!-- Datatables CSS -->
     <link href="vendor/jquery/css/jquery.dataTables.min.css" rel="stylesheet">
-    <link href="vendor/bootstrap/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap/css/dataTables.bootstrap3.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap/css/responsive.dataTables.min.css" rel="stylesheet">
     <link href="vendor/bootstrap/css/buttons.bootstrap4.min.css" rel="stylesheet">
     <!-- Tree CSS -->
     <link href="assets/css/tree/default/style.css" rel="stylesheet">
@@ -642,15 +643,15 @@
                     </h4>
                 </div>
                 <div class="modal-body modal-body-threshold">
-                    <!-- Demo bảng vượt ngưỡng -->
-                    <table class="table table-striped table-hover table-bordered table-condensed table-responsive" id="table_threshold">
+                    <table class="table table-striped table-bordered table-condensed table-responsive"
+                           cellspacing="0" width="100%" id="table_threshold">
                         <thead>
                             <tr class="bg-info" role="row" style="color: #000">
-                                <th scope="col"></th>
-                                <th scope="col">Tên trạm</th>
-                                <th scope="col">Loại hình</th>
-                                <th scope="col">Loại trạm</th>
-                                <th scope="col">Địa điểm</th>
+                                <th scope="col" class="bg-info fixed_header"></th>
+                                <th scope="col" class="bg-info fixed_header">Tên trạm</th>
+                                <th scope="col" class="bg-info fixed_header">Loại hình</th>
+                                <th scope="col" class="bg-info fixed_header">Loại trạm</th>
+                                <th scope="col" class="bg-info fixed_header">Địa điểm</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -997,17 +998,18 @@
     <script src="assets/js/search_plugin/list.min.js"></script>
     <!-- Datatables JS -->
     <script src="vendor/jquery/js/jquery.dataTables.min.js"></script>
-    <script src="vendor/bootstrap/js/dataTables.bootstrap4.min.js"></script>
+    <script src="vendor/bootstrap/js/dataTables.bootstrap3.min.js"></script>
     <!-- Tree JS -->
     <script src="assets/js/tree/jstree.js"></script>
     <!-- Datatables Plugin -->
     <script src="assets/js/tables/datatables.min.js"></script>
     <script src="assets/js/tables/extensions/responsive.min.js"></script>
+    <script src="assets/js/tables/dataTables.responsive.min.js"></script>
     <script src="assets/js/forms/selects/select2.min.js"></script>
     <script src="assets/js/tables/dataTables.buttons.min.js"></script>
-    <!-- <script src="assets/js/tables/jszip.min.js"></script>
+    <script src="assets/js/tables/jszip.min.js"></script>
     <script src="assets/js/tables/pdfmake.min.js"></script>
-    <script src="assets/js/tables/vfs_fonts.js"></script> -->
+    <script src="assets/js/tables/vfs_fonts.js"></script>
     <script src="assets/js/tables/buttons.html5.min.js"></script>
 
     <!-- Map JS -->
