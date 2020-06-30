@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="461f7496-579b-4c31-90e4-a3dfaeb4f371" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/main.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -237,14 +236,7 @@
       <workItem from="1593130317829" duration="12000" />
       <workItem from="1593143572018" duration="22768000" />
       <workItem from="1593391274002" duration="30338000" />
-      <workItem from="1593475558200" duration="15814000" />
-    </task>
-    <task id="LOCAL-00017" summary="TraVinh_QuanTrac">
-      <created>1588905136242</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1588905136242</updated>
+      <workItem from="1593475558200" duration="16992000" />
     </task>
     <task id="LOCAL-00018" summary="TraVinh_QuanTrac">
       <created>1589462262875</created>
@@ -582,7 +574,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593491147780</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="TraVinh_QuanTrac">
+      <created>1593494324889</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1593494324889</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -604,7 +603,7 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="275" y="27" key="#com.intellij.execution.impl.EditConfigurationsDialog/1366.0.1366.738/0.0.1366.738@0.0.1366.738" timestamp="1592906797577" />
-    <state x="333" y="0" key="CommitChangelistDialog2" timestamp="1593491146195">
+    <state x="333" y="0" key="CommitChangelistDialog2" timestamp="1593494324023">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="375" y="0" key="CommitChangelistDialog2/0.0.1536.834/1920.0.1024.738@0.0.1536.834" timestamp="1588905135465" />
@@ -612,7 +611,7 @@
     <state x="375" y="0" key="CommitChangelistDialog2/0.0.1536.834/1920.30.1366.738@0.0.1536.834" timestamp="1591465668796" />
     <state x="375" y="0" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1592561250643" />
     <state x="333" y="0" key="CommitChangelistDialog2/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1592560818398" />
-    <state x="333" y="0" key="CommitChangelistDialog2/1366.0.1366.738/0.0.1366.738@0.0.1366.738" timestamp="1593491146195" />
+    <state x="333" y="0" key="CommitChangelistDialog2/1366.0.1366.738/0.0.1366.738@0.0.1366.738" timestamp="1593494324023" />
     <state x="488" y="152" key="FileChooserDialogImpl" timestamp="1593482891510">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -632,7 +631,7 @@
     </state>
     <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1591930049767" />
     <state x="537" y="297" key="NewPhpFileDialog/1366.0.1366.738/0.0.1366.738@0.0.1366.738" timestamp="1592985106277" />
-    <state x="246" y="12" key="SettingsEditor" timestamp="1593475582882">
+    <state x="246" y="12" key="SettingsEditor" timestamp="1593494394285">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="277" y="59" key="SettingsEditor/0.0.1536.834/1920.0.1024.738@0.0.1536.834" timestamp="1588905169183" />
@@ -641,8 +640,8 @@
     <state x="277" y="59" key="SettingsEditor/0.0.1536.834/1920.30.1366.738@0.0.1536.834" timestamp="1591449510739" />
     <state x="277" y="59" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1590330123913" />
     <state x="246" y="12" key="SettingsEditor/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1592542431198" />
-    <state x="246" y="12" key="SettingsEditor/1366.0.1366.738/0.0.1366.738@0.0.1366.738" timestamp="1593475582882" />
-    <state x="321" y="129" key="Vcs.Push.Dialog.v2" timestamp="1593491152937">
+    <state x="246" y="12" key="SettingsEditor/1366.0.1366.738/0.0.1366.738@0.0.1366.738" timestamp="1593494394285" />
+    <state x="321" y="129" key="Vcs.Push.Dialog.v2" timestamp="1593494328710">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834/1920.0.1024.738@0.0.1536.834" timestamp="1588905139877" />
@@ -650,7 +649,7 @@
     <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834/1920.30.1366.738@0.0.1536.834" timestamp="1591465673681" />
     <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1592561260239" />
     <state x="321" y="127" key="Vcs.Push.Dialog.v2/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1592560766669" />
-    <state x="321" y="129" key="Vcs.Push.Dialog.v2/1366.0.1366.738/0.0.1366.738@0.0.1366.738" timestamp="1593491152937" />
+    <state x="321" y="129" key="Vcs.Push.Dialog.v2/1366.0.1366.738/0.0.1366.738@0.0.1366.738" timestamp="1593494328710" />
     <state x="1758" y="6" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1592907005894">
       <screen x="1366" y="0" width="1366" height="738" />
     </state>
