@@ -22,6 +22,7 @@ function DOM_data_child_Threshold(row_detail, time) {
 
             value = Object.values(detail_data_value[j_threshold]);
             for (var k_value_threshold = 0; k_value_threshold < total_std_param.length; k_value_threshold++) {
+                /*** Chỉ DOM các dữ liệu vượt ngưỡng (xét value[0].inlimit) ***/
                 if (parseInt(spidID) == total_std_param[k_value_threshold].id && value[0].inlimit == "Y") {
                     valueinlimit = value[0].v;
                     unitName = total_std_param[k_value_threshold].unitName;

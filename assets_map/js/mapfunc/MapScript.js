@@ -183,11 +183,11 @@ function Modal_Feature_Advanced(feat, layer) {
         "<tr><th class='blue' style='text-align: center'>" + "Nhu cầu Oxy hóa học" +
         "</th><td style='text-align: center'>" + "33.32" + "</td></tr>";
 
-    /*** View Chart cho trạm tự động ***/
+    /*** View Chart cho trạm tự động
     $.getJSON("assets_map/data/data_viewchart_demo.json", function (data_viewchart_demo) {
         render_chart_quantrac("chart_para_1", data_viewchart_demo, "Nhu cầu Oxy hóa học",
             "Thời gian", "Nhu cầu Oxy hóa học");
-    })
+    }) ***/
 
     layer.on({
         click: function (e) {

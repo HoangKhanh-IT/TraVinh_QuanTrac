@@ -1,3 +1,4 @@
+/*---- Hàm cắt chuối JSON trả về theo thời gian ----*/
 function onChangeTime_feature(time) {
     /*---- Call Threshold Station using Ajax ----*/
     var detail_threshold_station;

@@ -275,7 +275,7 @@ function format(d, ID_modal) {
                 /*** DOM hàng đầu tiên không thêm thẻ tr ***/
                 if (i_dom_threshold == 0) {
                     /*** Thời gian ***/
-                    DOM_child_table += '<td style="text-align: center" ' +
+                    DOM_child_table += '<td style="text-align: center; border-bottom-width: 1px;" ' +
                         'class="first-col-threshold ' + i_dom_threshold + '_daytimes' + '">' +
                         '</td>';
                     /*** Số liệu vượt ngưỡng và đơn vị ***/
@@ -295,7 +295,7 @@ function format(d, ID_modal) {
                 /*** DOM các hàng tiếp theo cần thêm thẻ tr ***/
                 if (i_dom_threshold >= 1) {
                     /*** Thời gian ***/
-                    DOM_child_table += '<tr><td style="text-align: center" ' +
+                    DOM_child_table += '<tr><td style="text-align: center; border-bottom-width: 1px;" ' +
                         'class="first-col-threshold ' + i_dom_threshold + '_daytimes' + '">' +
                         '</td>';
                     /*** Số liệu vượt ngưỡng và đơn vị ***/

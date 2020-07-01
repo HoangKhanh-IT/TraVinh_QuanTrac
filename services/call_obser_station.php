@@ -30,7 +30,8 @@
                             "loctype"."id" "locationTypeID",
                             "district"."name" "districtName",
                             "district"."id" "districtID",
-							string_agg("obs_type"."name", \'; \') "obstype_namelist"
+							string_agg(distinct "obs_type"."name", \'; \') "obstype_namelist",
+							concat(\'[\', string_agg(distinct "obs"."detail", \', \'), \']\') "total_detail"
 							
                         FROM "Observationstation" "station"
                         LEFT JOIN "Category" "category" ON "category"."id" = "station"."categoryid"
@@ -42,6 +43,7 @@
                         LEFT JOIN "District" "district" ON "district"."id" = "station"."districtid"
 						LEFT JOIN "Obstype_Station" "obs_station" ON "obs_station"."stationid" = "station"."id"
 						LEFT JOIN "ObservationType" "obs_type" ON "obs_type"."id" = "obs_station"."obstypesid"
+						LEFT JOIN "Observation" "obs" ON "obs"."stationid" = "station"."id"
 						
 						WHERE "station"."id" IN (
 						
@@ -55,7 +57,8 @@
                         LEFT JOIN "LocationType" "loctype" on "loctype"."id" = "location"."locationtypeid"
                         LEFT JOIN "District" "district" ON "district"."id" = "station_In"."districtid"
 			            LEFT JOIN "Obstype_Station" "obs_station" ON "obs_station"."stationid" = "station_In"."id"
-			            LEFT JOIN "ObservationType" "obs_type" ON "obs_type"."id" = "obs_station"."obstypesid"';
+			            LEFT JOIN "ObservationType" "obs_type" ON "obs_type"."id" = "obs_station"."obstypesid"
+			            LEFT JOIN "Observation" "obs" ON "obs"."stationid" = "station_In"."id"';
 
     /*** Where Condition Data Loại hình ***/
     $querry_tramqt_where_loaihinh = ' WHERE ';
@@ -140,7 +143,8 @@
                 'terminatedate' => $value['terminatedate'],
                 'maintenance' => $value['maintenance'],
                 'active' => $value['active'],
-                'obstype_namelist' => $value['obstype_namelist']
+                'obstype_namelist' => $value['obstype_namelist'],
+                'total_detail' => json_decode($value['total_detail'])
             ),
             'geometry' => array(
                 'type' => 'Point',

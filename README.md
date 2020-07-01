@@ -134,6 +134,10 @@ add data mới vào bảng dữ liệu
     + Quay lại từ chỗ quy trình từ `format()` có ID là thresholdModal trở đi
 + Khi tắt thresholdModal và mở lại, sử dụng hàm `trigger` để kích hoạt nút button 1 giờ
 
+### Xử lý DOM dữ liệu trạm tự động và doanh nghiệp ra Chart
++ Yêu cầu: thay đổi chart theo thời gian (1, 8 hoặc 24 giờ), theo kiểu chart (đường hoặc cột) và theo thông số (Ph, SO2, ...)
++ Lựa chọn dropdown
+
 ### Tối ưu hóa đợt 1
 + Tìm các thư viện nặng nhưng không sử dụng đến để loại bỏ
 + Tối ưu hóa thuật toán fitbounds (xem ở phần "Note xử lý onChange in map using Select Option/Checkbox Input"
