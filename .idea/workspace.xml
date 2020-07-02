@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="461f7496-579b-4c31-90e4-a3dfaeb4f371" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/tables/feature_infoThreshold.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/tables/feature_infoThreshold.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/tables/feature_onChange.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/tables/feature_onChange.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets_map/js/mapfunc/MapScript.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets_map/js/mapfunc/MapScript.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/call_obser_station.php" beforeDir="false" afterPath="$PROJECT_DIR$/services/call_obser_station.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -245,14 +237,8 @@
       <workItem from="1593143572018" duration="22768000" />
       <workItem from="1593391274002" duration="30338000" />
       <workItem from="1593475558200" duration="22296000" />
-      <workItem from="1593562272726" duration="14876000" />
-    </task>
-    <task id="LOCAL-00019" summary="TraVinh_QuanTrac">
-      <created>1589509168045</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1589509168045</updated>
+      <workItem from="1593562272726" duration="14935000" />
+      <workItem from="1593652184693" duration="6543000" />
     </task>
     <task id="LOCAL-00020" summary="TraVinh_QuanTrac">
       <created>1589794460935</created>
@@ -590,7 +576,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593499894923</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="TraVinh_QuanTrac">
+      <created>1593599549727</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1593599549728</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -612,7 +605,7 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="275" y="27" key="#com.intellij.execution.impl.EditConfigurationsDialog/1366.0.1366.738/0.0.1366.738@0.0.1366.738" timestamp="1592906797577" />
-    <state x="333" y="0" key="CommitChangelistDialog2" timestamp="1593499893661">
+    <state x="333" y="0" key="CommitChangelistDialog2" timestamp="1593599547419">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="375" y="0" key="CommitChangelistDialog2/0.0.1536.834/1920.0.1024.738@0.0.1536.834" timestamp="1588905135465" />
@@ -620,7 +613,7 @@
     <state x="375" y="0" key="CommitChangelistDialog2/0.0.1536.834/1920.30.1366.738@0.0.1536.834" timestamp="1591465668796" />
     <state x="375" y="0" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1592561250643" />
     <state x="333" y="0" key="CommitChangelistDialog2/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1592560818398" />
-    <state x="333" y="0" key="CommitChangelistDialog2/1366.0.1366.738/0.0.1366.738@0.0.1366.738" timestamp="1593499893661" />
+    <state x="333" y="0" key="CommitChangelistDialog2/1366.0.1366.738/0.0.1366.738@0.0.1366.738" timestamp="1593599547419" />
     <state x="488" y="152" key="FileChooserDialogImpl" timestamp="1593482891510">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -640,7 +633,7 @@
     </state>
     <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1591930049767" />
     <state x="537" y="297" key="NewPhpFileDialog/1366.0.1366.738/0.0.1366.738@0.0.1366.738" timestamp="1592985106277" />
-    <state x="246" y="12" key="SettingsEditor" timestamp="1593562291761">
+    <state x="246" y="12" key="SettingsEditor" timestamp="1593652205219">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="277" y="59" key="SettingsEditor/0.0.1536.834/1920.0.1024.738@0.0.1536.834" timestamp="1588905169183" />
@@ -649,7 +642,7 @@
     <state x="277" y="59" key="SettingsEditor/0.0.1536.834/1920.30.1366.738@0.0.1536.834" timestamp="1591449510739" />
     <state x="277" y="59" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1590330123913" />
     <state x="246" y="12" key="SettingsEditor/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1592542431198" />
-    <state x="246" y="12" key="SettingsEditor/1366.0.1366.738/0.0.1366.738@0.0.1366.738" timestamp="1593562291761" />
+    <state x="246" y="12" key="SettingsEditor/1366.0.1366.738/0.0.1366.738@0.0.1366.738" timestamp="1593652205219" />
     <state x="321" y="129" key="Vcs.Push.Dialog.v2" timestamp="1593499898402">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -663,14 +656,14 @@
       <screen x="1366" y="0" width="1366" height="738" />
     </state>
     <state x="1758" y="6" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/1366.0.1366.738/0.0.1366.738@0.0.1366.738" timestamp="1592907005894" />
-    <state x="395" y="213" key="com.intellij.ide.util.TipDialog" timestamp="1593562276207">
+    <state x="395" y="213" key="com.intellij.ide.util.TipDialog" timestamp="1593652188343">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="444" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1591945356912" />
     <state x="444" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834/1920.30.1366.738@0.0.1536.834" timestamp="1591464847954" />
     <state x="444" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834@0.0.1536.834" timestamp="1592561215093" />
     <state x="395" y="210" key="com.intellij.ide.util.TipDialog/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1592542389693" />
-    <state x="395" y="213" key="com.intellij.ide.util.TipDialog/1366.0.1366.738/0.0.1366.738@0.0.1366.738" timestamp="1593562276207" />
+    <state x="395" y="213" key="com.intellij.ide.util.TipDialog/1366.0.1366.738/0.0.1366.738@0.0.1366.738" timestamp="1593652188343" />
     <state x="452" y="0" width="631" height="834" key="find.popup" timestamp="1591082758729">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
