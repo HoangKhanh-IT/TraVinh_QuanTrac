@@ -41,6 +41,10 @@ input[type="checkbox"] {
     height: 32px;
 }
 
+#filter_parameters, #filter_time, #filter_typechart {
+    margin-top: 5%;
+}
+
 /*** Tool quan trắc***/
 label {
     margin-bottom: 0;
@@ -630,7 +634,12 @@ input[type="checkbox"] {
     padding: 15px;
 }
 
-#data_qt,
+#data_qt {
+    height: 125px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
 .table-overflow {
     height: 200px;
     overflow-y: auto;
@@ -643,8 +652,13 @@ input[type="checkbox"] {
     overflow-x: hidden;
 }
 
-.gender-chart,
+.gender-chart {
+    margin-top: 9%;
+    height: 300px;
+}
+
 .gender-chart_stats {
+    margin-top: 10%;
     height: 400px;
 }
 

@@ -1,5 +1,5 @@
 /*---- Chart cho từng trạm khi bấm vào từng trạm hoặc tìm kiếm trạm ----*/
-function render_chart_quantrac(div_id, data_chart, name_title, key, data) {
+function render_columnchart_quantrac(div_id, data_chart, name_title, key, data) {
     am4core.useTheme(am4themes_animated);
     am4core.ready(function () {
 
@@ -14,27 +14,27 @@ function render_chart_quantrac(div_id, data_chart, name_title, key, data) {
         chart.dateFormatter.inputDateFormat = "HH:mm:ss, dd/MM/yyyy";
 
         var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
-        dateAxis.renderer.minGridDistance = 30;
+        dateAxis.renderer.minGridDistance = 50;
         dateAxis.baseInterval = {
-            "timeUnit": "minute",
+            "timeUnit": "second",
             "count": 1
         }
         dateAxis.tooltipDateFormat = "HH:mm:ss, dd/MM/yyyy";
+        dateAxis.showOnInit = false;
 
         var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
         valueAxis.title.text = "";
 
-        var series = chart.series.push(new am4charts.LineSeries());
+        var series = chart.series.push(new am4charts.ColumnSeries());
         series.dataFields.valueY = data;
         series.dataFields.dateX = key;
-        /* series.name = ""; */
         series.strokeWidth = 2;
-        series.tensionX = 0.7;
+        /* series.tensionX = 0.7; */
         series.stroke = "#007bff";
         series.fill = "#007bff";
         series.fillOpacity = 0.3;
         series.yAxis = valueAxis;
-        series.tooltipText = "{name}\n[bold font-size: 13]{valueY}[/]";
+        series.tooltipText = "Thời gian: {dateX}\n Giá trị: [bold font-size: 13]{valueY}[/]";
 
         chart.cursor = new am4charts.XYCursor();
         chart.cursor.lineY.opacity = 0;
@@ -45,30 +45,63 @@ function render_chart_quantrac(div_id, data_chart, name_title, key, data) {
         title.fontFamily = "Arial";
         title.marginBottom = 30;
 
-        chart.scrollbarX = new am4charts.XYChartScrollbar();
-        chart.scrollbarX.series.push(series);
-        chart.scrollbarX.parent = chart.bottomAxesContainer;
+        chart.invalidateData();
+    });
+};
 
-        function customizeGrip(grip) {
-            grip.icon.disabled = true;
-            grip.background.disabled = false;
+function render_linechart_quantrac(div_id, data_chart, name_title, key, data) {
+    am4core.useTheme(am4themes_animated);
+    am4core.ready(function () {
 
-            var img = grip.createChild(am4core.Rectangle);
-            img.width = 10;
-            img.height = 10;
-            img.fill = am4core.color("#999");
-            img.rotation = 45;
-            img.align = "center";
-            img.valign = "middle";
+        /** Remove Logo **/
+        $("g[opacity='0.3']").remove();
+        $("g[opacity='0.4']").remove();
+        var chart = am4core.create(div_id, am4charts.XYChart);
+        chart.data = data_chart;
+
+        chart.logo.height = -500;
+        chart.fontSize = 13;
+        chart.dateFormatter.inputDateFormat = "HH:mm:ss, dd/MM/yyyy";
+
+        var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
+        dateAxis.renderer.minGridDistance = 50;
+        dateAxis.baseInterval = {
+            "timeUnit": "second",
+            "count": 1
         }
+        dateAxis.tooltipDateFormat = "HH:mm:ss, dd/MM/yyyy";
+        dateAxis.showOnInit = false;
 
-        customizeGrip(chart.scrollbarX.startGrip);
-        customizeGrip(chart.scrollbarX.endGrip);
+        var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+        valueAxis.title.text = "";
+
+        var series = chart.series.push(new am4charts.LineSeries());
+        series.dataFields.valueY = data;
+        series.dataFields.dateX = key;
+        series.strokeWidth = 2;
+        series.tensionX = 1;
+        series.stroke = "#007bff";
+        series.fill = "#007bff";
+        series.fillOpacity = 0.3;
+        series.yAxis = valueAxis;
+        series.tooltipText = "Thời gian: {dateX}\n Giá trị: [bold font-size: 13]{valueY}[/]";
+
+        chart.cursor = new am4charts.XYCursor();
+        chart.cursor.lineY.opacity = 0;
+
+        var title = chart.titles.create();
+        title.text = name_title;
+        title.fontSize = 25;
+        title.fontFamily = "Arial";
+        title.marginBottom = 30;
+
+        chart.invalidateData();
     });
 };
 
 /*---- Group Chart của nhiều trạm quan trắc ----*/
-// function render_groupchart_quantrac(div_id, data_chart, type_chart, name_title, key, num_data) {
+
+/* function render_groupchart_quantrac(div_id, data_chart, type_chart, name_title, key, num_data) { */
 function render_groupchart_quantrac(div_id, data_chart, name_title, key, data) {
     am4core.useTheme(am4themes_animated);
     am4core.ready(function () {
@@ -93,7 +126,7 @@ function render_groupchart_quantrac(div_id, data_chart, name_title, key, data) {
 
         function createAxisAndSeries(field, name, bullet, color) {
             var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-            if(chart.yAxes.indexOf(valueAxis) != 0){
+            if (chart.yAxes.indexOf(valueAxis) != 0) {
                 valueAxis.syncWithAxis = chart.yAxes.getIndex(0);
             }
 
@@ -110,7 +143,7 @@ function render_groupchart_quantrac(div_id, data_chart, name_title, key, data) {
 
             var interfaceColors = new am4core.InterfaceColorSet();
 
-            switch(bullet) {
+            switch (bullet) {
                 case "triangle":
                     var bullet_1 = series.bullets.push(new am4charts.Bullet());
                     bullet_1.width = 12;
@@ -157,9 +190,9 @@ function render_groupchart_quantrac(div_id, data_chart, name_title, key, data) {
         }
 
         /*** Tạo Line Series theo từng trạm với mỗi thông số ***/
-        createAxisAndSeries("Trạm NM01", "Trạm NM01","circle", "#ffb157");
-        createAxisAndSeries("Trạm NM02", "Trạm NM02","triangle", "#007bff");
-        createAxisAndSeries("Trạm NM03", "Trạm NM03","rectangle", "#1ab400");
+        createAxisAndSeries("Trạm NM01", "Trạm NM01", "circle", "#ffb157");
+        createAxisAndSeries("Trạm NM02", "Trạm NM02", "triangle", "#007bff");
+        createAxisAndSeries("Trạm NM03", "Trạm NM03", "rectangle", "#1ab400");
 
         chart.cursor = new am4charts.XYCursor();
         chart.cursor.lineY.opacity = 0;

@@ -136,7 +136,10 @@ add data mới vào bảng dữ liệu
 
 ### Xử lý DOM dữ liệu trạm tự động và doanh nghiệp ra Chart
 + Yêu cầu: thay đổi chart theo thời gian (1, 8 hoặc 24 giờ), theo kiểu chart (đường hoặc cột) và theo thông số (Ph, SO2, ...)
-+ Lựa chọn dropdown
++ Xử lý từng Dropdown, trong đó theo thời gian và theo thông số sẽ không phụ thuộc nhau
++ Xử lý tạo chuỗi total detail mới: thêm vào service `call_obser_station.php` thêm phần tìm thời gian sớm nhất ==> 
+sau đó sử dụng thời gian đó so sánh với thời gian của detail (gần tương tự với hàm vượt ngưỡng) ==> nếu phù hợp
+sẽ `push` vào 1 mảng mới (không push vào mảng cũ vì sẽ làm thay đổi dữ liệu gốc ban đầu của detail đó)
 
 ### Tối ưu hóa đợt 1
 + Tìm các thư viện nặng nhưng không sử dụng đến để loại bỏ

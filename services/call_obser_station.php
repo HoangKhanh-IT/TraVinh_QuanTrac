@@ -31,7 +31,8 @@
                             "district"."name" "districtName",
                             "district"."id" "districtID",
 							string_agg(distinct "obs_type"."name", \'; \') "obstype_namelist",
-							concat(\'[\', string_agg(distinct "obs"."detail", \', \'), \']\') "total_detail"
+							concat(\'[\', string_agg(distinct "obs"."detail", \', \'), \']\') "total_detail",
+							string_agg(distinct CAST ("obs"."day" + "obs"."time"  AS text), \', \') "total_day"
 							
                         FROM "Observationstation" "station"
                         LEFT JOIN "Category" "category" ON "category"."id" = "station"."categoryid"
@@ -144,6 +145,8 @@
                 'maintenance' => $value['maintenance'],
                 'active' => $value['active'],
                 'obstype_namelist' => $value['obstype_namelist'],
+                /*** Get daytime earliest ***/
+                'daytime_earliest' => max(explode(", ",$value['total_day'])),
                 'total_detail' => json_decode($value['total_detail'])
             ),
             'geometry' => array(

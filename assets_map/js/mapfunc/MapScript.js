@@ -110,6 +110,7 @@ function markerOnClick(e) {
 /*** Hiển thị thông tin trạm quan trắc ***/
 /*** Modal cho Search Nâng cao ***/
 var station_id;
+
 function Modal_Feature_Advanced(feat, layer) {
     /*** Kiểm tra trạm quan trắc có năm thành lập hay không ***/
     var establishyear_qt = "";
@@ -176,27 +177,67 @@ function Modal_Feature_Advanced(feat, layer) {
         active_qt +
         "<table>";
 
-    /*** Số liệu trạm quan trắc mới nhất ***/
-    var content_data_qt = "<table class='table table-striped table-bordered table-condensed'>";
-    content_data_qt = content_data_qt + "<tr><th class='blue' style='text-align: center'>Thời gian</th>" +
-        "<td style='text-align: center'>" + "2019-07-07" + " " + "02:35:00" + "</td></tr>" +
-        "<tr><th class='blue' style='text-align: center'>" + "Nhu cầu Oxy hóa học" +
-        "</th><td style='text-align: center'>" + "33.32" + "</td></tr>";
-
-    /*** View Chart cho trạm tự động
-    $.getJSON("assets_map/data/data_viewchart_demo.json", function (data_viewchart_demo) {
-        render_chart_quantrac("chart_para_1", data_viewchart_demo, "Nhu cầu Oxy hóa học",
-            "Thời gian", "Nhu cầu Oxy hóa học");
-    }) ***/
-
     layer.on({
         click: function (e) {
             if (feat.properties.categoryName == "Tự động"
                 || feat.properties.categoryName == "Doanh nghiệp") {
                 $(".feature-title").html(feat.properties.name);
                 $(".info_qt").html(content_info);
+
+                var detail_chart_1h, detail_chart_8h, detail_chart_24h;
+                detail_chart_1h = process_detail_DOMchart(feat, 1);
+                detail_chart_8h = process_detail_DOMchart(feat, 8);
+                detail_chart_24h = process_detail_DOMchart(feat, 24);
+
+                /*** DOM số liệu mới nhất ***/
+                var length = detail_chart_24h.length;
+                var content_data_qt = '';
+                /*** Dữ liệu đã được Sort theo thời gian nên có thể lấy dòng cuối cùng - thời gian sớm nhất ***/
+                content_data_qt = "<table class='table table-striped table-bordered table-condensed'>";
+                content_data_qt += "<tr><th class='blue' style='text-align: center'>Thời gian</th>" +
+                    "<td style='text-align: center'>" + detail_chart_24h[length - 1].time + "</td></tr>";
+
+                for (var i = 0; i < Object.keys(detail_chart_24h[length - 1]).length; i++) {
+                    if (Object.keys(detail_chart_24h[length - 1])[i] != "time" &&
+                        Object.keys(detail_chart_24h[length - 1])[i] != "time_js" &&
+                        Object.keys(detail_chart_24h[length - 1])[i] != "data") {
+
+                        var name = Object.keys(detail_chart_24h[length - 1])[i];
+                        var value = Object.values(detail_chart_24h[length - 1])[i];
+                        content_data_qt += "<tr><th class='blue' style='text-align: center'>" + name +
+                            "</th><td style='text-align: center'>" + value + "</td></tr>";
+                    }
+                }
+                content_data_qt += "</table>";
+
                 $("#data_qt").html(content_data_qt);
-                /* $("#chart_qt").html(content_chart); */
+
+                /*** View Chart cho trạm tự động ***/
+                /*** Reset Option ***/
+                $("#filter_typechart").val('filter_column_chart');
+                $("#filter_time").val('filter_1h_chart');
+
+                render_chart($("#filter_parameters").val(), detail_chart_1h, 'filter_column_chart');
+
+                /*** Onchange Filter Time ***/
+                var item_time = $("#filter_time").val();
+                $("#filter_time").change(function () {
+                    item_time = $("#filter_time").val();
+
+                    if (item_time == "filter_1h_chart") {
+                        $("#filter_typechart").val('filter_column_chart');
+                        render_chart($("#filter_parameters").val(), detail_chart_1h, 'filter_column_chart');
+                        onChange_option(detail_chart_1h);
+                    } else if (item_time == "filter_8h_chart") {
+                        $("#filter_typechart").val('filter_column_chart');
+                        render_chart($("#filter_parameters").val(), detail_chart_8h, 'filter_column_chart');
+                        onChange_option(detail_chart_8h);
+                    } else {
+                        $("#filter_typechart").val('filter_column_chart');
+                        render_chart($("#filter_parameters").val(), detail_chart_24h, 'filter_column_chart');
+                        onChange_option(detail_chart_24h);
+                    }
+                })
 
                 $("#featureModal").modal("show");
             } else {
@@ -301,30 +342,72 @@ function Modal_Feature_Basic(feat, layer) {
         active_qt +
         "<table>";
 
-    /*** Số liệu trạm quan trắc mới nhất ***/
-    var content_data_qt = "<table class='table table-striped table-bordered table-condensed'>";
-    content_data_qt = content_data_qt + "<tr><th class='blue' style='text-align: center'>Thời gian</th>" +
-        "<td style='text-align: center'>" + "2019-07-07" + " " + "02:35:00" + "</td></tr>" +
-        "<tr><th class='blue' style='text-align: center'>" + "Nhu cầu Oxy hóa học" +
-        "</th><td style='text-align: center'>" + "33.32" + "</td></tr>";
-
-    /*** View Chart cho trạm tự động ***/
-    $.getJSON("assets_map/data/data_viewchart_demo.json", function (data_viewchart_demo) {
-        render_chart_quantrac("chart_para_1", data_viewchart_demo, "Nhu cầu Oxy hóa học",
-            "Thời gian", "Nhu cầu Oxy hóa học");
-    })
-
     layer.on({
         click: function (e) {
             if (feat.properties.categoryName == "Tự động"
                 || feat.properties.categoryName == "Doanh nghiệp") {
                 $(".feature-title").html(feat.properties.name);
                 $(".info_qt").html(content_info);
+
+                var detail_chart_1h, detail_chart_8h, detail_chart_24h;
+                detail_chart_1h = process_detail_DOMchart(feat, 1);
+                detail_chart_8h = process_detail_DOMchart(feat, 8);
+                detail_chart_24h = process_detail_DOMchart(feat, 24);
+
+                /*** DOM số liệu mới nhất ***/
+                var length = detail_chart_24h.length;
+                var content_data_qt = '';
+                /*** Dữ liệu đã được Sort theo thời gian nên có thể lấy dòng cuối cùng - thời gian sớm nhất ***/
+                content_data_qt = "<table class='table table-striped table-bordered table-condensed'>";
+                content_data_qt += "<tr><th class='blue' style='text-align: center'>Thời gian</th>" +
+                    "<td style='text-align: center'>" + detail_chart_24h[length - 1].time + "</td></tr>";
+
+                for (var i = 0; i < Object.keys(detail_chart_24h[length - 1]).length; i++) {
+                    if (Object.keys(detail_chart_24h[length - 1])[i] != "time" &&
+                        Object.keys(detail_chart_24h[length - 1])[i] != "time_js" &&
+                        Object.keys(detail_chart_24h[length - 1])[i] != "data") {
+
+                        var name = Object.keys(detail_chart_24h[length - 1])[i];
+                        var value = Object.values(detail_chart_24h[length - 1])[i];
+                        content_data_qt += "<tr><th class='blue' style='text-align: center'>" + name +
+                            "</th><td style='text-align: center'>" + value + "</td></tr>";
+                    }
+                }
+                content_data_qt += "</table>";
+
                 $("#data_qt").html(content_data_qt);
-                /* $("#chart_qt").html(content_chart); */
+
+                /*** View Chart cho trạm tự động ***/
+                /*** Reset Option ***/
+                $("#filter_typechart").val('filter_column_chart');
+                $("#filter_time").val('filter_1h_chart');
+
+                render_chart($("#filter_parameters").val(), detail_chart_1h, 'filter_column_chart');
+
+                /*** Onchange Filter Time ***/
+                var item_time = $("#filter_time").val();
+                $("#filter_time").change(function () {
+                    item_time = $("#filter_time").val();
+
+                    if (item_time == "filter_1h_chart") {
+                        $("#filter_typechart").val('filter_column_chart');
+                        render_chart($("#filter_parameters").val(), detail_chart_1h, 'filter_column_chart');
+                        onChange_option(detail_chart_1h);
+                    } else if (item_time == "filter_8h_chart") {
+                        $("#filter_typechart").val('filter_column_chart');
+                        render_chart($("#filter_parameters").val(), detail_chart_8h, 'filter_column_chart');
+                        onChange_option(detail_chart_8h);
+                    } else {
+                        $("#filter_typechart").val('filter_column_chart');
+                        render_chart($("#filter_parameters").val(), detail_chart_24h, 'filter_column_chart');
+                        onChange_option(detail_chart_24h);
+                    }
+                })
 
                 $("#featureModal").modal("show");
             } else {
+                /*** Get Staion ID ***/
+                station_id = feat.properties.id;
                 $(".feature-title").html(feat.properties.name);
                 $(".info_qt").html(content_info);
 

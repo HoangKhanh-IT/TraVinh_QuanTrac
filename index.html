@@ -537,12 +537,41 @@
                         <i class="icon-info3" style="font-size: 16px; margin-top: -2px; padding-left: 15px"></i> &nbsp;Thông tin trạm
                         <div class="info_qt"></div>
                         <i class="icon-table" style="font-size: 16px; margin-top: -2px; padding-left: 15px"></i> &nbsp;Số liệu mới nhất
-                        <div id="data_qt" style="padding-right: 10px"></div>
+                        <div id="data_qt" style="padding-right: 10px; margin-top: 5px; padding-top: 5px;"></div>
                     </div>
                     <!-- <div class="tab-pane fade" id="data_qt"></div> -->
                     <div class="tab-pane fade" id="chart_data_qt">
-                        <!-- DOM nhiều chart -->
-                        <div id="chart_para_1" class="gender-chart"></div>
+                        <!-- DOM chart lựa chọn theo thời gian -->
+                        <div class="form-group col-xs-4 col-md-4">
+                            <i class="icon-database-time2 blue" style="font-size: 16px; margin-top: -1px; padding-left: 15px"></i> &nbsp;
+                            <span for="" class="blue" style="margin-left: 1px">&nbsp;Thời gian</span>
+                            <select class="form-control" id="filter_time">
+                                <option value="filter_1h_chart">1 giờ</option>
+                                <option value="filter_8h_chart">8 giờ</option>
+                                <option value="filter_24h_chart">24 giờ</option>
+                            </select>
+                        </div>
+
+                        <!-- DOM chart lựa chọn theo thông số -->
+                        <div class="form-group col-xs-4 col-md-4">
+                            <i class="icon-list-numbered blue" style="font-size: 16px; margin-top: -1px; padding-left: 15px"></i> &nbsp;
+                            <span for="" class="blue" style="margin-left: 1px">&nbsp;Thông số</span>
+                            <select class="form-control" id="filter_parameters">
+                                <!-- DOM from JSON -->
+                            </select>
+                        </div>
+
+                        <!-- DOM chart lựa chọn theo kiểu chart -->
+                        <div class="form-group col-xs-4 col-md-4">
+                            <i class="icon-chart blue" style="font-size: 16px; margin-top: -1px; padding-left: 15px"></i> &nbsp;
+                            <span for="" class="blue" style="margin-left: 1px">&nbsp;Biểu đồ</span>
+                            <select class="form-control" id="filter_typechart">
+                                <option value="filter_column_chart">Biểu đồ cột</option>
+                                <option value="filter_line_chart">Biểu đồ đường</option>
+                            </select>
+                        </div>
+
+                        <div id="chart_para" class="gender-chart"></div>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -1036,6 +1065,7 @@
     <script src="assets/js/config.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/option_customize/option_searches.js"></script>
+    <script src="assets/js/option_customize/option_renderChart.js"></script>
     <script src="assets/js/tables/feature_onChange.js"></script>
     <script src="assets/js/tables/feature_infoBTD.js"></script>
     <script src="assets/js/tables/feature_infoThreshold.js"></script>
@@ -1044,7 +1074,7 @@
     <!-- Map JS Custom -->
     <script src="assets_map/js/mapfunc/MapScript.js"></script>
     <script src="assets_map/js/mapfunc/MapSearch.js"></script>
-    <!-- <script src="assets_map/js/mapfunc/MapVS_data.js"></script> -->
+    <script src="assets_map/js/mapfunc/MapVS_pre_data.js"></script>
     <script src="assets_map/js/mapfunc/MapVS_chart.js"></script>
 </body>
 
