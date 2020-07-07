@@ -18,9 +18,11 @@ function process_detail_DOMchart(feature, time) {
     var new_total_detail = [];
     var data;
 
-    /*** Thời gian sớm nhất ***/
+    /*** Thời gian sớm nhất
     var max_time = new Date(feature.properties.daytime_earliest);
-    var max_time_minus = new Date(max_time.setHours(max_time.getHours() - time));
+    var max_time_minus = new Date(max_time.setHours(max_time.getHours() - time)); ***/
+    var d_curent = new Date();
+    var d_hour_minus = new Date(d_curent.setHours(d_curent.getHours() - time));
 
     total_detail = feature.properties.total_detail;
 
@@ -37,7 +39,6 @@ function process_detail_DOMchart(feature, time) {
         /*** Gộp thành chuỗi rồi chuyển sang dạng thời gian mặc định ***/
         var data_day_time = new Date(string_day[2] + "/" + string_day[1] + "/" + string_day[0] +
             " " + detail_time);
-        // console.log(data_day_time)
 
         total_detail[j]['time_js'] = data_day_time;
 
@@ -63,11 +64,13 @@ function process_detail_DOMchart(feature, time) {
             }
         }
 
-        if (data_day_time.getTime() >= max_time_minus.getTime()) {
+        if (data_day_time.getTime() >= d_hour_minus.getTime()) {
             /*** Push các phần tử nằm trong khoảng thời gian đó vào mảng detail mới ***/
             new_total_detail.push(total_detail[j])
         }
     }
+    // console.log(total_detail)
+    console.log(new_total_detail);
     sortResults(new_total_detail, 'time_js', true);
     return new_total_detail;
 }

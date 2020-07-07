@@ -217,7 +217,8 @@ function Modal_Feature_Advanced(feat, layer) {
                 $("#filter_typechart").val('filter_column_chart');
                 $("#filter_time").val('filter_1h_chart');
 
-                render_chart($("#filter_parameters").val(), detail_chart_1h, 'filter_column_chart');
+                onChange_option(detail_chart_1h);
+                render_chart($("#filter_parameters").val(), detail_chart_1h, $("#filter_typechart").val());
 
                 /*** Onchange Filter Time ***/
                 var item_time = $("#filter_time").val();
@@ -225,16 +226,13 @@ function Modal_Feature_Advanced(feat, layer) {
                     item_time = $("#filter_time").val();
 
                     if (item_time == "filter_1h_chart") {
-                        $("#filter_typechart").val('filter_column_chart');
-                        render_chart($("#filter_parameters").val(), detail_chart_1h, 'filter_column_chart');
+                        render_chart($("#filter_parameters").val(), detail_chart_1h, $("#filter_typechart").val());
                         onChange_option(detail_chart_1h);
                     } else if (item_time == "filter_8h_chart") {
-                        $("#filter_typechart").val('filter_column_chart');
-                        render_chart($("#filter_parameters").val(), detail_chart_8h, 'filter_column_chart');
+                        render_chart($("#filter_parameters").val(), detail_chart_8h, $("#filter_typechart").val());
                         onChange_option(detail_chart_8h);
                     } else {
-                        $("#filter_typechart").val('filter_column_chart');
-                        render_chart($("#filter_parameters").val(), detail_chart_24h, 'filter_column_chart');
+                        render_chart($("#filter_parameters").val(), detail_chart_24h, $("#filter_typechart").val());
                         onChange_option(detail_chart_24h);
                     }
                 })
@@ -382,7 +380,8 @@ function Modal_Feature_Basic(feat, layer) {
                 $("#filter_typechart").val('filter_column_chart');
                 $("#filter_time").val('filter_1h_chart');
 
-                render_chart($("#filter_parameters").val(), detail_chart_1h, 'filter_column_chart');
+                onChange_option(detail_chart_1h);
+                render_chart($("#filter_parameters").val(), detail_chart_1h, $("#filter_typechart").val());
 
                 /*** Onchange Filter Time ***/
                 var item_time = $("#filter_time").val();
@@ -390,16 +389,13 @@ function Modal_Feature_Basic(feat, layer) {
                     item_time = $("#filter_time").val();
 
                     if (item_time == "filter_1h_chart") {
-                        $("#filter_typechart").val('filter_column_chart');
-                        render_chart($("#filter_parameters").val(), detail_chart_1h, 'filter_column_chart');
+                        render_chart($("#filter_parameters").val(), detail_chart_1h, $("#filter_typechart").val());
                         onChange_option(detail_chart_1h);
                     } else if (item_time == "filter_8h_chart") {
-                        $("#filter_typechart").val('filter_column_chart');
-                        render_chart($("#filter_parameters").val(), detail_chart_8h, 'filter_column_chart');
+                        render_chart($("#filter_parameters").val(), detail_chart_8h, $("#filter_typechart").val());
                         onChange_option(detail_chart_8h);
                     } else {
-                        $("#filter_typechart").val('filter_column_chart');
-                        render_chart($("#filter_parameters").val(), detail_chart_24h, 'filter_column_chart');
+                        render_chart($("#filter_parameters").val(), detail_chart_24h, $("#filter_typechart").val());
                         onChange_option(detail_chart_24h);
                     }
                 })

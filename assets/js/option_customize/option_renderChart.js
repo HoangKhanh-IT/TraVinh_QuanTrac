@@ -22,10 +22,6 @@ function onChange_option(detail_chart) {
 
     $("#filter_parameters").change(function () {
         item_param = $("#filter_parameters").val();
-        /*** Reset Typechart ***/
-        $("#filter_typechart").val('filter_column_chart');
-        item_type = 'filter_column_chart';
-
         render_chart(item_param, detail_chart, item_type);
     })
 

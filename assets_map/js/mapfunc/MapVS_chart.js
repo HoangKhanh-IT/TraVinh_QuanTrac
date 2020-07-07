@@ -13,14 +13,24 @@ function render_columnchart_quantrac(div_id, data_chart, name_title, key, data) 
         chart.fontSize = 13;
         chart.dateFormatter.inputDateFormat = "HH:mm:ss, dd/MM/yyyy";
 
+        /*** View Chart Column theo Date ***/
         var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
+        dateAxis.renderer.grid.template.location = 0;
+        /*** Label thời gian nằm giữa column ***/
+        dateAxis.renderer.labels.template.location = 0.5;
         dateAxis.renderer.minGridDistance = 50;
+        /*** Thay đổi width chart do khoảng cách thời gian ***/
         dateAxis.baseInterval = {
-            "timeUnit": "second",
-            "count": 1
+            "timeUnit": "minute",
+            "count": 5
         }
         dateAxis.tooltipDateFormat = "HH:mm:ss, dd/MM/yyyy";
         dateAxis.showOnInit = false;
+
+        /*** View Chart Column theo Category đẹp
+        var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+        categoryAxis.dataFields.category = "time";
+        categoryAxis.renderer.maxGridDistance = 10; ***/
 
         var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
         valueAxis.title.text = "";
@@ -28,13 +38,16 @@ function render_columnchart_quantrac(div_id, data_chart, name_title, key, data) 
         var series = chart.series.push(new am4charts.ColumnSeries());
         series.dataFields.valueY = data;
         series.dataFields.dateX = key;
-        series.strokeWidth = 2;
-        /* series.tensionX = 0.7; */
-        series.stroke = "#007bff";
+        /* series.stroke = "#007bff";
+        series.dataFields.categoryX = key; */
         series.fill = "#007bff";
         series.fillOpacity = 0.3;
         series.yAxis = valueAxis;
         series.tooltipText = "Thời gian: {dateX}\n Giá trị: [bold font-size: 13]{valueY}[/]";
+
+        var columnTemplate = series.columns.template;
+        columnTemplate.strokeWidth = 2;
+        columnTemplate.strokeOpacity = 1;
 
         chart.cursor = new am4charts.XYCursor();
         chart.cursor.lineY.opacity = 0;
@@ -44,6 +57,11 @@ function render_columnchart_quantrac(div_id, data_chart, name_title, key, data) 
         title.fontSize = 25;
         title.fontFamily = "Arial";
         title.marginBottom = 30;
+
+        /* var label = categoryAxis.renderer.labels.template;
+        label.wrap = true;
+        label.maxWidth = 100;
+        label.tooltipText = "{category}"; */
 
         chart.invalidateData();
     });
@@ -63,8 +81,11 @@ function render_linechart_quantrac(div_id, data_chart, name_title, key, data) {
         chart.fontSize = 13;
         chart.dateFormatter.inputDateFormat = "HH:mm:ss, dd/MM/yyyy";
 
+        /*** View Chart Line theo Date ***/
         var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
+        dateAxis.renderer.grid.template.location = 0;
         dateAxis.renderer.minGridDistance = 50;
+        /*** Thay đổi width chart do khoảng cách thời gian ***/
         dateAxis.baseInterval = {
             "timeUnit": "second",
             "count": 1
@@ -117,10 +138,13 @@ function render_groupchart_quantrac(div_id, data_chart, name_title, key, data) {
         chart.dateFormatter.inputDateFormat = "HH:mm:ss, dd/MM/yyyy";
 
         var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
-        dateAxis.renderer.minGridDistance = 30;
+        dateAxis.renderer.grid.template.location = 0;
+        /*** Label thời gian nằm giữa column ***/
+        dateAxis.renderer.labels.template.location = 0.5;
+        dateAxis.renderer.minGridDistance = 50;
         dateAxis.baseInterval = {
             "timeUnit": "minute",
-            "count": 1
+            "count": 5
         }
         dateAxis.tooltipDateFormat = "HH:mm:ss, dd/MM/yyyy";
 
