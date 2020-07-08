@@ -122,6 +122,7 @@ lại layout bảng, sau đó mới DOM các giá trị vào trong thành phần
 ```
 + Khi các button kích hoạt, phải clear dữ liệu trước đó `$('#table_threshold').DataTable().clear().draw();`, sau đó
 add data mới vào bảng dữ liệu
++ Hàm `onChangeTime_feature(time)` cần được sắp xếp dữ liệu lại
 + Cách add dữ liệu: điều kiện phụ thuộc vào việc kích hoạt của các button, nếu button có class `active` sẽ chạy hàm
 `DOM_data_child_Threshold(row_detail, time)`
 + Luồng của hàm onChange vượt ngưỡng: click button `DS vượt ngưỡng` ==> `getData_threshold_station()` 
@@ -140,6 +141,7 @@ add data mới vào bảng dữ liệu
 + Xử lý tạo chuỗi total detail mới: thêm vào service `call_obser_station.php` thêm phần tìm thời gian sớm nhất ==> 
 sau đó sử dụng thời gian đó so sánh với thời gian của detail (gần tương tự với hàm vượt ngưỡng) ==> nếu phù hợp
 sẽ `push` vào 1 mảng mới (không push vào mảng cũ vì sẽ làm thay đổi dữ liệu gốc ban đầu của detail đó)
++ Thay đổi: dữ liệu the
 
 ### Tối ưu hóa đợt 1
 + Tìm các thư viện nặng nhưng không sử dụng đến để loại bỏ

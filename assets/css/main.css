@@ -640,6 +640,13 @@ input[type="checkbox"] {
     overflow-x: hidden;
 }
 
+#info_dom_chart {
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ff0000
+}
+
 .table-overflow {
     height: 200px;
     overflow-y: auto;
@@ -754,7 +761,7 @@ input[type="checkbox"] {
     overflow-y: scroll;
 }
 
-#table_threshold_wrapper .col-sm-12 thead .fixed_header{
+#table_threshold_wrapper .col-sm-12 thead .fixed_header {
     position: sticky;
     top: 0;
     z-index: 1;

@@ -33,12 +33,16 @@ function onChangeTime_feature(time) {
             /*** Gộp thành chuỗi rồi chuyển sang dạng thời gian mặc định ***/
             var data_day_time = new Date(string_day[2] + "/" + string_day[1] + "/" + string_day[0]
                 + " " + detail_time);
+
+            total_detail[j]['time_js'] = data_day_time;
+
             if (data_day_time.getTime() < d_hour_minus.getTime()) {
                 /*** Dùng hàm Splice cắt phần tử mảng ở vị trí thứ j và bỏ đi 1 phần tử ***/
                total_detail.splice(j, 1);
             }
             detail_threshold_station.data[i].total_detail = total_detail;
         }
+        sortResults(total_detail, 'time_js', false);
     }
 
     data_threshold_station = detail_threshold_station.data;

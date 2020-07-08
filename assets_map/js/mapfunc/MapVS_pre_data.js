@@ -69,8 +69,6 @@ function process_detail_DOMchart(feature, time) {
             new_total_detail.push(total_detail[j])
         }
     }
-    // console.log(total_detail)
-    console.log(new_total_detail);
     sortResults(new_total_detail, 'time_js', true);
     return new_total_detail;
 }
