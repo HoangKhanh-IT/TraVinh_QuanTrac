@@ -112,7 +112,7 @@ var station_id;
 function Modal_Feature_Advanced(feat, layer) {
     Feature_info_modal(feat, layer)
 
-    /*** Tạo mảng quantrac_search ***/
+    /*** Tạo mảng quantrac_search_advanced ***/
     quantrac_search_advanced.push({
         name: feat.properties.name,
         quanhuyen: feat.properties.districtName,
