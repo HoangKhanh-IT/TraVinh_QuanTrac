@@ -143,6 +143,8 @@ sau đó sử dụng thời gian đó so sánh với thời gian của detail (g
 sẽ `push` vào 1 mảng mới (không push vào mảng cũ vì sẽ làm thay đổi dữ liệu gốc ban đầu của detail đó)
 + Thay đổi: dữ liệu được DOM theo thời gian hệ thống
 
+### Xử lý DOM dữ liệu thống kê
+
 ### Tối ưu hóa đợt 1
 + Tìm các thư viện nặng nhưng không sử dụng đến để loại bỏ
 + Tối ưu hóa thuật toán fitbounds (xem ở phần "Note xử lý onChange in map using Select Option/Checkbox Input"
