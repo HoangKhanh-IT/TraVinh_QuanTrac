@@ -698,7 +698,7 @@
     </div>
 
     <!-- Modal Thống kê -->
-    <div class="modal fade" id="statisticModal" role="dialog" tabindex="-1">
+    <div class="modal fade" id="statisticModal" role="dialog" tabindex="-1" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog modal-statistic">
             <div class="modal-content" style="border-radius: 0">
                 <div class="modal-header">
@@ -784,11 +784,11 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <div class="col-xs-12 col-md-12">
                                     <hr class="line-search">
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="form-group">
                                 <div class="col-xs-5 col-md-5 modal-advanced-titles">
                                     <i class="icon-database-time2 brown" style="font-size: 16px; margin-top: -2px"></i>
@@ -807,7 +807,7 @@
                                     <input class="form-control" id="Todate" type="date">
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <div class="col-xs-5 col-md-5 modal-advanced-titles">
                                     <i class="icon-pie-chart3 brown" style="font-size: 16px; margin-top: -2px"></i>
                                     <span for="charttype" class="black" style="margin-left: 1px">&nbsp;Loại biểu đồ</span>
@@ -819,7 +819,7 @@
                                         <option>Biểu đồ đường</option>
                                     </select>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="form-group">
                                 <div class="col-xs-5 col-md-5 modal-advanced-titles">
                                     <i class="icon-reply brown" style="font-size: 16px; margin-top: -2px"></i>
@@ -840,15 +840,15 @@
                                     <span for="loaihinh" class="black" style="margin-left: 1px">&nbsp;Tùy chọn hiển thị</span>
                                 </div>
                                 <div class="form-group col-xs-7 col-md-7 modal-advanced">
-                                    <div class="pretty p-image p-plain" style="margin-top: 10px">
-                                        <input type="checkbox">
+                                    <div class="pretty p-image p-plain" style="margin-top: 5px">
+                                        <input type="checkbox" checked>
                                         <div class="state">
                                             <img class="image image-checkbox" src="assets/images/checkbox_2.png">
                                             <label>Báo cáo</label>
                                         </div>
                                     </div>
-                                    <div class="pretty p-image p-plain" style="margin-top: 10px">
-                                        <input type="checkbox">
+                                    <div class="pretty p-image p-plain" style="margin-top: 5px">
+                                        <input type="checkbox" checked>
                                         <div class="state">
                                             <img class="image image-checkbox" src="assets/images/checkbox_2.png">
                                             <label>Biểu đồ</label>
@@ -859,14 +859,14 @@
                                 <div class="col-xs-5 col-md-5 modal-advanced-titles">
                                 </div>
                                 <div class="form-group col-xs-7 col-md-7 modal-advanced">
-                                    <div class="pretty p-image p-plain" style="margin-top: 10px">
+                                    <div class="pretty p-image p-plain" style="margin-top: 0px">
                                         <input type="checkbox">
                                         <div class="state">
                                             <img class="image image-checkbox" src="assets/images/checkbox_2.png">
                                             <label>WQI</label>
                                         </div>
                                     </div>
-                                    <div class="pretty p-image p-plain" style="margin-top: 10px; margin-left: 23px">
+                                    <div class="pretty p-image p-plain" style="margin-top: 0px; margin-left: 23px">
                                         <input type="checkbox">
                                         <div class="state">
                                             <img class="image image-checkbox" src="assets/images/checkbox_2.png">
@@ -887,7 +887,7 @@
     </div>
 
     <!-- Modal Thống kê (phần Tìm trạm) -->
-    <div class="modal fade" id="search_stats_tramqtModal" role="dialog" tabindex="-1">
+    <div class="modal fade" id="search_stats_tramqtModal" role="dialog" tabindex="-1" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog modal-stats-search">
             <div class="modal-content" style="border-radius: 0">
                 <div class="modal-header">
@@ -931,7 +931,7 @@
     </div>
 
     <!-- Modal Thống kê (phần Thông số) -->
-    <div class="modal fade" id="search_paraqtModal" role="dialog" tabindex="-1">
+    <div class="modal fade" id="search_paraqtModal" role="dialog" tabindex="-1" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog modal-stats-para">
             <div class="modal-content" style="border-radius: 0">
                 <div class="modal-header">
@@ -966,7 +966,7 @@
     </div>
 
     <!-- Modal Xuất kết quả Thống kê -->
-    <div class="modal fade" id="statistic_resultModal" role="dialog" tabindex="-1">
+    <div class="modal fade" id="statistic_resultModal" role="dialog" tabindex="-1" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog modal-statistic-result">
             <div class="modal-content modal-statistic-result-content" style="border-radius: 0">
                 <div class="modal-header">
@@ -1014,7 +1014,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-default" data-dismiss="modal" type="button">Cancel</button>
+                    <button id="return_modal_statistic" class="btn btn-default" data-dismiss="modal" type="button">Cancel</button>
                 </div>
             </div>
         </div>
@@ -1067,11 +1067,13 @@
     <script src="assets/js/config.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/option_customize/option_searches.js"></script>
+    <script src="assets/js/option_customize/option_stats.js"></script>
     <script src="assets/js/option_customize/option_renderChart.js"></script>
-    <script src="assets/js/tables/feature_onChange.js"></script>
-    <script src="assets/js/tables/feature_infoBTD.js"></script>
-    <script src="assets/js/tables/feature_infoThreshold.js"></script>
-    <!-- <script src="assets/js/option_customize/option_stats.js"></script> -->
+    <script src="assets/js/tables_customize/feature_onChange.js"></script>
+    <script src="assets/js/tables_customize/feature_infoBTD.js"></script>
+    <script src="assets/js/tables_customize/feature_infoThreshold.js"></script>
+    <script src="assets/js/tables_customize/feature_infoStatistic.js"></script>
+
 
     <!-- Map JS Custom -->
     <script src="assets_map/js/mapfunc/MapScript.js"></script>

@@ -665,16 +665,12 @@ input[type="checkbox"] {
 }
 
 .gender-chart_stats {
-    margin-top: 10%;
+    padding-left: 10%;
     height: 400px;
 }
 
-.gender-chart_stats {
-    padding-left: 10%;
-}
-
 #search_stats_tramqt {
-    margin: -25% 0px 0px 85%;
+    margin: -24% 0px 0px 86%;
     padding: 6px;
     font-size: 19px;
     background-color: #ff6810;
@@ -785,6 +781,7 @@ div.dataTables_scrollBody table tbody tr:first-child td {
 }
 
 .modal-body-statistic {
+    padding-top: 5px;
     height: 500px;
     overflow-y: auto;
     overflow-x: hidden;

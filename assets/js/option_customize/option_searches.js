@@ -46,7 +46,7 @@ function dom_categories_option() {
 }
 dom_categories_option();
 
-/*----- DOM Option Huyện -----*/
+/*----- DOM Option Quận/Huyện -----*/
 function dom_districts_option() {
     $.getJSON("services/call_districts_option.php", function (data_district) {
         $('#district')

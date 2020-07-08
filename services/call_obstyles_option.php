@@ -57,5 +57,5 @@
     );
 
     $final_data = json_encode($option_final);
-     echo $final_data;
+    echo $final_data;
 ?>

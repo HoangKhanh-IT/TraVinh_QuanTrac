@@ -180,8 +180,8 @@ function Refresh_Option() {
 map.addControl(
     L.control.basemaps({
         basemaps: Basemaps_Control,
-        tileX: 0,  // tile X coordinate
-        tileY: 0,  // tile Y coordinate
-        tileZ: 1   // tile zoom level
+        tileX: 0,  /* tile X coordinate */
+        tileY: 0,  /* tile Y coordinate */
+        tileZ: 1   /* tile zoom level */
     })
 );

@@ -144,6 +144,8 @@ sẽ `push` vào 1 mảng mới (không push vào mảng cũ vì sẽ làm thay 
 + Thay đổi: dữ liệu được DOM theo thời gian hệ thống
 
 ### Xử lý DOM dữ liệu thống kê
++ Không xử lý trung bình trong 1 giờ của trạm bán tự động
++ Luồng xử lý: truy vấn trong bảng Obstype_Station
 
 ### Tối ưu hóa đợt 1
 + Tìm các thư viện nặng nhưng không sử dụng đến để loại bỏ

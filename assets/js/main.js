@@ -63,6 +63,15 @@ $("#sample-btn").click(function () {
 /*---- Modal Statistic ----*/
 $("#statistic-btn").click(function () {
     $("#statisticModal").modal("show");
+    result_Statistic();
+    $(".navbar-collapse.in").collapse("hide");
+    return false;
+});
+
+/*---- Quay trở lại Modal Statistic ----*/
+$("#return_modal_statistic").click(function () {
+    $("#statisticModal").modal("show");
+    $("#statistic_resultModal").modal("hide");
     $(".navbar-collapse.in").collapse("hide");
     return false;
 });
@@ -77,7 +86,26 @@ $("#statistic-result-btn").click(function () {
 
 /*---- Modal Search Stats Trạm ----*/
 $("#search_stats_tramqt").click(function () {
-    $("#search_stats_tramqtModal").modal("show");
+    var url_list_stations = '';
+    var item_loaihinh_stat = $("#loaihinh_stat").val();
+    var item_loaitram_stat = $("#loaitram_stat").val();
+    var item_quanhuyen_stat = $("#district_stat").val();
+
+    if (item_loaihinh_stat == 'none') {
+        alert("Vui lòng chọn loại hình");
+    } else {
+        if (item_quanhuyen_stat == 'none') {
+            url_list_stations = 'services/call_stat_station.php?' + '&%20loaihinh_stat=' + item_loaihinh_stat +
+                '&%20loaitram_stat=' + item_loaitram_stat + '&%20quanhuyen_stat=1=1';
+        } else {
+            url_list_stations = 'services/call_stat_station.php?' + '&%20loaihinh_stat=' + item_loaihinh_stat +
+                '&%20loaitram_stat=' + item_loaitram_stat + '&%20quanhuyen_stat=' + item_quanhuyen_stat;
+        }
+    }
+
+    if (url_list_stations != '') {
+        $("#search_stats_tramqtModal").modal("show");
+    }
     $(".navbar-collapse.in").collapse("hide");
     return false;
 });
