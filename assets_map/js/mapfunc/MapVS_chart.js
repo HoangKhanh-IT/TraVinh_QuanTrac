@@ -9,6 +9,7 @@ function render_columnchart_quantrac(div_id, data_chart, name_title, key, data) 
         var chart = am4core.create(div_id, am4charts.XYChart);
         chart.data = data_chart;
 
+        chart.language.locale = am4lang_vi_VN;
         chart.logo.height = -500;
         chart.fontSize = 13;
         chart.dateFormatter.inputDateFormat = "HH:mm:ss, dd/MM/yyyy";
@@ -77,6 +78,7 @@ function render_linechart_quantrac(div_id, data_chart, name_title, key, data) {
         var chart = am4core.create(div_id, am4charts.XYChart);
         chart.data = data_chart;
 
+        chart.language.locale = am4lang_vi_VN;
         chart.logo.height = -500;
         chart.fontSize = 13;
         chart.dateFormatter.inputDateFormat = "HH:mm:ss, dd/MM/yyyy";
@@ -133,6 +135,7 @@ function render_groupchart_quantrac(div_id, data_chart, name_title, key, data) {
         var chart = am4core.create(div_id, am4charts.XYChart);
         chart.data = data_chart;
 
+        chart.language.locale = am4lang_vi_VN;
         chart.logo.height = -500;
         chart.fontSize = 13;
         chart.dateFormatter.inputDateFormat = "HH:mm:ss, dd/MM/yyyy";

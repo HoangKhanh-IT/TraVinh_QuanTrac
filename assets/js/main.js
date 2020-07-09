@@ -63,7 +63,7 @@ $("#sample-btn").click(function () {
 /*---- Modal Statistic ----*/
 $("#statistic-btn").click(function () {
     $("#statisticModal").modal("show");
-    result_Statistic();
+    // result_Statistic();
     $(".navbar-collapse.in").collapse("hide");
     return false;
 });
@@ -101,6 +101,63 @@ $("#search_stats_tramqt").click(function () {
             url_list_stations = 'services/call_stat_station.php?' + '&%20loaihinh_stat=' + item_loaihinh_stat +
                 '&%20loaitram_stat=' + item_loaitram_stat + '&%20quanhuyen_stat=' + item_quanhuyen_stat;
         }
+
+        /*** Hàm xử lý DOM các trạm quan trắc ***/
+        $(document).ready(function () {
+            if ($.fn.DataTable.isDataTable('#stat_stations')) {
+                $('#stat_stations').DataTable().ajax.url(url_list_stations).load();
+            }
+            if (!$.fn.DataTable.isDataTable('#stat_stations')) {
+                var table_stat_stations = $('#stat_stations').DataTable({
+                    ajax: url_list_stations,
+                    columns: [
+                        {"data": "code"},
+                        {"data": "name"}
+                    ],
+                    order: [
+                        [1, 'asc']
+                    ],
+
+                    dom: "<'row'<'col-sm-12'f>>" +
+                        "<'row'<'col-sm-12'tr>>" +
+                        "<'row'<'col-sm-5'i><'col-sm-7'p>>",
+
+                    paging: false,
+                    autoWidth: false,
+                    "language": {
+                        pagingType: "full_numbers",
+                        search: '<span>Tìm kiếm:</span> _INPUT_',
+                        searchPlaceholder: 'Gõ để tìm...',
+                        paginate: {
+                            'first': 'First',
+                            'last': 'Last',
+                            'next': $('html').attr('dir') == 'rtl' ? '<span style="font-size:13px;">Trước</span>' : '<span style="font-size:13px;">Sau</span>',
+                            'previous': $('html').attr('dir') == 'rtl' ? '<span style="font-size:13px;">Sau</span>' : '<span style="font-size:13px;">Trước</span>'
+                        },
+                        sLengthMenu: "<span>Hiển thị&nbsp;</span> _MENU_<span> kết quả</span>",
+                        sZeroRecords: "Không tìm thấy kết quả",
+                        sInfo: "Hiển thị _START_ đến _END_ trên _TOTAL_ dòng",
+                        sInfoFiltered: "(tất cả _MAX_ dòng)",
+                        sInfoEmpty: "Hiển thị 0 đến _END_ trên _TOTAL_ dòng",
+                    },
+                });
+
+                $('#stat_stations tbody').on('click', 'tr', function () {
+                    $(this).toggleClass('selected');
+                });
+
+                $('#station_mulitiple').click(function () {
+                    var station_selected = '';
+                    var data_selected = Object.keys(table_stat_stations.rows('.selected').data())
+                    for (var i = 0; i < data_selected.length; i++) {
+                        if (isNaN(Number(data_selected[i])) == false) {
+                            station_selected += table_stat_stations.rows('.selected').data()[i].name + " ";
+                            $('#search_quantrac').val(station_selected);
+                        }
+                    }
+                });
+            }
+        })
     }
 
     if (url_list_stations != '') {
@@ -268,21 +325,21 @@ function format(d, ID_modal) {
                         max = total_std_param[k_para_threshold].max_value;
 
                         /*** DOM ngưỡng dữ liệu
-                        if (min == null && max != null) {
+                         if (min == null && max != null) {
                             dom_min_max = '&#8804; ' + max;
                         }
-                        if (min != null && max == null) {
+                         if (min != null && max == null) {
                             dom_min_max = '&#8805; ' + min;
                         }
-                        if (min != null && max != null) {
+                         if (min != null && max != null) {
                             dom_min_max = min + ' &#8804; x &#8804; ' + max;
                         }  ***/
                     }
                 }
                 /*** DOM min max
-                DOM_child_table += '<th scope="col" style="white-space: nowrap;" ' +
-                    'class="parameter_tab" id="' + spidID + '">' +
-                    parameterName + ' (' + dom_min_max + ')</th>'; ***/
+                 DOM_child_table += '<th scope="col" style="white-space: nowrap;" ' +
+                 'class="parameter_tab" id="' + spidID + '">' +
+                 parameterName + ' (' + dom_min_max + ')</th>'; ***/
 
                 DOM_child_table += '<th scope="col" style="white-space: nowrap;" ' +
                     'class="parameter_tab" id="' + spidID + '">' +

@@ -1,3 +1,4 @@
-/*---- Trả kết quả thống kê ----*/
-function result_Statistic() {
+/*---- Trả danh sách các trạm quan trắc ----*/
+function result_list_stations(url_list_stations) {
+
 }

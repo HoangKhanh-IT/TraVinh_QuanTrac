@@ -41,9 +41,14 @@
 						LEFT JOIN "ObservationType" "obs_type" ON "obs_type"."id" = "obs_station"."obstypesid"
 						LEFT JOIN "Observation" "obs" ON "obs"."stationid" = "station"."id"';
 
-    /*** Where Condition Data Loại hình, Loại trạm và Quận huyện ***/
-    $querry_statistic_where_loaihinh_loaitram_quanhuyen = ' WHERE "obs_type"."id" = '.$loaihinh.
-        ' AND "district"."id" = '.$quanhuyen.' AND "category"."id" = '.$loaitram;
+    /*** Where Condition Data Loại hình, Loại trạm và Quận huyện (trừ điều kiện $quanhuyen=1=1)  ***/
+    if ($quanhuyen != '1=1') {
+        $querry_statistic_where_loaihinh_loaitram_quanhuyen = ' WHERE "obs_type"."id" = '.$loaihinh.
+            ' AND "category"."id" = '.$loaitram.' AND "district"."id" = '.$quanhuyen;
+    } else {
+        $querry_statistic_where_loaihinh_loaitram_quanhuyen = ' WHERE "obs_type"."id" = '.$loaihinh.
+            ' AND "category"."id" = '.$loaitram;
+    }
 
     /*** Group and Order Data ***/
     $querry_statistic_group = ' GROUP BY "station"."id", 
@@ -73,7 +78,8 @@
     $original_data = json_decode($jsonData, true);
     $option = array();
     foreach ($original_data as $key => $value) {
-        $option[] = array('id' => $value['id'],
+        $option[] = array(
+            'id' => $value['id'],
             'code' => $value['code'],
             'name' => $value['name'],
             'organizationName' => $value['organizationName'],
@@ -97,6 +103,11 @@
         );
     }
 
-    $final_data = json_encode($option);
+    /*** Để Dom dữ liệu vào Danh sách vượt ngưỡng ***/
+    $option_final = array(
+        'data' => $option
+    );
+
+    $final_data = json_encode($option_final);
     echo $final_data;
 ?>
