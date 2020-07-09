@@ -2,24 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="461f7496-579b-4c31-90e4-a3dfaeb4f371" name="Default Changelist" comment="TraVinh_QuanTrac">
-      <change afterPath="$PROJECT_DIR$/assets/js/tables_customize/feature_infoBTD.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/tables_customize/feature_infoStatistic.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/tables_customize/feature_infoThreshold.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/tables_customize/feature_onChange.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/call_obstyles_stat_option.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/call_stat_station.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/option_customize/option_searches.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/option_customize/option_searches.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/option_customize/option_stats.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/option_customize/option_stats.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/tables/feature_infoBTD.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/tables/feature_infoThreshold.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/tables/feature_onChange.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets_map/js/mapfunc/MapScript.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets_map/js/mapfunc/MapScript.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/call_obstyles_option.php" beforeDir="false" afterPath="$PROJECT_DIR$/services/call_obstyles_option.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/services/config.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,34 +85,32 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/services/call_stat_station.php" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/assets/js/tables_customize/feature_infoStatistic.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/services/call_obstyles_stat_option.php" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/services/call_elec_board.php" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/services/call_obstyles_option.php" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/assets/js/main.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/assets_map/css/MapStyle.css" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/services/call_districts_option.php" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/services/call_categories_option.php" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/assets/js/config.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/index.html" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/README.md" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/services/call_obser_station.php" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/services/call_categories_option.php" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/services/call_obstyles_option.php" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/assets/js/option_customize/option_renderChart.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/assets/js/config.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/services/call_data_sampleBTD.php" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/assets_map/js/mapfunc/MapFeatureInfo.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/assets_map/js/mapfunc/MapScript.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/services/call_standard_param.php" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/assets/js/main.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/index.html" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/assets/css/main.css" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/assets_map/js/mapfunc/MapSearch.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/assets/js/option_customize/option_searches.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/assets_map/js/mapfunc/MapVS_pre_data.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/assets_map/css/MapStyle.css" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/assets/js/option_customize/option_stats.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/assets_map/js/mapfunc/MapVS_chart.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/services/call_elec_board.php" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/services/call_districts_option.php" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/assets_map/js/mapfunc/MapScript.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/services/config.php" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/services/call_loctype_option.php" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/services/call_location_option.php" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/services/call_threshold_station.php" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/assets_map/js/mapfunc/MapVS_pre_data.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/services/call_standard_param.php" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/assets_map/js/mapfunc/MapFeatureInfo.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/assets/css/main.css" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/services/call_data_sampleBTD.php" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/assets_map/js/mapfunc/MapVS_chart.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/assets/js/option_customize/option_stats.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/services/call_obstyles_stat_option.php" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/assets/js/option_customize/option_searches.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/services/call_stat_station.php" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/services/call_location_option.php" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/services/call_loctype_option.php" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
   </component>
   <component name="IgnoredFileRootStore">
     <option name="generatedRoots">
@@ -261,6 +244,7 @@
       <workItem from="1593994890326" duration="29889000" />
       <workItem from="1594084337594" duration="14485000" />
       <workItem from="1594168163511" duration="25754000" />
+      <workItem from="1594259464258" duration="1304000" />
     </task>
     <task id="LOCAL-00027" summary="TraVinh_QuanTrac">
       <created>1589967894771</created>
@@ -627,9 +611,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="275" y="27" key="#com.intellij.execution.impl.EditConfigurationsDialog/1366.0.1366.738/0.0.1366.738@0.0.1366.738" timestamp="1592906797577" />
-    <state x="333" y="0" key="CommitChangelistDialog2" timestamp="1594211191985">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state x="333" y="0" key="CommitChangelistDialog2" timestamp="1594260789420">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="333" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1594260789420" />
     <state x="375" y="0" key="CommitChangelistDialog2/0.0.1536.834/1920.0.1024.738@0.0.1536.834" timestamp="1588905135465" />
     <state x="375" y="0" key="CommitChangelistDialog2/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1591865434951" />
     <state x="375" y="0" key="CommitChangelistDialog2/0.0.1536.834/1920.30.1366.738@0.0.1536.834" timestamp="1591465668796" />
@@ -679,9 +664,10 @@
       <screen x="1366" y="0" width="1366" height="738" />
     </state>
     <state x="1758" y="6" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/1366.0.1366.738/0.0.1366.738@0.0.1366.738" timestamp="1592907005894" />
-    <state x="395" y="213" key="com.intellij.ide.util.TipDialog" timestamp="1594168166316">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state x="395" y="210" key="com.intellij.ide.util.TipDialog" timestamp="1594259464180">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="395" y="210" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1594259464180" />
     <state x="444" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1591945356912" />
     <state x="444" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834/1920.30.1366.738@0.0.1536.834" timestamp="1591464847954" />
     <state x="444" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834@0.0.1536.834" timestamp="1592561215093" />

@@ -3,7 +3,7 @@
         port=5432 
         dbname=quantrac_travinh 
         user=postgres 
-        password=0888365051"
+        password=123456"
     );
     if (!$travinh_db) {
         echo "Kết nối thất bại.\n";
