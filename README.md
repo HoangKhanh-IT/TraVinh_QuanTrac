@@ -79,6 +79,15 @@ click "Xem dữ liệu" các lần chẵn (tức là lần 2, 4, 6, ...) thì kh
 + Kiểm tra bảng có dữ liệu hay chưa: https://datatables.net/reference/api/%24.fn.dataTable.isDataTable
 + Cần xử lý cách DOM bảng Child (done)
 + Đối với 1 số VPS không hỗ trợ lấy Date có dấu nháy cần phải làm cách khác (đã note trong code)
++ Thêm ở thuộc tính `column` để có thể mở `row_child`:
+```
+    {
+        "className": 'details-control',
+        "orderable": false,
+        "data": null,
+        "defaultContent": ''
+    }
+```
 
 ### Note DB Observation
 + Mỗi 1 thời điểm (tức cứ 5 phút) là sẽ có 1 row/1 trạm/1 thời điểm (time, date)/1 detail

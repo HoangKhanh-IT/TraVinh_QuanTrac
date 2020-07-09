@@ -149,9 +149,10 @@ $("#search_stats_tramqt").click(function () {
                 $('#station_mulitiple').click(function () {
                     var station_selected = '';
                     var data_selected = Object.keys(table_stat_stations.rows('.selected').data())
-                    for (var i = 0; i < data_selected.length; i++) {
-                        if (isNaN(Number(data_selected[i])) == false) {
-                            station_selected += table_stat_stations.rows('.selected').data()[i].name + " ";
+                    for (var i_data_selected = 0; i_data_selected < data_selected.length; i_data_selected++) {
+                        if (isNaN(Number(data_selected[i_data_selected])) == false) {
+                            station_selected +=
+                                table_stat_stations.rows('.selected').data()[i_data_selected].name + " ";
                             $('#search_quantrac').val(station_selected);
                         }
                     }
