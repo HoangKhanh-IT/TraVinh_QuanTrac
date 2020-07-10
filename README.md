@@ -17,28 +17,28 @@
 + Chặn cơ chế bấm click bên ngoài modal để tắt modal thêm thuộc tính `data-backdrop="static"` và `data-keyboard="false"`
 + Cơ chế đóng mở 1 trong 2 của Search Cơ bản và Nâng cao: 
 https://viblo.asia/p/bai-19-tao-collapse-va-accordion-voi-bootstrap-3-Qbq5Q1gG5D8
-+ Lưu ý: phảm thêm thẻ class `.panel` thì thuộc tính `data-parent` mới được thực hiện:
++ Lưu ý: phải thêm thẻ class `.panel` thì thuộc tính `data-parent` mới được thực hiện:
 https://stackoverflow.com/questions/19425165/bootstrap-accordion-button-toggle-data-parent-not-working
-+ Nút Navbar Collapse chuyển qua góc trái (sát Logo) ==> logo
++ Nút Navbar Collapse chuyển qua góc trái (sát Logo) ==> done
 + Border ở các Modal (Header và Footer) tăng Width ==> done
 + Điều chỉnh thanh kéo ngang (giảm Width) ==> done
 + Hiển thị kết quả thống kê
     + Giới hạn số lượng trạm so sánh: 3 ==> Bảng biểu và chart hiển thị tối đa 3 trạm (done)
-    + Bảng dữ liệu báo cáo: đề xuất làm Dropdown hiển thị Chart (pending)
+    + Bảng dữ liệu báo cáo: đề xuất làm Dropdown hiển thị Chart (done)
 + Nút toggle thay đổi (xóa ==> thay đổi cơ chế làm mờ)  ==> làm nút toggle nhỏ hơn
 + Làm gọn panel heading (bấm xố dropdown nhưng không làm nút, cái đầu tiên mặc định mở) ==> done
 + Bỏ chú thích bản đồ (done)
 + Làm baner to hơn (done)
 + Bỏ nút Copy và Print, đổi màu đỏ cho các nút hiển thị 1 giờ, 8 giờ và 24 giờ (done)
 + Tool chạy batch files để ở trang Admin (tool chạy bằng Php)
-+ Làm phần Scrollbar width to hơn (done)
++ Làm phần Scrollbar width to hơn (done) ==> thay đổi `heigth` của Scrollbar ngang (done)
 + Fit content cho modalFeature khi DOM dữ liệu từ DB
 + Hiện số liệu trạm quan trắc:
     + Đối với trạm tự động: có hiện chart
     + Đối với trạm bán tự động: không hiện chart nhưng hiện bảng số liệu 
     Datatables cho từng mẫu (không hiện số mới nhất)
     + Dom nhiều thuộc tính từ DB
-    + Các mẫu theo hàng, chí tiêu theo hàng (Scrollbar ngang)
+    + Các mẫu theo hàng, chỉ tiêu theo hàng (Scrollbar ngang)
 
 ### Set Up in Xampp
 + Thêm extension cho PostgreSQL: 
@@ -60,7 +60,7 @@ https://www.semicolonworld.com/question/32508/add-json-element-to-multidimension
 + Xử lý sự kiện `onChange`: xử lý duplicate Option Select: https://forum.jquery.com/topic/jquery-how-to-remove-duplicates-from-dropdown-select-box
 + Bắt sự kiện Option Checkbox để đóng/mở parent/children theo ý muốn `var obj_node = $('li#2.jstree-node.jstree-open')`
 + Thêm event `onChange` vào `<select class="form-control" id="quantrac" onchange="search_tramqt()"></select>`
-+ Vào trang show hết tất cả điểm (lựa chọn loại hình được tích `Tất cả` ==> done)
++ Vào trang show tất cả điểm (lựa chọn loại hình được tích `Tất cả` ==> done)
 + Ghép chuỗi trong service: sử dụng linh hoạt `%20` (dấu " ") và `%27` (dấu "'") ==> Chuyển sang GET id nên không sử dụng `%27`
 + Đưa về sử dụng Leaflet Ajax + Option Onchange + Ghép chuỗi service URL
 + Thanks my Master: http://dev.dothanhlong.org/geoserver_cql_query_ajax_json/

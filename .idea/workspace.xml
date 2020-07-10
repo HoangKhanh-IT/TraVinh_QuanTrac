@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="461f7496-579b-4c31-90e4-a3dfaeb4f371" name="Default Changelist" comment="TraVinh_QuanTrac">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -252,14 +253,8 @@
       <workItem from="1594259566306" duration="4206000" />
       <workItem from="1594263785451" duration="19000" />
       <workItem from="1594264109942" duration="40000" />
-      <workItem from="1594287362561" duration="1720000" />
-    </task>
-    <task id="LOCAL-00029" summary="TraVinh_QuanTrac">
-      <created>1590121855710</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1590121855711</updated>
+      <workItem from="1594287362561" duration="1776000" />
+      <workItem from="1594340299835" duration="186000" />
     </task>
     <task id="LOCAL-00030" summary="TraVinh_QuanTrac">
       <created>1590124831297</created>
@@ -597,7 +592,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594263760922</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="TraVinh_QuanTrac">
+      <created>1594289376072</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1594289376073</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -619,7 +621,7 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="275" y="27" key="#com.intellij.execution.impl.EditConfigurationsDialog/1366.0.1366.738/0.0.1366.738@0.0.1366.738" timestamp="1592906797577" />
-    <state x="333" y="0" key="CommitChangelistDialog2" timestamp="1594263767408">
+    <state x="333" y="0" key="CommitChangelistDialog2" timestamp="1594289385491">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="375" y="0" key="CommitChangelistDialog2/0.0.1536.834/1920.0.1024.738@0.0.1536.834" timestamp="1588905135465" />
@@ -627,7 +629,7 @@
     <state x="375" y="0" key="CommitChangelistDialog2/0.0.1536.834/1920.30.1366.738@0.0.1536.834" timestamp="1591465668796" />
     <state x="375" y="0" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1592561250643" />
     <state x="333" y="0" key="CommitChangelistDialog2/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1592560818398" />
-    <state x="333" y="0" key="CommitChangelistDialog2/1366.0.1366.738/0.0.1366.738@0.0.1366.738" timestamp="1594263767408" />
+    <state x="333" y="0" key="CommitChangelistDialog2/1366.0.1366.738/0.0.1366.738@0.0.1366.738" timestamp="1594289385491" />
     <state x="488" y="152" key="FileChooserDialogImpl" timestamp="1594190300340">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -658,7 +660,7 @@
     <state x="277" y="59" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1590330123913" />
     <state x="246" y="12" key="SettingsEditor/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1592542431198" />
     <state x="246" y="12" key="SettingsEditor/1366.0.1366.738/0.0.1366.738@0.0.1366.738" timestamp="1594287384920" />
-    <state x="321" y="129" key="Vcs.Push.Dialog.v2" timestamp="1594263769837">
+    <state x="321" y="129" key="Vcs.Push.Dialog.v2" timestamp="1594289388475">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834/1920.0.1024.738@0.0.1536.834" timestamp="1588905139877" />
@@ -666,19 +668,19 @@
     <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834/1920.30.1366.738@0.0.1536.834" timestamp="1591465673681" />
     <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1592561260239" />
     <state x="321" y="127" key="Vcs.Push.Dialog.v2/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1592560766669" />
-    <state x="321" y="129" key="Vcs.Push.Dialog.v2/1366.0.1366.738/0.0.1366.738@0.0.1366.738" timestamp="1594263769837" />
+    <state x="321" y="129" key="Vcs.Push.Dialog.v2/1366.0.1366.738/0.0.1366.738@0.0.1366.738" timestamp="1594289388475" />
     <state x="1758" y="6" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1592907005894">
       <screen x="1366" y="0" width="1366" height="738" />
     </state>
     <state x="1758" y="6" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/1366.0.1366.738/0.0.1366.738@0.0.1366.738" timestamp="1592907005894" />
-    <state x="395" y="213" key="com.intellij.ide.util.TipDialog" timestamp="1594287369246">
+    <state x="395" y="213" key="com.intellij.ide.util.TipDialog" timestamp="1594340310872">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="444" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1591945356912" />
     <state x="444" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834/1920.30.1366.738@0.0.1536.834" timestamp="1591464847954" />
     <state x="444" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834@0.0.1536.834" timestamp="1592561215093" />
     <state x="395" y="210" key="com.intellij.ide.util.TipDialog/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1592542389693" />
-    <state x="395" y="213" key="com.intellij.ide.util.TipDialog/1366.0.1366.738/0.0.1366.738@0.0.1366.738" timestamp="1594287369246" />
+    <state x="395" y="213" key="com.intellij.ide.util.TipDialog/1366.0.1366.738/0.0.1366.738@0.0.1366.738" timestamp="1594340310872" />
     <state x="452" y="0" width="631" height="834" key="find.popup" timestamp="1591082758729">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
