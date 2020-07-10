@@ -180,3 +180,5 @@ Diễn giải:
 1. Bản đồ hiển thị dùng Leaflet
 2. Index.html -> gọi các file javascript nằm ở cuối trang html -> javascipt sẽ gọi các services (dữ liệu trả về từ truy vấn sql đã viết sẵn)  gắn vô các id tương ứng trên html
 3. Các câu truy vấn SQL để Dom dữ liệu thì đưa vào các Services, thực thi bằng pgquery() -> Đưa vào mãng có $features -> đưa về dạng mảng Json
+
+V1.2 Xong service Call_stat_station chon chi tieu Thong Ke
